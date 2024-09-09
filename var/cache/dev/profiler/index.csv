@@ -50,3 +50,14 @@ cbb30e,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,17
 a38842,127.0.0.1,GET,http://127.0.0.1:8000/admin/dashboard,1725911899,,200,request
 fe69f0,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725911899,bf4176,404,request
 bf4176,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725911899,,404,request
+c10486,127.0.0.1,GET,http://127.0.0.1:8000/admin/dashboard,1725912035,,200,request
+ed8e37,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912036,d84346,404,request
+d84346,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912036,,404,request
+b3e5de,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/,1725912037,,200,request
+74033c,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/new,1725912043,,200,request
+ab9e9c,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912043,f3837c,404,request
+f3837c,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912043,,404,request
+655aba,127.0.0.1,POST,http://127.0.0.1:8000/admin/user/new,1725912069,,303,request
+6ba2c2,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/,1725912069,,200,request
+dda7e3,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912069,ff27b7,404,request
+ff27b7,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1725912069,,404,request

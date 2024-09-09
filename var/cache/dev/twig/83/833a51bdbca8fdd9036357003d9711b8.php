@@ -74,6 +74,17 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                         </p>
                     </a>
                 </li>
+                <li class=\"nav-item\">
+                <a href=\"";
+        // line 22
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\" class=\"nav-link\">
+                    <i class=\"nav-icon bi bi-people\"></i>
+                    <p>
+                        Employés
+                    </p>
+                </a>
+            </li>
             </ul>
         </nav>
     <!-- sidebar Nav end -->
@@ -112,7 +123,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -137,6 +148,14 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                         </p>
                     </a>
                 </li>
+                <li class=\"nav-item\">
+                <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
+                    <i class=\"nav-icon bi bi-people\"></i>
+                    <p>
+                        Employés
+                    </p>
+                </a>
+            </li>
             </ul>
         </nav>
     <!-- sidebar Nav end -->
