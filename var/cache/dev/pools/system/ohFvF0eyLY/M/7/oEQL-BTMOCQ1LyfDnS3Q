@@ -1,0 +1,3 @@
+<?php //eb9d0ead33e0364f75dd4670d1728b1f
+
+return [PHP_INT_MAX, 'global-assets/css/global.css'];

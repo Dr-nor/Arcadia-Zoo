@@ -1,0 +1,3 @@
+<?php //a326ba78c14b7fd9cd5089385dc37dfb
+
+return [PHP_INT_MAX, 'global-assets/js/plugins/bootstrap.bundle.min.js'];

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Panneau d'administration</title>
+        
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front-assets/images/favicon.ico') }}" />
+    
+        {% block stylesheets %}
+        <!-- Icons CSS (Icon Fonts) -->
+        <link rel="stylesheet" href="{{ asset('global-assets/css/icons.css') }}" />
+    
+        <!-- Fonts CSS (Family Fonts) -->
+        <link rel="stylesheet" href="{{ asset('global-assets/css/fonts.css') }}" />
+
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="{{ asset('admin-assets/css/plugins/datatables.css') }}">
+        <link rel="stylesheet" href="{{ asset('global-assets/css/plugins/nice-select.css') }}" />
+
+    
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="{{ asset('global-assets/css/global.css') }}">
+        <link rel="stylesheet" href="{{ asset('admin-assets/css/back.css') }}">
+        {% endblock %}
+	</head>
+	<body class="hold-transition sidebar-mini layout-fixed">
+		
+        <div class="wrapper">
+        {{ include('admin/layouts/header.html.twig') }}
+        {% if is_granted('ROLE_ADMIN') %}
+            {{ include('admin/layouts/admin-sidebar.html.twig') }}
+        {% endif %}
+        
+        {{ include('admin/layouts/flash.html.twig') }}
+        <!-- Begin Main Content Area -->
+          {% block content %}{% endblock %}
+         <!-- Main Content Area End -->
+        {{ include('admin/layouts/footer.html.twig') }}
+		</div>
+
+        {% block javascripts %}
+
+        <!--Plugins JS-->
+        <script src="{{ asset('global-assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ asset('global-assets/js/plugins/bootstrap.bundle.min.js') }}" ></script>
+        <script src="{{ asset('admin-assets/js/plugins/datatables.js') }}" ></script>
+        <script src="{{ asset('admin-assets/js/plugins/fullscreen.js') }}" ></script>
+        <script src="{{ asset('admin-assets/js/plugins/pushmenu.js') }}" ></script>
+        <script src="{{ asset('global-assets/js/plugins/jquery.nice-select.js') }}"></script>
+        <!--Main JS-->
+        <script src="{{ asset('admin-assets/js/back.js') }}"></script>
+        {% endblock %}
+	</body>
+</html>

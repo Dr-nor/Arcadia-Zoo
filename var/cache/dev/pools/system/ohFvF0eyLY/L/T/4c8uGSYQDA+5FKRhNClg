@@ -1,0 +1,3 @@
+<?php //2250a36eb1e4d7151749026e7d698274
+
+return [PHP_INT_MAX, 'global-assets/fonts/bootstrap/bootstrap-icons.woff2'];

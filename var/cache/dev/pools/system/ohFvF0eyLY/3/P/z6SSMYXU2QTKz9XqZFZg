@@ -1,0 +1,3 @@
+<?php //c2114127fa126cf1c10a7eae44c30552
+
+return [PHP_INT_MAX, 'global-assets/js/plugins/jquery.nice-select.js'];
