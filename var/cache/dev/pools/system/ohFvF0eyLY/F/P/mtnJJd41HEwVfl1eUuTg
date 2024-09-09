@@ -1,0 +1,3 @@
+<?php //54394aea43b3e2760a1686a0084f99b4
+
+return [PHP_INT_MAX, 'global-assets/fonts/poppins/Poppins-Medium.woff'];
