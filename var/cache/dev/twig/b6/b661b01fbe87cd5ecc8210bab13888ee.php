@@ -142,6 +142,6 @@ class __TwigTemplate_0b2513676d2c845ec132d1a392b21d2e extends Template
     </tbody>
 </table>
 </div>
-", "@WebProfiler/Profiler/table.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
+", "@WebProfiler/Profiler/table.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
     }
 }

@@ -184,6 +184,6 @@ class __TwigTemplate_c9ccfe588be6084ec07fcd22d8f67d89 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }

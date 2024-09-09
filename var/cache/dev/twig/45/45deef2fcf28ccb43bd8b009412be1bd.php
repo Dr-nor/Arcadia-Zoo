@@ -186,6 +186,6 @@ class __TwigTemplate_84f2d1c61704ada97b1ec177e9b7b423 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
     }
 }

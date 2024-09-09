@@ -1478,6 +1478,6 @@ class __TwigTemplate_29e0e3570c4ef76bc9d34cf5f2399aae extends Template
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

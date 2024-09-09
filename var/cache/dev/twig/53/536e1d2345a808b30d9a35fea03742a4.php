@@ -422,6 +422,6 @@ class __TwigTemplate_ec1ca7cdda5c6eb9ee18128e2e1f8a7f extends Template
 
     </div>
 {%- endif %}
-", "@WebProfiler/Profiler/_request_summary.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/_request_summary.html.twig");
+", "@WebProfiler/Profiler/_request_summary.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/_request_summary.html.twig");
     }
 }

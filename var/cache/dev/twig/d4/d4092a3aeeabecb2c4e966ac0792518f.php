@@ -1854,6 +1854,6 @@ class __TwigTemplate_0e37a64c193f5246b54a5e06564c73d6 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
     }
 }

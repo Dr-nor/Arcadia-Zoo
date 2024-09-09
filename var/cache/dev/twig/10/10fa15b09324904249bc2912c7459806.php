@@ -1717,6 +1717,6 @@ $context["event"], "message", [], "any", false, false, false, 293), "headers", [
         {%- endif -%}
     {% endmacro %}
 {% endblock %}
-", "@WebProfiler/Collector/mailer.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
+", "@WebProfiler/Collector/mailer.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/symfony/web-profiler-bundle/Resources/views/Collector/mailer.html.twig");
     }
 }
