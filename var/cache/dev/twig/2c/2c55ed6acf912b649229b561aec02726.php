@@ -225,6 +225,6 @@ class __TwigTemplate_0aec535b1e40c20d6950f856b1efd1d3 extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/templates/base.html.twig");
+", "base.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/templates/base.html.twig");
     }
 }

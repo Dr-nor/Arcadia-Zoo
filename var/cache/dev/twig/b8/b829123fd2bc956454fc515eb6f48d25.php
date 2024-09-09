@@ -981,6 +981,6 @@ class __TwigTemplate_c177d3f5b68e8aab785e9de3cdbb9691 extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo2/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }
