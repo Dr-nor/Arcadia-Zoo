@@ -89,7 +89,32 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
     <section class=\"content\">
         <div class=\"container-fluid\">
             <div class=\"row\">
-                
+                <!-- Users widget -->
+                <div class=\"col-lg-4 col-6\">
+                    <div class=\"small-box card\">
+                        <div class=\"inner\">
+                            <h3>
+                                ";
+        // line 27
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 27, $this->source); })())), "html", null, true);
+        yield "
+                            </h3>
+                            <p>
+                                Employés
+                            </p>
+                        </div>
+                        <div class=\"icon\">
+                            <i class=\"bi bi-people\"></i>
+                        </div>
+                        <a href= \"";
+        // line 36
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\" class=\"small-box-footer text-dark\">
+                            Plus d'info  
+                            <i class=\"fa fa-arrow-circle-right\"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -126,7 +151,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  73 => 3,  63 => 2,  40 => 1,);
+        return array (  111 => 36,  99 => 27,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -152,7 +177,26 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
     <section class=\"content\">
         <div class=\"container-fluid\">
             <div class=\"row\">
-                
+                <!-- Users widget -->
+                <div class=\"col-lg-4 col-6\">
+                    <div class=\"small-box card\">
+                        <div class=\"inner\">
+                            <h3>
+                                {{ users|length }}
+                            </h3>
+                            <p>
+                                Employés
+                            </p>
+                        </div>
+                        <div class=\"icon\">
+                            <i class=\"bi bi-people\"></i>
+                        </div>
+                        <a href= \"{{ path('app_user_index') }}\" class=\"small-box-footer text-dark\">
+                            Plus d'info  
+                            <i class=\"fa fa-arrow-circle-right\"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
