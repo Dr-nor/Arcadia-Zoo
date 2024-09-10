@@ -78,13 +78,13 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
     <div class=\"container-fluid my-2\">
         <div class=\"row mb-2\">
             <div class=\"col-sm-6\">
-                <h1>Employés</h1>
+                <h1>Utilisateurs</h1>
             </div>
             <div class=\"col-sm-6 text-right\">
                 <a href=\"";
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        yield "\" class=\"btn btn-primary\">Ajouter un emlpoyé</a>
+        yield "\" class=\"btn btn-primary\">Ajouter un utilisateur</a>
             </div>
         </div>
     </div>
@@ -114,28 +114,25 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
                             <th width=\"60\">ID</th>
                             <th>Nom &amp; Prénom</th>
                             <th>Email</th>
+                            <th>Rôles</th>
                             <th>créé à</th>
                             <th width=\"100\">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         ";
-        // line 49
+        // line 50
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 49, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 50, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 50
-            yield "                        ";
             // line 51
+            yield "                        ";
+            // line 52
             yield "                        <tr>
                             <td>";
-            // line 52
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 52), "html", null, true);
-            yield "</td>
-                            <td>";
             // line 53
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 53), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 53), "html", null, true);
             yield "</td>
                             <td>";
             // line 54
@@ -143,21 +140,58 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
             yield "</td>
                             <td>";
             // line 55
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "created_at", [], "any", false, false, false, 55), "Y-m-d H:i:s"), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 55), "html", null, true);
             yield "</td>
                             <td>
                                 ";
-            // line 58
+            // line 57
+            $context['_parent'] = $context;
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "roles", [], "any", false, false, false, 57));
+            foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+                // line 58
+                yield "                                    ";
+                if (($context["role"] == "ROLE_USER")) {
+                    // line 59
+                    yield "                                    Employé
+                                    ";
+                } elseif ((                // line 60
+$context["role"] == "ROLE_VET")) {
+                    // line 61
+                    yield "                                    Vétérinaire
+                                    ";
+                } elseif ((                // line 62
+$context["role"] == "ROLE_ADMIN")) {
+                    // line 63
+                    yield "                                    Administrateur
+                                    ";
+                }
+                // line 65
+                yield "                                    ,
+                                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 67
+            yield "                                
+                            </td>
+                            <td>";
+            // line 69
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "created_at", [], "any", false, false, false, 69), "Y-m-d H:i:s"), "html", null, true);
+            yield "</td>
+                            <td>
+                                ";
+            // line 72
             yield "                                <a class=\"text-info w-4 h-4\" href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 72)]), "html", null, true);
             yield "\"><i class=\"nav-icon bi bi-pencil-fill\"></i></a>
                                 <form class=\"display-inline\" method=\"post\" action=\"";
-            // line 59
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            // line 73
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 73)]), "html", null, true);
             yield "\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
                                     <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 60
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 60))), "html", null, true);
+            // line 74
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 74))), "html", null, true);
             yield "\">
                                      <button class=\"btn text-danger\"><i class=\"nav-icon bi bi-trash-fill\"></i></button>
                                 </form>
@@ -168,7 +202,7 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 67
+            // line 81
             yield "                        <tr>
                             <td>Aucun enregistrement trouvé.</td>
                             <td class=\"hidden\"></td>
@@ -177,14 +211,14 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
                             <td class=\"hidden\"></td>
                         </tr>
                     ";
-            // line 75
+            // line 89
             yield "
                          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 91
         yield "                        
                     </tbody>
                 </table>\t\t\t\t\t\t\t\t\t\t
@@ -227,7 +261,7 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  188 => 77,  181 => 75,  172 => 67,  160 => 60,  156 => 59,  151 => 58,  146 => 55,  142 => 54,  138 => 53,  134 => 52,  131 => 51,  129 => 50,  124 => 49,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  222 => 91,  215 => 89,  206 => 81,  194 => 74,  190 => 73,  185 => 72,  180 => 69,  176 => 67,  169 => 65,  165 => 63,  163 => 62,  160 => 61,  158 => 60,  155 => 59,  152 => 58,  148 => 57,  143 => 55,  139 => 54,  135 => 53,  132 => 52,  130 => 51,  125 => 50,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -242,10 +276,10 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
     <div class=\"container-fluid my-2\">
         <div class=\"row mb-2\">
             <div class=\"col-sm-6\">
-                <h1>Employés</h1>
+                <h1>Utilisateurs</h1>
             </div>
             <div class=\"col-sm-6 text-right\">
-                <a href=\"{{ path('app_user_new') }}\" class=\"btn btn-primary\">Ajouter un emlpoyé</a>
+                <a href=\"{{ path('app_user_new') }}\" class=\"btn btn-primary\">Ajouter un utilisateur</a>
             </div>
         </div>
     </div>
@@ -275,6 +309,7 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
                             <th width=\"60\">ID</th>
                             <th>Nom &amp; Prénom</th>
                             <th>Email</th>
+                            <th>Rôles</th>
                             <th>créé à</th>
                             <th width=\"100\">Actions</th>
                         </tr>
@@ -284,8 +319,21 @@ class __TwigTemplate_4259526ac4b3a6394dffb5e7c98894af extends Template
                         {# {% if user.is_granted('ROLE_ADMIN') %} #}
                         <tr>
                             <td>{{ user.id }}</td>
-                            <td>{{ user.email }}</td>
                             <td>{{ user.fullname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                {% for role in user.roles %}
+                                    {% if role == \"ROLE_USER\" %}
+                                    Employé
+                                    {% elseif  role ==\"ROLE_VET\" %}
+                                    Vétérinaire
+                                    {% elseif  role == \"ROLE_ADMIN\" %}
+                                    Administrateur
+                                    {% endif %}
+                                    ,
+                                {% endfor %}
+                                
+                            </td>
                             <td>{{ user.created_at|date('Y-m-d H:i:s')}}</td>
                             <td>
                                 {# <a class=\"text-success w-4 h-4 mr-3\" href=\"{{ path('app_user_show', {'id': user.id}) }}\"><i class=\"nav-icon bi bi-eye-fill\"></i></a> #}

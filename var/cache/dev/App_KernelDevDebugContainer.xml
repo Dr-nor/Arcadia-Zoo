@@ -6429,6 +6429,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.kiPkrad"/>
+        <argument type="collection">
+          <argument>ROLE_VET</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
@@ -7039,6 +7046,14 @@
     <service id=".security.request_matcher.y9.6UaE" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
         <argument type="service" id=".security.request_matcher.l6nTaJG"/>
+      </argument>
+    </service>
+    <service id=".security.request_matcher.MMXiH1D" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/veterinary</argument>
+    </service>
+    <service id=".security.request_matcher.kiPkrad" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.MMXiH1D"/>
       </argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">

@@ -81,7 +81,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         yield "\" class=\"nav-link\">
                     <i class=\"nav-icon bi bi-people\"></i>
                     <p>
-                        Employés
+                        Utilisateurs
                     </p>
                 </a>
             </li>
@@ -152,7 +152,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                 <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
                     <i class=\"nav-icon bi bi-people\"></i>
                     <p>
-                        Employés
+                        Utilisateurs
                     </p>
                 </a>
             </li>

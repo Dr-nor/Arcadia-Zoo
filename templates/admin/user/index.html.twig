@@ -8,10 +8,10 @@
     <div class="container-fluid my-2">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Employés</h1>
+                <h1>Utilisateurs</h1>
             </div>
             <div class="col-sm-6 text-right">
-                <a href="{{ path('app_user_new') }}" class="btn btn-primary">Ajouter un emlpoyé</a>
+                <a href="{{ path('app_user_new') }}" class="btn btn-primary">Ajouter un utilisateur</a>
             </div>
         </div>
     </div>
@@ -41,6 +41,7 @@
                             <th width="60">ID</th>
                             <th>Nom &amp; Prénom</th>
                             <th>Email</th>
+                            <th>Rôles</th>
                             <th>créé à</th>
                             <th width="100">Actions</th>
                         </tr>
@@ -50,8 +51,21 @@
                         {# {% if user.is_granted('ROLE_ADMIN') %} #}
                         <tr>
                             <td>{{ user.id }}</td>
-                            <td>{{ user.email }}</td>
                             <td>{{ user.fullname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                {% for role in user.roles %}
+                                    {% if role == "ROLE_USER" %}
+                                    Employé
+                                    {% elseif  role =="ROLE_VET" %}
+                                    Vétérinaire
+                                    {% elseif  role == "ROLE_ADMIN" %}
+                                    Administrateur
+                                    {% endif %}
+                                    ,
+                                {% endfor %}
+                                
+                            </td>
                             <td>{{ user.created_at|date('Y-m-d H:i:s')}}</td>
                             <td>
                                 {# <a class="text-success w-4 h-4 mr-3" href="{{ path('app_user_show', {'id': user.id}) }}"><i class="nav-icon bi bi-eye-fill"></i></a> #}

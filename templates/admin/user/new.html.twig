@@ -8,7 +8,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1>
-                            Ajouter un employé                       
+                            Ajouter un utilisateur                       
                         </h1>
                     </div>
                     <div class="col-sm-6 text-right">
@@ -42,6 +42,14 @@
                                     </label>
                                 {{ form_widget(form.fullname, {'attr': {'class': 'form-control'}}) }}                                
                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="role">
+                                    Role
+                                </label>
+                            {{ form_widget(form.roles, {'attr': {'class': 'form-check'}}) }}                                
+                            </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="mb-3">
