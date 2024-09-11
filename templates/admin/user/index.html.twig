@@ -1,0 +1,102 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+<!-- Begin User List Section -->
+<div class="content-wrapper">
+<!-- Page header -->
+<section class="content-header">					
+    <div class="container-fluid my-2">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Utilisateurs</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ path('app_user_new') }}" class="btn btn-primary">Ajouter un utilisateur</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-tools">
+                    <div class="input-group input-group" style="width: 250px;">
+                        <input type="text" name="table_search" class="form-control float-right search-input" placeholder="Search">
+    
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-default">
+                            <i class="bi bi-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">								
+                <table id="userstable" class="table table-hover text-nowrap search-table">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Nom &amp; Prénom</th>
+                            <th>Email</th>
+                            <th>Rôles</th>
+                            <th>créé à</th>
+                            <th width="100">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        {# {% if user.is_granted('ROLE_ADMIN') %} #}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.fullname }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                                {% for role in user.roles %}
+                                    {% if role == "ROLE_USER" %}
+                                    Employé
+                                    {% elseif  role =="ROLE_VET" %}
+                                    Vétérinaire
+                                    {% elseif  role == "ROLE_ADMIN" %}
+                                    Administrateur
+                                    {% endif %}
+                                    ,
+                                {% endfor %}
+                                
+                            </td>
+                            <td>{{ user.created_at|date('Y-m-d H:i:s')}}</td>
+                            <td>
+                                {# <a class="text-success w-4 h-4 mr-3" href="{{ path('app_user_show', {'id': user.id}) }}"><i class="nav-icon bi bi-eye-fill"></i></a> #}
+                                <a class="text-info w-4 h-4" href="{{ path('app_user_edit', {'id': user.id}) }}"><i class="nav-icon bi bi-pencil-fill"></i></a>
+                                <form class="display-inline" method="post" action="{{ path('app_user_delete', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ user.id) }}">
+                                     <button class="btn text-danger"><i class="nav-icon bi bi-trash-fill"></i></button>
+                                </form>
+
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td>Aucun enregistrement trouvé.</td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                        </tr>
+                    {# {% endif %} #}
+
+                         {% endfor %}
+                        
+                    </tbody>
+                </table>										
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- User List Section End -->
+
+
+{% endblock %}
