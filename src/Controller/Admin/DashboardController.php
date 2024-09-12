@@ -14,11 +14,12 @@ use Doctrine\ORM\EntityManagerInterface;
 class DashboardController extends AbstractController
 {
     #[Route('/admin/dashboard', name: 'app_admin_dashboard')]
-    public function index(UserRepository $userRepository, EntityManagerInterface $entityManager): Response
+    public function index(UserRepository $userRepository, EntityManagerInterface $entityManager, ServiceRepository $serviceRepository ): Response
     {
         return $this->render('admin/dashboard/admin-dashboard.html.twig', [
             'controller_name' => 'DashboardController',
             'users' => $userRepository->findAll(),
+            'services' =>  $serviceRepository->findAll(),
         ]);
     }
 }
