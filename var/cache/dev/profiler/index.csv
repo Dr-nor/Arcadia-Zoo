@@ -123,3 +123,6 @@ db00ac,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,17
 9e4adc,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/,1726171556,,200,request
 48e379,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726171557,092caa,404,request
 092caa,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726171557,,404,request
+006195,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/,1726172129,,200,request
+d4cfcc,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726172130,3aba22,404,request
+3aba22,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726172133,,404,request
