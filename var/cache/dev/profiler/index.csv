@@ -143,3 +143,8 @@ e0806d,127.0.0.1,GET,http://127.0.0.1:8000/admin/service/,1726173126,,200,reques
 2f3358,127.0.0.1,GET,http://127.0.0.1:8000/admin/service/,1726173705,,200,request
 d7aae0,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726173706,0156b7,404,request
 0156b7,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726173706,,404,request
+3b761f,127.0.0.1,GET,http://127.0.0.1:8000/admin/user/,1726215521,,200,request
+8087f9,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726215549,d46d27,404,request
+d46d27,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726215549,,404,request
+387faa,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726215549,c7db46,404,request
+c7db46,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726215549,,404,request
