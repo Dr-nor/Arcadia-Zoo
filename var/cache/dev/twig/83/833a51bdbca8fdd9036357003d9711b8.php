@@ -106,7 +106,19 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                             Services
                         </p>
                     </a>
-                </li>
+            </li>
+
+            <li class=\"nav-item\">
+                <a href=\"";
+        // line 47
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_testimonial_index");
+        yield "\" class=\"nav-link\">
+                    <i class=\"nav-icon bi bi-star\"></i>
+                    <p>
+                        Témoignages
+                    </p>
+                </a>
+            </li>   
             </ul>
         </nav>
     <!-- sidebar Nav end -->
@@ -145,7 +157,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  114 => 47,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -193,7 +205,16 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                             Services
                         </p>
                     </a>
-                </li>
+            </li>
+
+            <li class=\"nav-item\">
+                <a href=\"{{ path('app_testimonial_index') }}\" class=\"nav-link\">
+                    <i class=\"nav-icon bi bi-star\"></i>
+                    <p>
+                        Témoignages
+                    </p>
+                </a>
+            </li>   
             </ul>
         </nav>
     <!-- sidebar Nav end -->
