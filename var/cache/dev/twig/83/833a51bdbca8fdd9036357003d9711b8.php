@@ -88,6 +88,17 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             <li class=\"nav-item\">
                     <a href=\"";
         // line 30
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_opening_index");
+        yield "\" class=\"nav-link\">
+                        <i class=\"nav-icon bi bi-clock-history\"></i>
+                        <p>
+                            Horaires d'ouverture
+                        </p>
+                    </a>
+            </li>
+            <li class=\"nav-item\">
+                    <a href=\"";
+        // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_service_index");
         yield "\" class=\"nav-link\">
                         <i class=\"nav-icon  bi bi-wrench-adjustable-circle\"></i>
@@ -134,7 +145,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -166,6 +177,14 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                         Utilisateurs
                     </p>
                 </a>
+            </li>
+            <li class=\"nav-item\">
+                    <a href=\"{{ path('app_opening_index') }}\" class=\"nav-link\">
+                        <i class=\"nav-icon bi bi-clock-history\"></i>
+                        <p>
+                            Horaires d'ouverture
+                        </p>
+                    </a>
             </li>
             <li class=\"nav-item\">
                     <a href=\"{{ path('app_service_index') }}\" class=\"nav-link\">

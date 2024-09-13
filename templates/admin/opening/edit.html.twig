@@ -1,0 +1,96 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Modifier
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right d-flex flex-end">
+                        <form class="mr-4" method="post" action="{{ path('app_opening_delete', {'id': opening.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ opening.id) }}">
+                            <button class="btn btn-secondary  ml-3">Delete</button>
+                        </form>
+                        <a href="{{ path('app_opening_index') }}" class="btn btn-primary">
+                            Retour                                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+            {{ form_start(form) }}
+
+                <div class="card">
+                    <div class="card-body">
+                    <div class="row">
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="weekday">
+                            Jour
+                            </label>
+                            {{ form_widget(form.weekday, {'attr': {'class': 'form-control'}}) }}
+                         </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="is_closed">
+                            Fermé
+                            </label>
+                            {{ form_widget(form.is_closed) }}
+                         </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="start_time">
+                                Heure de début
+                            </label>
+                        {{ form_widget(form.start_time, {'attr': {'class': 'form-control'}}) }}                                
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="pause_start">
+                            Début de pause
+                            </label>
+                             {{ form_widget(form.pause_start, {'attr': {'class': 'form-control'}}) }}                                
+                         </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="pause_end">
+                            Fin de pause
+                            </label>
+                             {{ form_widget(form.pause_end, {'attr': {'class': 'form-control'}}) }}                                
+                         </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="mb-3">
+                            <label for="end_time">
+                            Heure de fin
+                            </label>
+                             {{ form_widget(form.end_time, {'attr': {'class': 'form-control'}}) }}                                
+                         </div>
+                    </div>
+                    
+                </div>
+                    </div>
+                </div>
+                <div class="pb-5 pt-3">
+                    
+                    <button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+                </div>
+            {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
