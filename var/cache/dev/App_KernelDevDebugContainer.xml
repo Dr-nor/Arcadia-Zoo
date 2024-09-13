@@ -364,6 +364,13 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\DashboardController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\OpeningController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -388,6 +395,9 @@
     <service id="App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.password_hasher_factory"/>
+    </service>
+    <service id="App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -444,7 +454,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.PSYY0iZ"/>
+      <argument type="service" id=".service_locator.u.GRqvz"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1362,6 +1372,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\OpeningType</argument>
         <argument>App\Form\ServiceType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -3367,7 +3378,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.PSYY0iZ"/>
+      <argument type="service" id=".service_locator.u.GRqvz"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3877,7 +3888,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.ZUfUBRh"/>
+      <argument type="service" id=".service_locator.aBDeQC_"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7385,6 +7396,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7396,6 +7410,8 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
@@ -7996,6 +8012,61 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.ZultO7F" method="withContext"/>
     </service>
+    <service id=".service_locator.T8_IsXR" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="openingRepository" type="service_closure" id="App\Repository\OpeningRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController::index()"/>
+      <argument>App\Controller\Admin\OpeningController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.T8_IsXR" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController::new()"/>
+      <argument>App\Controller\Admin\OpeningController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.DcatOPi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="opening" type="service_closure" id=".errored..service_locator.DcatOPi.App\Entity\Opening"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController::show()"/>
+      <argument>App\Controller\Admin\OpeningController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.DcatOPi" method="withContext"/>
+    </service>
+    <service id=".service_locator.9ibgz36" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="opening" type="service_closure" id=".errored..service_locator.9ibgz36.App\Entity\Opening"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController::edit()"/>
+      <argument>App\Controller\Admin\OpeningController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.9ibgz36" method="withContext"/>
+    </service>
+    <service id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController::delete()"/>
+      <argument>App\Controller\Admin\OpeningController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.9ibgz36" method="withContext"/>
+    </service>
     <service id=".service_locator.PuhjwKK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8152,7 +8223,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mXDaS5b" method="withContext"/>
     </service>
-    <service id=".service_locator.PSYY0iZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.u.GRqvz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8160,6 +8231,11 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.ZultO7F.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\OpeningController::index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
+        <argument key="App\Controller\Admin\OpeningController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
+        <argument key="App\Controller\Admin\OpeningController::show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
+        <argument key="App\Controller\Admin\OpeningController::edit" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::edit()"/>
+        <argument key="App\Controller\Admin\OpeningController::delete" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController::index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Admin\ServiceController::index()"/>
         <argument key="App\Controller\Admin\ServiceController::new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Admin\ServiceController::new()"/>
         <argument key="App\Controller\Admin\ServiceController::show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Admin\ServiceController::show()"/>
@@ -8175,6 +8251,11 @@
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.ZultO7F.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\OpeningController:index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
+        <argument key="App\Controller\Admin\OpeningController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
+        <argument key="App\Controller\Admin\OpeningController:show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
+        <argument key="App\Controller\Admin\OpeningController:edit" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::edit()"/>
+        <argument key="App\Controller\Admin\OpeningController:delete" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController:index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Admin\ServiceController::index()"/>
         <argument key="App\Controller\Admin\ServiceController:new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Admin\ServiceController::new()"/>
         <argument key="App\Controller\Admin\ServiceController:show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Admin\ServiceController::show()"/>
@@ -8346,9 +8427,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.ZUfUBRh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.aBDeQC_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\OpeningType" type="service_closure" id="App\Form\OpeningType"/>
         <argument key="App\Form\ServiceType" type="service_closure" id="App\Form\ServiceType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
@@ -8736,6 +8818,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\OpeningController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController"/>
+      <argument>App\Controller\Admin\OpeningController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\ServiceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ServiceController"/>
       <argument>App\Controller\Admin\ServiceController</argument>
@@ -8944,6 +9032,7 @@
         <argument type="collection">
           <argument>App\Kernel</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
+          <argument>App\Controller\Admin\OpeningController</argument>
           <argument>App\Controller\Admin\ServiceController</argument>
           <argument>App\Controller\Admin\UserController</argument>
           <argument>App\Controller\SecurityController</argument>
@@ -9143,6 +9232,12 @@
     </service>
     <service id=".errored..service_locator.4wc4Ag1.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.4wc4Ag1&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
+    </service>
+    <service id=".errored..service_locator.DcatOPi.App\Entity\Opening" class="App\Entity\Opening">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.DcatOPi&quot;: it needs an instance of &quot;App\Entity\Opening&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.9ibgz36.App\Entity\Opening" class="App\Entity\Opening">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.9ibgz36&quot;: it needs an instance of &quot;App\Entity\Opening&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.HQ6Z48r.App\Entity\Service" class="App\Entity\Service">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.HQ6Z48r&quot;: it needs an instance of &quot;App\Entity\Service&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10340,7 +10435,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.PSYY0iZ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.u.GRqvz"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10384,6 +10479,10 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.diNoEIK" alias=".service_locator.4wc4Ag1"/>
     <service id=".service_locator.C8X8UiJ" alias=".service_locator.ZultO7F"/>
+    <service id=".service_locator.j6JxmIg" alias=".service_locator.T8_IsXR"/>
+    <service id=".service_locator.4KsIGyf" alias=".service_locator.P.blNFL"/>
+    <service id=".service_locator.aZxRJ09" alias=".service_locator.DcatOPi"/>
+    <service id=".service_locator.u1Y8PRa" alias=".service_locator.9ibgz36"/>
     <service id=".service_locator.XmOAYGv" alias=".service_locator.PuhjwKK"/>
     <service id=".service_locator.S1UUzxx" alias=".service_locator.vMw.xEU"/>
     <service id=".service_locator.qPCyw9l" alias=".service_locator.HQ6Z48r"/>
