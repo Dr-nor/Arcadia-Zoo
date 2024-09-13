@@ -18,6 +18,9 @@ class Image
 
     #[ORM\ManyToOne(inversedBy: 'images')]
     private ?Service $service = null;
+    
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Habitat $habitat = null;
 
     public function getId(): ?int
     {
@@ -44,6 +47,18 @@ class Image
     public function setService(?Service $service): static
     {
         $this->service = $service;
+
+        return $this;
+    }
+
+    public function getHabitat(): ?Habitat
+    {
+        return $this->habitat;
+    }
+
+    public function setHabitat(?Habitat $habitat): static
+    {
+        $this->habitat = $habitat;
 
         return $this;
     }
