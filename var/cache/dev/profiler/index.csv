@@ -188,3 +188,9 @@ a38d64,127.0.0.1,GET,http://127.0.0.1:8000/admin/testimonial/1/edit,1726237302,,
 3f628b,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726237303,,404,request
 faea82,127.0.0.1,POST,http://127.0.0.1:8000/admin/testimonial/1/edit,1726237306,,303,request
 c84b90,127.0.0.1,GET,http://127.0.0.1:8000/admin/testimonial/,1726237306,,200,request
+d97e1b,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726255425,8e9aa4,404,request
+8e9aa4,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726255426,,404,request
+28848d,127.0.0.1,GET,http://127.0.0.1:8000/admin/dashboard,1726255786,,200,request
+dc0fcc,127.0.0.1,GET,http://127.0.0.1:8000/admin/dashboard,1726255785,,200,request
+82f9db,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726255787,49bcb1,404,request
+49bcb1,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726255787,,404,request

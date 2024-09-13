@@ -100,7 +100,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
         yield "
                             </h3>
                             <p>
-                                Employés
+                                Utilisateurs
                             </p>
                         </div>
                         <div class=\"icon\">
@@ -115,6 +115,32 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                         </a>
                     </div>
                 </div>
+
+                <div class=\"col-lg-4 col-6\">
+                <div class=\"small-box card\">
+                    <div class=\"inner\">
+                        <h3>
+                            ";
+        // line 47
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 47, $this->source); })())), "html", null, true);
+        yield "
+                        </h3>
+                        <p>
+                            Services
+                        </p>
+                    </div>
+                    <div class=\"icon\">
+                        <i class=\"bi bi-wrench-adjustable-circle\"></i>
+                    </div>
+                    <a href=\"";
+        // line 56
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_service_index");
+        yield "\" class=\"small-box-footer text-dark\">
+                        Plus d'info  
+                        <i class=\"fa fa-arrow-circle-right\"></i>
+                    </a>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -151,7 +177,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  111 => 36,  99 => 27,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  137 => 56,  125 => 47,  111 => 36,  99 => 27,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -185,7 +211,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 {{ users|length }}
                             </h3>
                             <p>
-                                Employés
+                                Utilisateurs
                             </p>
                         </div>
                         <div class=\"icon\">
@@ -197,6 +223,26 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                         </a>
                     </div>
                 </div>
+
+                <div class=\"col-lg-4 col-6\">
+                <div class=\"small-box card\">
+                    <div class=\"inner\">
+                        <h3>
+                            {{ services|length }}
+                        </h3>
+                        <p>
+                            Services
+                        </p>
+                    </div>
+                    <div class=\"icon\">
+                        <i class=\"bi bi-wrench-adjustable-circle\"></i>
+                    </div>
+                    <a href=\"{{ path('app_service_index') }}\" class=\"small-box-footer text-dark\">
+                        Plus d'info  
+                        <i class=\"fa fa-arrow-circle-right\"></i>
+                    </a>
+                </div>
+            </div>
             </div>
         </div>
     </section>

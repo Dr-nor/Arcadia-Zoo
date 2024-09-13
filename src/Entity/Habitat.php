@@ -30,6 +30,9 @@ class Habitat
     #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'Habitat', orphanRemoval: true, cascade:['persist'])]
     private Collection $images;
 
+    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    private ?Animal $animal_ids = null;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
@@ -91,6 +94,17 @@ class Habitat
                 $image->setHabitat(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAnimalIds(): ?Animal
+    {
+        return $this->animal_ids;
+    }
+    public function setAnimalIds(Animal $animal_ids): static
+    {
+        $this->animal_ids = $animal_ids;
 
         return $this;
     }
