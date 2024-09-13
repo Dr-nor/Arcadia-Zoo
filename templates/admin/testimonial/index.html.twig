@@ -1,0 +1,112 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+<!-- Begin testimonial List Section -->
+<div class="content-wrapper">
+<!-- Page header -->
+<section class="content-header">					
+    <div class="container-fluid my-2">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Témoignages</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ path('app_testimonial_new') }}" class="btn btn-primary">Ajouter un témoignage</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-tools">
+                    <div class="input-group input-group" style="width: 250px;">
+                        <input type="text" name="table_search" class="form-control float-right search-input" placeholder="Search">
+    
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-default">
+                            <i class="bi bi-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">								
+                <table id="testimonialstable" class="table table-hover text-nowrap search-table">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Active</th>
+                            <th>Pseudonyme</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                            <th>Note</th>
+                            <th>Commentaire</th>
+                            <th>Employé</th>
+                            <th>créé à</th>
+                            <th width="100">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for testimonial in testimonials %}
+                        {# {% if testimonial.is_granted('ROLE_ADMIN') %} #}
+                        <tr>
+                            <td>{{ testimonial.id }}</td>
+                            <td>
+                                {% if testimonial.active %}
+                                    <i class="bi bi-check-circle text-success"></i>
+
+                                {% else %}
+                                    <i class="bi bi-x-circle text-danger"></i>
+                                {% endif %}
+                            </td>
+                            
+                            <td>{{ testimonial.pseudonym }}</td>
+                            <td>{{ testimonial.email }}</td>
+                            <td>{{ testimonial.phone }}</td>
+                            <td>{{ testimonial.note }}</td>
+                            <td>{{ testimonial.comment|striptags|slice(0, 70) ~ '...' }}</td>
+                            <td>{{ testimonial.user ? testimonial.user.fullname }}</td>
+                            <td>{{ testimonial.createdAt ? testimonial.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>
+                                {# <a class="text-success w-4 h-4 mr-3" href="{{ path('app_testimonial_show', {'id': testimonial.id}) }}"><i class="nav-icon bi bi-eye-fill"></i></a> #}
+                                <a class="text-info w-4 h-4" href="{{ path('app_testimonial_edit', {'id': testimonial.id}) }}"><i class="nav-icon bi bi-pencil-fill"></i></a>
+                                <form class="display-inline" method="post" action="{{ path('app_testimonial_delete', {'id': testimonial.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ testimonial.id) }}">
+                                     <button class="btn text-danger"><i class="nav-icon bi bi-trash-fill"></i></button>
+                                </form>
+
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td>Aucun enregistrement trouvé.</td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                        </tr>
+                    {# {% endif %} #}
+
+                         {% endfor %}
+                        
+                    </tbody>
+                </table>										
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- testimonial List Section End -->
+
+
+{% endblock %}
+

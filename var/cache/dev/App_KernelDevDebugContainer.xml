@@ -378,6 +378,13 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\ServiceController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\TestimonialController" class="App\Controller\Admin\TestimonialController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\TestimonialController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -401,6 +408,10 @@
     </service>
     <service id="App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TestimonialType" class="App\Form\TestimonialType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+      <argument type="service" id="security.authorization_checker"/>
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -458,7 +469,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.u.GRqvz"/>
+      <argument type="service" id=".service_locator.OcrPcTS"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1378,6 +1389,7 @@
       <argument type="collection">
         <argument>App\Form\OpeningType</argument>
         <argument>App\Form\ServiceType</argument>
+        <argument>App\Form\TestimonialType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -3382,7 +3394,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.u.GRqvz"/>
+      <argument type="service" id=".service_locator.OcrPcTS"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3892,7 +3904,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.aBDeQC_"/>
+      <argument type="service" id=".service_locator.dhes_bK"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7406,6 +7418,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\TestimonialController" class="App\Controller\Admin\TestimonialController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\TestimonialController" class="App\Controller\Admin\TestimonialController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\TestimonialController" class="App\Controller\Admin\TestimonialController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7418,6 +7433,8 @@
     <service id=".abstract.instanceof.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TestimonialType" class="App\Form\TestimonialType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TestimonialType" class="App\Form\TestimonialType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
@@ -8153,6 +8170,55 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.t3TbjcM" method="withContext"/>
     </service>
+    <service id=".service_locator.ufefr24" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="testimonialRepository" type="service_closure" id="App\Repository\TestimonialRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ufefr24.App\Controller\Admin\TestimonialController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController::index()"/>
+      <argument>App\Controller\Admin\TestimonialController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ufefr24" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Admin\TestimonialController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController::new()"/>
+      <argument>App\Controller\Admin\TestimonialController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZKETimn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="testimonial" type="service_closure" id=".errored..service_locator.ZKETimn.App\Entity\Testimonial"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZKETimn.App\Controller\Admin\TestimonialController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController::show()"/>
+      <argument>App\Controller\Admin\TestimonialController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZKETimn" method="withContext"/>
+    </service>
+    <service id=".service_locator.Ga.aiw8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="testimonial" type="service_closure" id=".errored..service_locator.Ga.aiw8.App\Entity\Testimonial"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController::edit()"/>
+      <argument>App\Controller\Admin\TestimonialController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Ga.aiw8" method="withContext"/>
+    </service>
+    <service id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController::delete()"/>
+      <argument>App\Controller\Admin\TestimonialController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Ga.aiw8" method="withContext"/>
+    </service>
     <service id=".service_locator.bTA9FKH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8229,7 +8295,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mXDaS5b" method="withContext"/>
     </service>
-    <service id=".service_locator.u.GRqvz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OcrPcTS" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8248,6 +8314,11 @@
         <argument key="App\Controller\Admin\ServiceController::edit" type="service_closure" id=".service_locator.B6iH7lH.App\Controller\Admin\ServiceController::edit()"/>
         <argument key="App\Controller\Admin\ServiceController::delete" type="service_closure" id=".service_locator.zhttGGF.App\Controller\Admin\ServiceController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController::deleteImage" type="service_closure" id=".service_locator.t3TbjcM.App\Controller\Admin\ServiceController::deleteImage()"/>
+        <argument key="App\Controller\Admin\TestimonialController::index" type="service_closure" id=".service_locator.ufefr24.App\Controller\Admin\TestimonialController::index()"/>
+        <argument key="App\Controller\Admin\TestimonialController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\TestimonialController::new()"/>
+        <argument key="App\Controller\Admin\TestimonialController::show" type="service_closure" id=".service_locator.ZKETimn.App\Controller\Admin\TestimonialController::show()"/>
+        <argument key="App\Controller\Admin\TestimonialController::edit" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::edit()"/>
+        <argument key="App\Controller\Admin\TestimonialController::delete" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::delete()"/>
         <argument key="App\Controller\Admin\UserController::index" type="service_closure" id=".service_locator.bTA9FKH.App\Controller\Admin\UserController::index()"/>
         <argument key="App\Controller\Admin\UserController::new" type="service_closure" id=".service_locator.__CzQUd.App\Controller\Admin\UserController::new()"/>
         <argument key="App\Controller\Admin\UserController::show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
@@ -8268,6 +8339,11 @@
         <argument key="App\Controller\Admin\ServiceController:edit" type="service_closure" id=".service_locator.B6iH7lH.App\Controller\Admin\ServiceController::edit()"/>
         <argument key="App\Controller\Admin\ServiceController:delete" type="service_closure" id=".service_locator.zhttGGF.App\Controller\Admin\ServiceController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController:deleteImage" type="service_closure" id=".service_locator.t3TbjcM.App\Controller\Admin\ServiceController::deleteImage()"/>
+        <argument key="App\Controller\Admin\TestimonialController:index" type="service_closure" id=".service_locator.ufefr24.App\Controller\Admin\TestimonialController::index()"/>
+        <argument key="App\Controller\Admin\TestimonialController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\TestimonialController::new()"/>
+        <argument key="App\Controller\Admin\TestimonialController:show" type="service_closure" id=".service_locator.ZKETimn.App\Controller\Admin\TestimonialController::show()"/>
+        <argument key="App\Controller\Admin\TestimonialController:edit" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::edit()"/>
+        <argument key="App\Controller\Admin\TestimonialController:delete" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Admin\TestimonialController::delete()"/>
         <argument key="App\Controller\Admin\UserController:index" type="service_closure" id=".service_locator.bTA9FKH.App\Controller\Admin\UserController::index()"/>
         <argument key="App\Controller\Admin\UserController:new" type="service_closure" id=".service_locator.__CzQUd.App\Controller\Admin\UserController::new()"/>
         <argument key="App\Controller\Admin\UserController:show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
@@ -8433,11 +8509,12 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.aBDeQC_" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.dhes_bK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\OpeningType" type="service_closure" id="App\Form\OpeningType"/>
         <argument key="App\Form\ServiceType" type="service_closure" id="App\Form\ServiceType"/>
+        <argument key="App\Form\TestimonialType" type="service_closure" id="App\Form\TestimonialType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -8837,6 +8914,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\TestimonialController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\TestimonialController"/>
+      <argument>App\Controller\Admin\TestimonialController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\UserController"/>
       <argument>App\Controller\Admin\UserController</argument>
@@ -9041,6 +9124,7 @@
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\OpeningController</argument>
           <argument>App\Controller\Admin\ServiceController</argument>
+          <argument>App\Controller\Admin\TestimonialController</argument>
           <argument>App\Controller\Admin\UserController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
@@ -9257,6 +9341,12 @@
     </service>
     <service id=".errored..service_locator.t3TbjcM.App\Entity\Image" class="App\Entity\Image">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.t3TbjcM&quot;: it needs an instance of &quot;App\Entity\Image&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.ZKETimn.App\Entity\Testimonial" class="App\Entity\Testimonial">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.ZKETimn&quot;: it needs an instance of &quot;App\Entity\Testimonial&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.Ga.aiw8.App\Entity\Testimonial" class="App\Entity\Testimonial">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Ga.aiw8&quot;: it needs an instance of &quot;App\Entity\Testimonial&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.hKA2je_.App\Entity\User" class="App\Entity\User">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.hKA2je_&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10442,7 +10532,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.u.GRqvz"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.OcrPcTS"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10496,6 +10586,9 @@
     <service id=".service_locator.kKiOoU_" alias=".service_locator.B6iH7lH"/>
     <service id=".service_locator.Lm7tw1u" alias=".service_locator.zhttGGF"/>
     <service id=".service_locator.zMIwzX_" alias=".service_locator.t3TbjcM"/>
+    <service id=".service_locator.efxzpnb" alias=".service_locator.ufefr24"/>
+    <service id=".service_locator.u5yYdP." alias=".service_locator.ZKETimn"/>
+    <service id=".service_locator.zRcNYk2" alias=".service_locator.Ga.aiw8"/>
     <service id=".service_locator.qIDYkpc" alias=".service_locator.bTA9FKH"/>
     <service id=".service_locator.6yrOe37" alias=".service_locator.__CzQUd"/>
     <service id=".service_locator.MaqvS4." alias=".service_locator.hKA2je_"/>
