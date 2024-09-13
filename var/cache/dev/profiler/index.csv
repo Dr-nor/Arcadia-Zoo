@@ -169,3 +169,6 @@ e86fc0,127.0.0.1,GET,http://127.0.0.1:8000/opening/,1726219332,,200,request
 dae00e,127.0.0.1,GET,http://127.0.0.1:8000/opening/,1726219390,,200,request
 11f4dc,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726219390,d802ee,404,request
 d802ee,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726219390,,404,request
+4d95b5,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726236256,6ce5d9,404,request
+6ce5d9,127.0.0.1,GET,http://127.0.0.1:8000/front-assets/images/logo/light.svg,1726236256,,404,request
+e73a26,127.0.0.1,GET,http://127.0.0.1:8000/opening/,1726236268,,200,request
