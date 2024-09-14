@@ -1,0 +1,3 @@
+<?php //bdf9c635ce6e28cd857c3f83b55e2d9a
+
+return [PHP_INT_MAX, 'front-assets/js/plugins/tippy.min.js'];

@@ -1,0 +1,3 @@
+<?php //c368c27467ba441baad32b192668b4cd
+
+return [PHP_INT_MAX, 'front-assets/css/plugins/animate.min.css'];

@@ -1,0 +1,3 @@
+<?php //1a14c526b8688d30710fb03dd878426f
+
+return [PHP_INT_MAX, 'front-assets/images/logo/light.svg'];

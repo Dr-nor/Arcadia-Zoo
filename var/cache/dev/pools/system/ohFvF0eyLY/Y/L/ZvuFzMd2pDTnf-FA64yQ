@@ -1,0 +1,3 @@
+<?php //e510be747b7f5ff25005a49a4f07a926
+
+return [PHP_INT_MAX, 'front-assets/images/favicon.ico'];

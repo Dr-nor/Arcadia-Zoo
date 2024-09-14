@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            Arcadia Zoo       
+        </title>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front-assets/images/favicon.ico') }}" />
+
+        {% block stylesheets %}
+
+            <!-- Icons CSS (Icon Fonts) -->
+            <link rel="stylesheet" href="{{ asset('global-assets/css/icons.css') }}" />
+
+            <!-- Fonts CSS (Family Fonts) -->
+            <link rel="stylesheet" href="{{ asset('global-assets/css/fonts.css') }}" />
+
+            <!-- Plugins CSS -->
+            <link rel="stylesheet" href="{{ asset('front-assets/css/plugins/animate.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('front-assets/css/plugins/jquery-ui.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('front-assets/css/plugins/swiper-bundle.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('front-assets/css/plugins/magnific-popup.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('front-assets/css/plugins/ion.rangeSlider.min.css') }}" />
+            <link rel="stylesheet" href="{{ asset('global-assets/css/plugins/nice-select.css') }}" />
+
+            <!-- Style CSS -->
+            <link rel="stylesheet" href="{{ asset('global-assets/css/global.css') }}">
+            <link rel="stylesheet" href="{{ asset('front-assets/css/front.css') }}">
+
+        {% endblock %}
+
+    </head>
+
+    <body>
+
+        
+        {{ include('front/layouts/header.html.twig') }}
+        <!-- Begin Main Content Area -->
+        {% block body %}{% endblock %}
+        <!-- Main Content Area End -->
+        {{ include('front/layouts/footer.html.twig') }}
+
+        {% block javascripts %}
+
+            <!--Plugins JS-->
+            <script src="{{ asset('global-assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
+            <script src="{{ asset('global-assets/js/plugins/jquery-migrate-3.3.2.min.js') }}"></script>
+            <script src="{{ asset('global-assets/js/plugins/bootstrap.bundle.min.js') }}"></script>
+            <script src="{{ asset('global-assets/js/plugins/jquery-ui.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/jquery.magnific-popup.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/modernizr-3.11.2.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/wow.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/swiper-bundle.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/parallax.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/tippy.min.js') }}"></script>
+            <script src="{{ asset('front-assets/js/plugins/ion.rangeSlider.min.js') }}"></script>
+            <script src="{{ asset('global-assets/js/plugins/jquery.nice-select.js') }}"></script>
+
+            <!--Main JS-->
+            <script src="{{ asset('front-assets/js/front.js') }}"></script>
+
+        {% endblock %}
+
+    </body>
+
+</html>

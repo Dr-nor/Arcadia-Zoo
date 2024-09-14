@@ -1,0 +1,3 @@
+<?php //791f1d336e9043b2dad25a18e99b9115
+
+return [PHP_INT_MAX, 'front-assets/js/plugins/swiper-bundle.min.js'];
