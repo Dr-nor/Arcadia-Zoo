@@ -91,7 +91,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     <!-- Users widget -->
-                    <div class=\"col-lg-4 col-6\">
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -118,8 +118,8 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                             </a>
                         </div>
                     </div>
-
-                    <div class=\"col-lg-4 col-6\">
+                    <!-- Services widget -->
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -146,8 +146,8 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                             </a>
                         </div>
                     </div>
-
-                    <div class=\"col-lg-4 col-6\">
+                    <!-- Habitats widget -->
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -170,6 +170,32 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
         yield "\" class=\"small-box-footer text-dark\">
                                 Plus d'info  
                                                         
+                                <i class=\"fa fa-arrow-circle-right\"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Animals widget -->
+                    <div class=\"col-lg-3 col-6\">
+                        <div class=\"small-box card\">
+                            <div class=\"inner\">
+                                <h3>
+                                    ";
+        // line 94
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["habitat"]) || array_key_exists("habitat", $context) ? $context["habitat"] : (function () { throw new RuntimeError('Variable "habitat" does not exist.', 94, $this->source); })())), "html", null, true);
+        yield "
+                                </h3>
+                                <p>
+                                    Animaux                       
+                                </p>
+                            </div>
+                            <div class=\"icon\">
+                                <i class=\"fal fa-paw\"></i>
+                            </div>
+                            <a href=\"";
+        // line 103
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_animal_index");
+        yield "\" class=\"small-box-footer text-dark\">
+                                Plus d'info  
                                 <i class=\"fa fa-arrow-circle-right\"></i>
                             </a>
                         </div>
@@ -210,7 +236,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  169 => 82,  156 => 72,  141 => 60,  128 => 50,  113 => 38,  100 => 28,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  196 => 103,  184 => 94,  169 => 82,  156 => 72,  141 => 60,  128 => 50,  113 => 38,  100 => 28,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -238,7 +264,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     <!-- Users widget -->
-                    <div class=\"col-lg-4 col-6\">
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -259,8 +285,8 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                             </a>
                         </div>
                     </div>
-
-                    <div class=\"col-lg-4 col-6\">
+                    <!-- Services widget -->
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -281,8 +307,8 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                             </a>
                         </div>
                     </div>
-
-                    <div class=\"col-lg-4 col-6\">
+                    <!-- Habitats widget -->
+                    <div class=\"col-lg-3 col-6\">
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
@@ -299,6 +325,26 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                             <a href=\"{{ path('app_habitat_index') }}\" class=\"small-box-footer text-dark\">
                                 Plus d'info  
                                                         
+                                <i class=\"fa fa-arrow-circle-right\"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Animals widget -->
+                    <div class=\"col-lg-3 col-6\">
+                        <div class=\"small-box card\">
+                            <div class=\"inner\">
+                                <h3>
+                                    {{ habitat|length }}
+                                </h3>
+                                <p>
+                                    Animaux                       
+                                </p>
+                            </div>
+                            <div class=\"icon\">
+                                <i class=\"fal fa-paw\"></i>
+                            </div>
+                            <a href=\"{{ path('app_animal_index') }}\" class=\"small-box-footer text-dark\">
+                                Plus d'info  
                                 <i class=\"fa fa-arrow-circle-right\"></i>
                             </a>
                         </div>

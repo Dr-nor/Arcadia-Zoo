@@ -1,0 +1,153 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Modifier
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right d-flex flex-end">
+                        <form class="mr-4" method="post" action="{{ path('app_animal_delete', {'id': animal.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ animal.id) }}" />
+                            <button class="btn btn-secondary  ml-3">
+                                Delete
+                            </button>
+                        </form>
+                        <a href="{{ path('app_animal_index') }}" class="btn btn-primary">Retour</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                {{ form_start(form) }}
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="mb-3">
+                                Informations                                
+                            </h5>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="name">Nom</label>
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control' }}
+                                    ) }}                                  
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="description">
+                                        Description                                                                    
+                                    </label>
+                                    {{ form_widget(form.description, {'attr': {'class': 'form-control' }}
+                                    ) }}                                  
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="race_id">
+                                        Race                            
+                                    </label>
+                                    {{ form_widget(form.race_id, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="habitat_id">
+                                        Habitat                            
+                                    </label>
+                                    {{ form_widget(form.habitat_id, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="medianlife">
+                                        Espérance de vie médiane                           
+                                    </label>
+                                    {{ form_widget(form.medianlife, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="size">
+                                        Taille                          
+                                    </label>
+                                    {{ form_widget(form.size, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="weight">
+                                        Poids                          
+                                    </label>
+                                    {{ form_widget(form.weight, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="diet">
+                                    Nourriture                          
+                                </label>
+                                {{ form_widget(form.diet, {'attr': {'class': 'form-control' }}) }}                         
+                            </div>
+                        </div>
+                            
+                              
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="status">
+                                        Statut                    
+                                    </label>
+                                    {{ form_widget(form.status, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <h5 class=" mt-6 mb-3">
+                                Gallerie                     
+                                                                                                
+                                                            
+                            </h5>
+                            <div class="col-md-12">
+                                <div class="mt-3">
+
+                                    <ul class="image-list">
+                                        {% for image in animal.images %}
+                                            <li>
+                                                <img src="{{ asset('uploads/animals/mini/300x300-' ~ image.name ) }}" alt="Image" width="150" />
+                                                <a class="delete-img" href="{{ path('app_animal_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}">
+                                                    <i class="nav-icon bi bi-trash-fill"></i>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    {{ form_widget(form.images) }}
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pb-5 pt-3">
+                    
+                    <button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('admin-assets/js/images.js') }}" defer></script> <!-- defer:  charger aprés le contenu de la page -->
+{% endblock %}

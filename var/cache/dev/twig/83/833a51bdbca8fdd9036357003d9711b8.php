@@ -129,7 +129,10 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
 
             <ul class=\"dropdown-menu dropdown-menu-dark\">
                 <li class=\"nav-item ml-4\">
-                    <a href=\"#\" class=\"nav-link\">
+                    <a href=\"";
+        // line 64
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_animal_index");
+        yield "\" class=\"nav-link\">
                         <p>
                             Liste des animaux
                         </p>
@@ -198,7 +201,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  155 => 82,  142 => 72,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  158 => 82,  145 => 72,  134 => 64,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -266,7 +269,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
 
             <ul class=\"dropdown-menu dropdown-menu-dark\">
                 <li class=\"nav-item ml-4\">
-                    <a href=\"#\" class=\"nav-link\">
+                    <a href=\"{{ path('app_animal_index') }}\" class=\"nav-link\">
                         <p>
                             Liste des animaux
                         </p>

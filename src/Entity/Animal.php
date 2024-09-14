@@ -45,7 +45,7 @@ class Animal
     private ?string $status = null;
 
 
-    #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'Animal',orphanRemoval: true, cascade:['persist'])]
+    #[ORM\OneToMany(targetEntity: Image::class, mappedBy: 'animal',orphanRemoval: true, cascade:['persist'])]
     private Collection $images;
 
     #[ORM\ManyToOne]
@@ -186,8 +186,6 @@ class Animal
         return $this;
     }
 
-
-
     public function getRaceId(): ?Race
     {
         return $this->race_id;
@@ -200,7 +198,7 @@ class Animal
         return $this;
     }
 
-    public function getHabitat(): ?Habitat
+    public function getHabitatId(): ?Habitat
     {
         return $this->habitat_id;
     }

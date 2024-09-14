@@ -21,7 +21,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <!-- Users widget -->
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-3 col-6">
                         <div class="small-box card">
                             <div class="inner">
                                 <h3>
@@ -42,8 +42,8 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-6">
+                    <!-- Services widget -->
+                    <div class="col-lg-3 col-6">
                         <div class="small-box card">
                             <div class="inner">
                                 <h3>
@@ -64,8 +64,8 @@
                             </a>
                         </div>
                     </div>
-
-                    <div class="col-lg-4 col-6">
+                    <!-- Habitats widget -->
+                    <div class="col-lg-3 col-6">
                         <div class="small-box card">
                             <div class="inner">
                                 <h3>
@@ -82,6 +82,26 @@
                             <a href="{{ path('app_habitat_index') }}" class="small-box-footer text-dark">
                                 Plus d'info  
                                                         
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Animals widget -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box card">
+                            <div class="inner">
+                                <h3>
+                                    {{ habitat|length }}
+                                </h3>
+                                <p>
+                                    Animaux                       
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-paw"></i>
+                            </div>
+                            <a href="{{ path('app_animal_index') }}" class="small-box-footer text-dark">
+                                Plus d'info  
                                 <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
