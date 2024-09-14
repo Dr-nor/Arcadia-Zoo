@@ -1,0 +1,142 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Ajouter un animal                                           
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="{{ path('app_animal_index') }}" class="btn btn-primary">
+                            Retour                                         
+                                                    
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                {{ form_start(form) }}
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="mb-3">Informations</h5>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="name">
+                                        Nom                     
+                                    </label>
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control' }}
+                                    ) }}
+                                                             
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="description">
+                                        Description                            
+                                    </label>
+                                    {{ form_widget(form.description, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="race_id">
+                                        Race                            
+                                    </label>
+                                    {{ form_widget(form.race_id, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="habitat_id">
+                                        Habitat                            
+                                    </label>
+                                    {{ form_widget(form.habitat_id, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="medianlife">
+                                        Espérance de vie médiane                           
+                                    </label>
+                                    {{ form_widget(form.medianlife, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="size">
+                                        Taille                          
+                                    </label>
+                                    {{ form_widget(form.size, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="weight">
+                                        Poids                          
+                                    </label>
+                                    {{ form_widget(form.weight, {'attr': {'class': 'form-control' }}) }}                         
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="diet">
+                                    Nourriture                          
+                                </label>
+                                {{ form_widget(form.diet, {'attr': {'class': 'form-control' }}) }}                         
+                            </div>
+                        </div>
+                            
+                            
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="status">
+                                        Statut                    
+                                    </label>
+                                    {{ form_widget(form.status, {'attr': {'class': 'form-control nice-select' }}) }}                         
+                                </div>
+                            </div>
+                            
+
+                        </div>
+
+
+                        <div class="row">
+                            <h5 class=" mt-6 mb-3">Gallerie</h5>
+                            <div class="col-md-12">
+                                <div class="mt-3">
+                                    
+                                    {{ form_widget(form.images) }}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-5 pt-3">
+
+                    <button class="btn btn-primary">
+                        {{ button_label|default('Sauvegarder') }}
+                    </button>
+
+                    <a href="/admin/animal" class="btn btn-outline-dark ml-3">
+                        Annuler                  
+                                            
+                    </a>
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
+{% endblock %}

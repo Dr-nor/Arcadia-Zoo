@@ -18,6 +18,12 @@ class Image
 
     #[ORM\ManyToOne(inversedBy: 'images')]
     private ?Service $service = null;
+    
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Habitat $habitat = null;
+
+    #[ORM\ManyToOne(inversedBy: 'images')]
+    private ?Animal $animal = null;
 
     public function getId(): ?int
     {
@@ -45,6 +51,30 @@ class Image
     {
         $this->service = $service;
 
+        return $this;
+    }
+
+    public function getHabitat(): ?Habitat
+    {
+        return $this->habitat;
+    }
+
+    public function setHabitat(?Habitat $habitat): static
+    {
+        $this->habitat = $habitat;
+
+        return $this;
+    }
+
+
+    public function getAnimal(): ?Animal
+    {
+        return $this->animal;
+    }
+
+    public function setAnimal(?Animal $animal): static
+    {
+        $this->animal = $animal;
         return $this;
     }
 

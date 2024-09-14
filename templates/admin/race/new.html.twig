@@ -1,0 +1,58 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Ajouter une race               
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <a href="{{ path('app_race_index') }}" class="btn btn-primary">
+                            Retour                                                           
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                {{ form_start(form) }}
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name">
+                                        Nom de la race                  
+                                    </label>
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control' }}
+                                    ) }}                          
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-5 pt-3">
+
+                    <button class="btn btn-primary">
+                        {{ button_label|default('Sauvegarder') }}
+                    </button>
+
+                    <a href="/admin/race" class="btn btn-secondary ml-3">
+                        Annuler                                    
+                    </a>
+                </div>
+                {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+
