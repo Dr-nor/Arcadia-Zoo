@@ -518,3 +518,7 @@ afa8d9,127.0.0.1,GET,http://127.0.0.1:8000/global-assets/js/pro.min.js,172634809
 6c59fc,127.0.0.1,GET,http://127.0.0.1:8000/global-assets/js/pro.min.js,1726348110,1e6b6b,404,request
 1e6b6b,127.0.0.1,GET,http://127.0.0.1:8000/global-assets/js/pro.min.js,1726348110,,404,request
 a18929,127.0.0.1,GET,http://127.0.0.1:8000/,1726348189,,200,request
+2d1660,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726349323,bd7bc7,200,request
+bd7bc7,127.0.0.1,GET,http://127.0.0.1:8000/,1726349323,,200,request
+2a95e8,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726349408,3c93f4,200,request
+3c93f4,127.0.0.1,GET,http://127.0.0.1:8000/,1726349408,,200,request

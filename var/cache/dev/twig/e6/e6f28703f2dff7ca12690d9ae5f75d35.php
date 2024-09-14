@@ -137,8 +137,14 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                     </div>
                    
                 </div>
-                
+                <div class=\"col-lg-3\">
+                ";
+        // line 91
+        yield $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\OpeningController::openingTimeShow"));
+        // line 93
+        yield "
 
+                </div>
             </div>
             </div>
         </div>
@@ -194,7 +200,7 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  59 => 10,  48 => 1,);
+        return array (  145 => 93,  143 => 91,  59 => 10,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -288,8 +294,12 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                     </div>
                    
                 </div>
-                
+                <div class=\"col-lg-3\">
+                {{ render(controller(
+                    'App\\\\Controller\\\\OpeningController::openingTimeShow'
+                )) }}
 
+                </div>
             </div>
             </div>
         </div>
