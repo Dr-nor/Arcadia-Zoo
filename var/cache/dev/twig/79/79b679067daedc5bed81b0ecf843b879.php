@@ -66,46 +66,46 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         ";
         // line 13
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 29
+        // line 31
         yield "\t</head>
 \t<body class=\"hold-transition sidebar-mini layout-fixed\">
 \t\t
         <div class=\"wrapper\">
         ";
-        // line 33
+        // line 35
         yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/header.html.twig");
         yield "
         ";
-        // line 34
+        // line 36
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 35
+            // line 37
             yield "            ";
             yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/admin-sidebar.html.twig");
             yield "
         ";
         }
-        // line 37
+        // line 39
         yield "        
         ";
-        // line 38
+        // line 40
         yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/flash.html.twig");
         yield "
         <!-- Begin Main Content Area -->
           ";
-        // line 40
+        // line 42
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
-        // line 41
+        // line 43
         yield "         <!-- Main Content Area End -->
         ";
-        // line 42
+        // line 44
         yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/footer.html.twig");
         yield "
 \t\t</div>
 
         ";
-        // line 45
+        // line 47
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 57
+        // line 60
         yield "\t</body>
 </html>";
         
@@ -133,31 +133,36 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         // line 15
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/css/icons.css"), "html", null, true);
         yield "\" />
+        <link rel=\"stylesheet\" href=\"";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/css/all.min.css"), "html", null, true);
+        yield "\" />
     
         <!-- Fonts CSS (Family Fonts) -->
         <link rel=\"stylesheet\" href=\"";
-        // line 18
+        // line 19
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/css/fonts.css"), "html", null, true);
         yield "\" />
 
         <!-- Plugins CSS -->
         <link rel=\"stylesheet\" href=\"";
-        // line 21
+        // line 22
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/css/plugins/datatables.css"), "html", null, true);
         yield "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 22
+        // line 23
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/css/plugins/nice-select.css"), "html", null, true);
         yield "\" />
+        
 
     
         <!-- Style CSS -->
         <link rel=\"stylesheet\" href=\"";
-        // line 26
+        // line 28
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/css/global.css"), "html", null, true);
         yield "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 27
+        // line 29
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/css/back.css"), "html", null, true);
         yield "\">
         ";
@@ -170,7 +175,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         return; yield '';
     }
 
-    // line 40
+    // line 42
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -189,7 +194,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         return; yield '';
     }
 
-    // line 45
+    // line 47
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -199,36 +204,40 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 46
+        // line 48
         yield "
         <!--Plugins JS-->
         <script src=\"";
-        // line 48
+        // line 50
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/jquery-3.6.0.min.js"), "html", null, true);
         yield "\"></script>
         <script src=\"";
-        // line 49
+        // line 51
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/bootstrap.bundle.min.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 50
+        // line 52
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/datatables.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 51
+        // line 53
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/fullscreen.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 52
+        // line 54
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/pushmenu.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 53
+        // line 55
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/jquery.nice-select.js"), "html", null, true);
+        yield "\"></script>
+         <script src=\"";
+        // line 56
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/pro.min.js"), "html", null, true);
         yield "\"></script>
         <!--Main JS-->
         <script src=\"";
-        // line 55
+        // line 58
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/back.js"), "html", null, true);
         yield "\"></script>
         ";
@@ -262,7 +271,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  232 => 55,  227 => 53,  223 => 52,  219 => 51,  215 => 50,  211 => 49,  207 => 48,  203 => 46,  193 => 45,  174 => 40,  161 => 27,  157 => 26,  150 => 22,  146 => 21,  140 => 18,  134 => 15,  131 => 14,  121 => 13,  109 => 57,  107 => 45,  101 => 42,  98 => 41,  96 => 40,  91 => 38,  88 => 37,  82 => 35,  80 => 34,  76 => 33,  70 => 29,  68 => 13,  63 => 11,  51 => 1,);
+        return array (  241 => 58,  236 => 56,  232 => 55,  228 => 54,  224 => 53,  220 => 52,  216 => 51,  212 => 50,  208 => 48,  198 => 47,  179 => 42,  166 => 29,  162 => 28,  154 => 23,  150 => 22,  144 => 19,  138 => 16,  134 => 15,  131 => 14,  121 => 13,  109 => 60,  107 => 47,  101 => 44,  98 => 43,  96 => 42,  91 => 40,  88 => 39,  82 => 37,  80 => 36,  76 => 35,  70 => 31,  68 => 13,  63 => 11,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -282,6 +291,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         {% block stylesheets %}
         <!-- Icons CSS (Icon Fonts) -->
         <link rel=\"stylesheet\" href=\"{{ asset('global-assets/css/icons.css') }}\" />
+        <link rel=\"stylesheet\" href=\"{{ asset('global-assets/css/all.min.css') }}\" />
     
         <!-- Fonts CSS (Family Fonts) -->
         <link rel=\"stylesheet\" href=\"{{ asset('global-assets/css/fonts.css') }}\" />
@@ -289,6 +299,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         <!-- Plugins CSS -->
         <link rel=\"stylesheet\" href=\"{{ asset('admin-assets/css/plugins/datatables.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('global-assets/css/plugins/nice-select.css') }}\" />
+        
 
     
         <!-- Style CSS -->
@@ -320,6 +331,7 @@ class __TwigTemplate_4ba9d70b97270bd1564bdc90b7687033 extends Template
         <script src=\"{{ asset('admin-assets/js/plugins/fullscreen.js') }}\" ></script>
         <script src=\"{{ asset('admin-assets/js/plugins/pushmenu.js') }}\" ></script>
         <script src=\"{{ asset('global-assets/js/plugins/jquery.nice-select.js') }}\"></script>
+         <script src=\"{{ asset('global-assets/js/pro.min.js') }}\"></script>
         <!--Main JS-->
         <script src=\"{{ asset('admin-assets/js/back.js') }}\"></script>
         {% endblock %}

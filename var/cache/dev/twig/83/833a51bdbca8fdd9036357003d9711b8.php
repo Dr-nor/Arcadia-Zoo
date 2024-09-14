@@ -68,7 +68,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_admin_dashboard");
         yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-speedometer2\"></i>
+                        <i class=\"nav-icon fal fa-tachometer-alt-average\"></i> 
                         <p>
                             Dashboard
                         </p>
@@ -79,7 +79,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\" class=\"nav-link\">
-                    <i class=\"nav-icon bi bi-people\"></i>
+                    <i class=\"nav-icon fal fa-user-cog\"></i>
                     <p>
                         Utilisateurs
                     </p>
@@ -90,7 +90,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 30
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_opening_index");
         yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-clock-history\"></i>
+                        <i class=\"nav-icon fal fa-clock\"></i>
                         <p>
                             Horaires d'ouverture
                         </p>
@@ -101,7 +101,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_service_index");
         yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-grid\"></i>
+                        <i class=\"nav-icon fal fa-concierge-bell\"></i>
                         <p>
                             Services
                         </p>
@@ -112,19 +112,49 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 46
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_habitat_index");
         yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon  bi bi-tree\"></i>
+                        <i class=\"nav-icon  fal fa-tree\"></i>
                         <p>
                             Habitats
                         </p>
                     </a>
             </li>
 
+            <li class=\"nav-item  car-dropdown dropdown \" aria-expanded=\"true\">
+            <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                <i class=\"nav-icon fal fa-paw\"></i>
+                <p>
+                    Animaux
+                </p>
+            </a>
+
+            <ul class=\"dropdown-menu dropdown-menu-dark\">
+                <li class=\"nav-item ml-4\">
+                    <a href=\"#\" class=\"nav-link\">
+                        <p>
+                            Liste des animaux
+                        </p>
+                    </a>
+                </li>
+            
+                <li class=\"nav-item ml-4\">
+                    <a href=\"";
+        // line 72
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_race_index");
+        yield "\" class=\"nav-link\">
+                        <p>
+                            Races
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
             <li class=\"nav-item\">
                 <a href=\"";
-        // line 55
+        // line 82
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_testimonial_index");
         yield "\" class=\"nav-link\">
-                    <i class=\"nav-icon bi bi-star\"></i>
+                    <i class=\"nav-icon fal fa-comment-lines\"></i>
                     <p>
                         Témoignages
                     </p>
@@ -168,7 +198,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  125 => 55,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  155 => 82,  142 => 72,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -187,7 +217,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             <nav class=\"mt-2\"> <ul class=\"nav nav-pills nav-sidebar flex-column\" role=\"menu\" data-accordion=\"false\">
                 <li class=\"nav-item\">
                     <a href=\"{{ path('app_admin_dashboard') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-speedometer2\"></i>
+                        <i class=\"nav-icon fal fa-tachometer-alt-average\"></i> 
                         <p>
                             Dashboard
                         </p>
@@ -195,7 +225,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                 </li>
                 <li class=\"nav-item\">
                 <a href=\"{{ path('app_user_index') }}\" class=\"nav-link\">
-                    <i class=\"nav-icon bi bi-people\"></i>
+                    <i class=\"nav-icon fal fa-user-cog\"></i>
                     <p>
                         Utilisateurs
                     </p>
@@ -203,7 +233,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             </li>
             <li class=\"nav-item\">
                     <a href=\"{{ path('app_opening_index') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-clock-history\"></i>
+                        <i class=\"nav-icon fal fa-clock\"></i>
                         <p>
                             Horaires d'ouverture
                         </p>
@@ -211,7 +241,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             </li>
             <li class=\"nav-item\">
                     <a href=\"{{ path('app_service_index') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon bi bi-grid\"></i>
+                        <i class=\"nav-icon fal fa-concierge-bell\"></i>
                         <p>
                             Services
                         </p>
@@ -219,16 +249,43 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             </li>
             <li class=\"nav-item\">
                     <a href=\"{{ path('app_habitat_index') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon  bi bi-tree\"></i>
+                        <i class=\"nav-icon  fal fa-tree\"></i>
                         <p>
                             Habitats
                         </p>
                     </a>
             </li>
 
+            <li class=\"nav-item  car-dropdown dropdown \" aria-expanded=\"true\">
+            <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                <i class=\"nav-icon fal fa-paw\"></i>
+                <p>
+                    Animaux
+                </p>
+            </a>
+
+            <ul class=\"dropdown-menu dropdown-menu-dark\">
+                <li class=\"nav-item ml-4\">
+                    <a href=\"#\" class=\"nav-link\">
+                        <p>
+                            Liste des animaux
+                        </p>
+                    </a>
+                </li>
+            
+                <li class=\"nav-item ml-4\">
+                    <a href=\"{{ path('app_race_index') }}\" class=\"nav-link\">
+                        <p>
+                            Races
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
             <li class=\"nav-item\">
                 <a href=\"{{ path('app_testimonial_index') }}\" class=\"nav-link\">
-                    <i class=\"nav-icon bi bi-star\"></i>
+                    <i class=\"nav-icon fal fa-comment-lines\"></i>
                     <p>
                         Témoignages
                     </p>

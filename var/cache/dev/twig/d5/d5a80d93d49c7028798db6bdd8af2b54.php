@@ -106,7 +106,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-people\"></i>
+                                <i class=\"fal fa-user-cog\"></i>
                             </div>
                             <a href=\"";
         // line 38
@@ -134,7 +134,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-grid\"></i>
+                                <i class=\"fal fa-concierge-bell\"></i>
                             </div>
                             <a href=\"";
         // line 60
@@ -162,7 +162,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-tree\"></i>
+                                <i class=\"fal fa-tree\"></i>
                             </div>
                             <a href=\"";
         // line 82
@@ -250,7 +250,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-people\"></i>
+                                <i class=\"fal fa-user-cog\"></i>
                             </div>
                             <a href=\"{{ path('app_user_index') }}\" class=\"small-box-footer text-dark\">
                                 Plus d'info  
@@ -272,7 +272,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-grid\"></i>
+                                <i class=\"fal fa-concierge-bell\"></i>
                             </div>
                             <a href=\"{{ path('app_service_index') }}\" class=\"small-box-footer text-dark\">
                                 Plus d'info  
@@ -294,7 +294,7 @@ class __TwigTemplate_08525470deaec1c2e64f6ad6fec8271f extends Template
                                 </p>
                             </div>
                             <div class=\"icon\">
-                                <i class=\"bi bi-tree\"></i>
+                                <i class=\"fal fa-tree\"></i>
                             </div>
                             <a href=\"{{ path('app_habitat_index') }}\" class=\"small-box-footer text-dark\">
                                 Plus d'info  

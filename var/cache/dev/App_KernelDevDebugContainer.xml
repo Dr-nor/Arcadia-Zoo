@@ -378,6 +378,13 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\OpeningController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\RaceController" class="App\Controller\Admin\RaceController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\RaceController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -414,6 +421,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RaceType" class="App\Form\RaceType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true">
@@ -491,7 +501,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.8z0gKrK"/>
+      <argument type="service" id=".service_locator.wn.sQDR"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1411,6 +1421,7 @@
       <argument type="collection">
         <argument>App\Form\HabitatType</argument>
         <argument>App\Form\OpeningType</argument>
+        <argument>App\Form\RaceType</argument>
         <argument>App\Form\ServiceType</argument>
         <argument>App\Form\TestimonialType</argument>
         <argument>App\Form\UserType</argument>
@@ -3417,7 +3428,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.8z0gKrK"/>
+      <argument type="service" id=".service_locator.wn.sQDR"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3927,7 +3938,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.vTmMcW6"/>
+      <argument type="service" id=".service_locator.tusVILp"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7441,6 +7452,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\RaceController" class="App\Controller\Admin\RaceController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\RaceController" class="App\Controller\Admin\RaceController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\RaceController" class="App\Controller\Admin\RaceController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ServiceController" class="App\Controller\Admin\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7459,6 +7473,8 @@
     <service id=".abstract.instanceof.App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RaceType" class="App\Form\RaceType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RaceType" class="App\Form\RaceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TestimonialType" class="App\Form\TestimonialType" autowire="true" abstract="true"/>
@@ -8205,6 +8221,70 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.9ibgz36" method="withContext"/>
     </service>
+    <service id=".service_locator.DXXF1Kz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="raceRepository" type="service_closure" id="App\Repository\RaceRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DXXF1Kz.App\Controller\Admin\RaceController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController::index()"/>
+      <argument>App\Controller\Admin\RaceController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.DXXF1Kz" method="withContext"/>
+    </service>
+    <service id=".service_locator..fUBbna" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator..fUBbna.App\Controller\Admin\RaceController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController::new()"/>
+      <argument>App\Controller\Admin\RaceController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator..fUBbna" method="withContext"/>
+    </service>
+    <service id=".service_locator.WNi.TcG" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="race" type="service_closure" id=".errored..service_locator.WNi.TcG.App\Entity\Race"/>
+      </argument>
+    </service>
+    <service id=".service_locator.WNi.TcG.App\Controller\Admin\RaceController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController::show()"/>
+      <argument>App\Controller\Admin\RaceController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WNi.TcG" method="withContext"/>
+    </service>
+    <service id=".service_locator.RxbP3ZI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="race" type="service_closure" id=".errored..service_locator.RxbP3ZI.App\Entity\Race"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RxbP3ZI.App\Controller\Admin\RaceController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController::edit()"/>
+      <argument>App\Controller\Admin\RaceController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.RxbP3ZI" method="withContext"/>
+    </service>
+    <service id=".service_locator.1eOBTXe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="race" type="service_closure" id=".errored..service_locator.1eOBTXe.App\Entity\Race"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.1eOBTXe.App\Controller\Admin\RaceController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController::delete()"/>
+      <argument>App\Controller\Admin\RaceController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.1eOBTXe" method="withContext"/>
+    </service>
     <service id=".service_locator.PuhjwKK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8410,7 +8490,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mXDaS5b" method="withContext"/>
     </service>
-    <service id=".service_locator.8z0gKrK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wn.sQDR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8429,6 +8509,11 @@
         <argument key="App\Controller\Admin\OpeningController::show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
         <argument key="App\Controller\Admin\OpeningController::edit" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::edit()"/>
         <argument key="App\Controller\Admin\OpeningController::delete" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::delete()"/>
+        <argument key="App\Controller\Admin\RaceController::index" type="service_closure" id=".service_locator.DXXF1Kz.App\Controller\Admin\RaceController::index()"/>
+        <argument key="App\Controller\Admin\RaceController::new" type="service_closure" id=".service_locator..fUBbna.App\Controller\Admin\RaceController::new()"/>
+        <argument key="App\Controller\Admin\RaceController::show" type="service_closure" id=".service_locator.WNi.TcG.App\Controller\Admin\RaceController::show()"/>
+        <argument key="App\Controller\Admin\RaceController::edit" type="service_closure" id=".service_locator.RxbP3ZI.App\Controller\Admin\RaceController::edit()"/>
+        <argument key="App\Controller\Admin\RaceController::delete" type="service_closure" id=".service_locator.1eOBTXe.App\Controller\Admin\RaceController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController::index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Admin\ServiceController::index()"/>
         <argument key="App\Controller\Admin\ServiceController::new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Admin\ServiceController::new()"/>
         <argument key="App\Controller\Admin\ServiceController::show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Admin\ServiceController::show()"/>
@@ -8460,6 +8545,11 @@
         <argument key="App\Controller\Admin\OpeningController:show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
         <argument key="App\Controller\Admin\OpeningController:edit" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::edit()"/>
         <argument key="App\Controller\Admin\OpeningController:delete" type="service_closure" id=".service_locator.9ibgz36.App\Controller\Admin\OpeningController::delete()"/>
+        <argument key="App\Controller\Admin\RaceController:index" type="service_closure" id=".service_locator.DXXF1Kz.App\Controller\Admin\RaceController::index()"/>
+        <argument key="App\Controller\Admin\RaceController:new" type="service_closure" id=".service_locator..fUBbna.App\Controller\Admin\RaceController::new()"/>
+        <argument key="App\Controller\Admin\RaceController:show" type="service_closure" id=".service_locator.WNi.TcG.App\Controller\Admin\RaceController::show()"/>
+        <argument key="App\Controller\Admin\RaceController:edit" type="service_closure" id=".service_locator.RxbP3ZI.App\Controller\Admin\RaceController::edit()"/>
+        <argument key="App\Controller\Admin\RaceController:delete" type="service_closure" id=".service_locator.1eOBTXe.App\Controller\Admin\RaceController::delete()"/>
         <argument key="App\Controller\Admin\ServiceController:index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Admin\ServiceController::index()"/>
         <argument key="App\Controller\Admin\ServiceController:new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Admin\ServiceController::new()"/>
         <argument key="App\Controller\Admin\ServiceController:show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Admin\ServiceController::show()"/>
@@ -8636,11 +8726,12 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.vTmMcW6" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.tusVILp" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\HabitatType" type="service_closure" id="App\Form\HabitatType"/>
         <argument key="App\Form\OpeningType" type="service_closure" id="App\Form\OpeningType"/>
+        <argument key="App\Form\RaceType" type="service_closure" id="App\Form\RaceType"/>
         <argument key="App\Form\ServiceType" type="service_closure" id="App\Form\ServiceType"/>
         <argument key="App\Form\TestimonialType" type="service_closure" id="App\Form\TestimonialType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
@@ -9045,6 +9136,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\RaceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\RaceController"/>
+      <argument>App\Controller\Admin\RaceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\ServiceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ServiceController"/>
       <argument>App\Controller\Admin\ServiceController</argument>
@@ -9261,6 +9358,7 @@
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\HabitatController</argument>
           <argument>App\Controller\Admin\OpeningController</argument>
+          <argument>App\Controller\Admin\RaceController</argument>
           <argument>App\Controller\Admin\ServiceController</argument>
           <argument>App\Controller\Admin\TestimonialController</argument>
           <argument>App\Controller\Admin\UserController</argument>
@@ -9479,6 +9577,15 @@
     </service>
     <service id=".errored..service_locator.9ibgz36.App\Entity\Opening" class="App\Entity\Opening">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.9ibgz36&quot;: it needs an instance of &quot;App\Entity\Opening&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.WNi.TcG.App\Entity\Race" class="App\Entity\Race">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.WNi.TcG&quot;: it needs an instance of &quot;App\Entity\Race&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.RxbP3ZI.App\Entity\Race" class="App\Entity\Race">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.RxbP3ZI&quot;: it needs an instance of &quot;App\Entity\Race&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.1eOBTXe.App\Entity\Race" class="App\Entity\Race">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.1eOBTXe&quot;: it needs an instance of &quot;App\Entity\Race&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.HQ6Z48r.App\Entity\Service" class="App\Entity\Service">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.HQ6Z48r&quot;: it needs an instance of &quot;App\Entity\Service&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10682,7 +10789,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.8z0gKrK"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.wn.sQDR"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10736,6 +10843,11 @@
     <service id=".service_locator.4KsIGyf" alias=".service_locator.P.blNFL"/>
     <service id=".service_locator.aZxRJ09" alias=".service_locator.DcatOPi"/>
     <service id=".service_locator.u1Y8PRa" alias=".service_locator.9ibgz36"/>
+    <service id=".service_locator.nL6ljhF" alias=".service_locator.DXXF1Kz"/>
+    <service id=".service_locator.sbm5tvA" alias=".service_locator..fUBbna"/>
+    <service id=".service_locator.YhbQzvI" alias=".service_locator.WNi.TcG"/>
+    <service id=".service_locator.N2ud.3x" alias=".service_locator.RxbP3ZI"/>
+    <service id=".service_locator.jy.9D2S" alias=".service_locator.1eOBTXe"/>
     <service id=".service_locator.XmOAYGv" alias=".service_locator.PuhjwKK"/>
     <service id=".service_locator.S1UUzxx" alias=".service_locator.vMw.xEU"/>
     <service id=".service_locator.qPCyw9l" alias=".service_locator.HQ6Z48r"/>

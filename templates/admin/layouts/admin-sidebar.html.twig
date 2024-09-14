@@ -12,7 +12,7 @@
             <nav class="mt-2"> <ul class="nav nav-pills nav-sidebar flex-column" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ path('app_admin_dashboard') }}" class="nav-link">
-                        <i class="nav-icon bi bi-speedometer2"></i>
+                        <i class="nav-icon fal fa-tachometer-alt-average"></i> 
                         <p>
                             Dashboard
                         </p>
@@ -20,7 +20,7 @@
                 </li>
                 <li class="nav-item">
                 <a href="{{ path('app_user_index') }}" class="nav-link">
-                    <i class="nav-icon bi bi-people"></i>
+                    <i class="nav-icon fal fa-user-cog"></i>
                     <p>
                         Utilisateurs
                     </p>
@@ -28,7 +28,7 @@
             </li>
             <li class="nav-item">
                     <a href="{{ path('app_opening_index') }}" class="nav-link">
-                        <i class="nav-icon bi bi-clock-history"></i>
+                        <i class="nav-icon fal fa-clock"></i>
                         <p>
                             Horaires d'ouverture
                         </p>
@@ -36,7 +36,7 @@
             </li>
             <li class="nav-item">
                     <a href="{{ path('app_service_index') }}" class="nav-link">
-                        <i class="nav-icon bi bi-grid"></i>
+                        <i class="nav-icon fal fa-concierge-bell"></i>
                         <p>
                             Services
                         </p>
@@ -44,16 +44,43 @@
             </li>
             <li class="nav-item">
                     <a href="{{ path('app_habitat_index') }}" class="nav-link">
-                        <i class="nav-icon  bi bi-tree"></i>
+                        <i class="nav-icon  fal fa-tree"></i>
                         <p>
                             Habitats
                         </p>
                     </a>
             </li>
 
+            <li class="nav-item  car-dropdown dropdown " aria-expanded="true">
+            <a href="#" class="nav-link dropdown-toggle">
+                <i class="nav-icon fal fa-paw"></i>
+                <p>
+                    Animaux
+                </p>
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-dark">
+                <li class="nav-item ml-4">
+                    <a href="#" class="nav-link">
+                        <p>
+                            Liste des animaux
+                        </p>
+                    </a>
+                </li>
+            
+                <li class="nav-item ml-4">
+                    <a href="{{ path('app_race_index') }}" class="nav-link">
+                        <p>
+                            Races
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
             <li class="nav-item">
                 <a href="{{ path('app_testimonial_index') }}" class="nav-link">
-                    <i class="nav-icon bi bi-star"></i>
+                    <i class="nav-icon fal fa-comment-lines"></i>
                     <p>
                         Témoignages
                     </p>
