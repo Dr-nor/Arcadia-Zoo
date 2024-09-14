@@ -101,16 +101,27 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
         // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_service_index");
         yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon  bi bi-wrench-adjustable-circle\"></i>
+                        <i class=\"nav-icon bi bi-grid\"></i>
                         <p>
                             Services
+                        </p>
+                    </a>
+            </li>
+            <li class=\"nav-item\">
+                    <a href=\"";
+        // line 46
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_habitat_index");
+        yield "\" class=\"nav-link\">
+                        <i class=\"nav-icon  bi bi-tree\"></i>
+                        <p>
+                            Habitats
                         </p>
                     </a>
             </li>
 
             <li class=\"nav-item\">
                 <a href=\"";
-        // line 47
+        // line 55
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_testimonial_index");
         yield "\" class=\"nav-link\">
                     <i class=\"nav-icon bi bi-star\"></i>
@@ -157,7 +168,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  114 => 47,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  125 => 55,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -200,9 +211,17 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
             </li>
             <li class=\"nav-item\">
                     <a href=\"{{ path('app_service_index') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon  bi bi-wrench-adjustable-circle\"></i>
+                        <i class=\"nav-icon bi bi-grid\"></i>
                         <p>
                             Services
+                        </p>
+                    </a>
+            </li>
+            <li class=\"nav-item\">
+                    <a href=\"{{ path('app_habitat_index') }}\" class=\"nav-link\">
+                        <i class=\"nav-icon  bi bi-tree\"></i>
+                        <p>
+                            Habitats
                         </p>
                     </a>
             </li>

@@ -364,6 +364,13 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\DashboardController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\HabitatController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -402,6 +409,9 @@
     <service id="App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.password_hasher_factory"/>
+    </service>
+    <service id="App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -481,7 +491,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.OcrPcTS"/>
+      <argument type="service" id=".service_locator.8z0gKrK"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1399,6 +1409,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\HabitatType</argument>
         <argument>App\Form\OpeningType</argument>
         <argument>App\Form\ServiceType</argument>
         <argument>App\Form\TestimonialType</argument>
@@ -3406,7 +3417,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.OcrPcTS"/>
+      <argument type="service" id=".service_locator.8z0gKrK"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3916,7 +3927,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.dhes_bK"/>
+      <argument type="service" id=".service_locator.vTmMcW6"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7424,6 +7435,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\DashboardController" class="App\Controller\Admin\DashboardController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7441,6 +7455,8 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ServiceType" class="App\Form\ServiceType" autowire="true" abstract="true"/>
@@ -8039,19 +8055,100 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4wc4Ag1" method="withContext"/>
     </service>
-    <service id=".service_locator.ZultO7F" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pmIsgEj" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="serviceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
+        <argument key="habitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ZultO7F.App\Controller\Admin\DashboardController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\DashboardController::index()"/>
       <argument>App\Controller\Admin\DashboardController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ZultO7F" method="withContext"/>
+      <factory service=".service_locator.pmIsgEj" method="withContext"/>
+    </service>
+    <service id=".service_locator.rKMHrg5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="habitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::index()"/>
+      <argument>App\Controller\Admin\HabitatController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.rKMHrg5" method="withContext"/>
+    </service>
+    <service id=".service_locator.PKLkl9R" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="imageHabitat" type="service_closure" id="App\Service\ImageService"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::new()"/>
+      <argument>App\Controller\Admin\HabitatController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PKLkl9R" method="withContext"/>
+    </service>
+    <service id=".service_locator.nvY2WDd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="habitat" type="service_closure" id=".errored..service_locator.nvY2WDd.App\Entity\Habitat"/>
+      </argument>
+    </service>
+    <service id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::show()"/>
+      <argument>App\Controller\Admin\HabitatController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.nvY2WDd" method="withContext"/>
+    </service>
+    <service id=".service_locator.fpBl.q0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="habitat" type="service_closure" id=".errored..service_locator.fpBl.q0.App\Entity\Habitat"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="imageHabitat" type="service_closure" id="App\Service\ImageService"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.fpBl.q0.App\Controller\Admin\HabitatController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::edit()"/>
+      <argument>App\Controller\Admin\HabitatController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.fpBl.q0" method="withContext"/>
+    </service>
+    <service id=".service_locator.O38RXnT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="habitat" type="service_closure" id=".errored..service_locator.O38RXnT.App\Entity\Habitat"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.O38RXnT.App\Controller\Admin\HabitatController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::delete()"/>
+      <argument>App\Controller\Admin\HabitatController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O38RXnT" method="withContext"/>
+    </service>
+    <service id=".service_locator.sDoT5rV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="image" type="service_closure" id=".errored..service_locator.sDoT5rV.App\Entity\Image"/>
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="imageHabitat" type="service_closure" id="App\Service\ImageService"/>
+      </argument>
+    </service>
+    <service id=".service_locator.sDoT5rV.App\Controller\Admin\HabitatController::deleteImage()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController::deleteImage()"/>
+      <argument>App\Controller\Admin\HabitatController::deleteImage()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.sDoT5rV" method="withContext"/>
     </service>
     <service id=".service_locator.T8_IsXR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8313,14 +8410,20 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.mXDaS5b" method="withContext"/>
     </service>
-    <service id=".service_locator.OcrPcTS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.8z0gKrK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
-        <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.ZultO7F.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\HabitatController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
+        <argument key="App\Controller\Admin\HabitatController::new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
+        <argument key="App\Controller\Admin\HabitatController::show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
+        <argument key="App\Controller\Admin\HabitatController::edit" type="service_closure" id=".service_locator.fpBl.q0.App\Controller\Admin\HabitatController::edit()"/>
+        <argument key="App\Controller\Admin\HabitatController::delete" type="service_closure" id=".service_locator.O38RXnT.App\Controller\Admin\HabitatController::delete()"/>
+        <argument key="App\Controller\Admin\HabitatController::deleteImage" type="service_closure" id=".service_locator.sDoT5rV.App\Controller\Admin\HabitatController::deleteImage()"/>
         <argument key="App\Controller\Admin\OpeningController::index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
         <argument key="App\Controller\Admin\OpeningController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
         <argument key="App\Controller\Admin\OpeningController::show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
@@ -8345,7 +8448,13 @@
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
-        <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.ZultO7F.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\HabitatController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
+        <argument key="App\Controller\Admin\HabitatController:new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
+        <argument key="App\Controller\Admin\HabitatController:show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
+        <argument key="App\Controller\Admin\HabitatController:edit" type="service_closure" id=".service_locator.fpBl.q0.App\Controller\Admin\HabitatController::edit()"/>
+        <argument key="App\Controller\Admin\HabitatController:delete" type="service_closure" id=".service_locator.O38RXnT.App\Controller\Admin\HabitatController::delete()"/>
+        <argument key="App\Controller\Admin\HabitatController:deleteImage" type="service_closure" id=".service_locator.sDoT5rV.App\Controller\Admin\HabitatController::deleteImage()"/>
         <argument key="App\Controller\Admin\OpeningController:index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
         <argument key="App\Controller\Admin\OpeningController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
         <argument key="App\Controller\Admin\OpeningController:show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
@@ -8527,9 +8636,10 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.dhes_bK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.vTmMcW6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\HabitatType" type="service_closure" id="App\Form\HabitatType"/>
         <argument key="App\Form\OpeningType" type="service_closure" id="App\Form\OpeningType"/>
         <argument key="App\Form\ServiceType" type="service_closure" id="App\Form\ServiceType"/>
         <argument key="App\Form\TestimonialType" type="service_closure" id="App\Form\TestimonialType"/>
@@ -8923,6 +9033,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\HabitatController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatController"/>
+      <argument>App\Controller\Admin\HabitatController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\OpeningController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController"/>
       <argument>App\Controller\Admin\OpeningController</argument>
@@ -9143,6 +9259,7 @@
         <argument type="collection">
           <argument>App\Kernel</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
+          <argument>App\Controller\Admin\HabitatController</argument>
           <argument>App\Controller\Admin\OpeningController</argument>
           <argument>App\Controller\Admin\ServiceController</argument>
           <argument>App\Controller\Admin\TestimonialController</argument>
@@ -9344,6 +9461,18 @@
     </service>
     <service id=".errored..service_locator.4wc4Ag1.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.4wc4Ag1&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
+    </service>
+    <service id=".errored..service_locator.nvY2WDd.App\Entity\Habitat" class="App\Entity\Habitat">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.nvY2WDd&quot;: it needs an instance of &quot;App\Entity\Habitat&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.fpBl.q0.App\Entity\Habitat" class="App\Entity\Habitat">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.fpBl.q0&quot;: it needs an instance of &quot;App\Entity\Habitat&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.O38RXnT.App\Entity\Habitat" class="App\Entity\Habitat">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.O38RXnT&quot;: it needs an instance of &quot;App\Entity\Habitat&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.sDoT5rV.App\Entity\Image" class="App\Entity\Image">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.sDoT5rV&quot;: it needs an instance of &quot;App\Entity\Image&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.DcatOPi.App\Entity\Opening" class="App\Entity\Opening">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.DcatOPi&quot;: it needs an instance of &quot;App\Entity\Opening&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -10553,7 +10682,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.OcrPcTS"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.8z0gKrK"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -10596,7 +10725,13 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.diNoEIK" alias=".service_locator.4wc4Ag1"/>
-    <service id=".service_locator.C8X8UiJ" alias=".service_locator.ZultO7F"/>
+    <service id=".service_locator.HSXKVs3" alias=".service_locator.pmIsgEj"/>
+    <service id=".service_locator.s0mTIkg" alias=".service_locator.rKMHrg5"/>
+    <service id=".service_locator.K_01ED8" alias=".service_locator.PKLkl9R"/>
+    <service id=".service_locator.XoGdWV0" alias=".service_locator.nvY2WDd"/>
+    <service id=".service_locator.HD4b.UF" alias=".service_locator.fpBl.q0"/>
+    <service id=".service_locator.wLz9zD1" alias=".service_locator.O38RXnT"/>
+    <service id=".service_locator.np9NUMG" alias=".service_locator.sDoT5rV"/>
     <service id=".service_locator.j6JxmIg" alias=".service_locator.T8_IsXR"/>
     <service id=".service_locator.4KsIGyf" alias=".service_locator.P.blNFL"/>
     <service id=".service_locator.aZxRJ09" alias=".service_locator.DcatOPi"/>
