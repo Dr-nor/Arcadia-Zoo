@@ -16,11 +16,12 @@ class FrontController extends AbstractController
 {
     // Home
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
+    public function index(Request $request, EntityManagerInterface $entityManager,ServiceRepository $serviceRepository,): Response
     {
 
         return $this->render('front/home.html.twig', [
             'controller_name' => 'FrontController',
+            'services' => $serviceRepository->findAll(),
             ]);
     }
   

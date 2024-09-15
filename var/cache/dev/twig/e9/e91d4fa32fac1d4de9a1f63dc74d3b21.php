@@ -74,13 +74,12 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
     <section class=\"homepage\">
         <!-- Begin Slider Area -->
         <div class=\"slider-area\">
-
             <!-- Main Slider -->
             <div class=\"swiper-container home-slider swiper-arrow with-bg_white\">
                 <div class=\"swiper-wrapper\">
                     <div class=\"swiper-slide animation-style-01\">
                         <div class=\"slide-inner bg-height overlay\" data-bg-image=\"";
-        // line 12
+        // line 11
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front-assets/images/slider/bg/21.jpg"), "html", null, true);
         yield "\">
                             <div class=\"container\">
@@ -105,7 +104,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                     </div>
                     <div class=\"swiper-slide animation-style-01\">
                         <div class=\"slide-inner bg-height overlay\" data-bg-image=\"";
-        // line 34
+        // line 33
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front-assets/images/slider/bg/22.jpg"), "html", null, true);
         yield "\">
                             <div class=\"container\">
@@ -130,7 +129,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                     </div>
                     <div class=\"swiper-slide animation-style-01\">
                     <div class=\"slide-inner bg-height overlay\" data-bg-image=\"";
-        // line 56
+        // line 55
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front-assets/images/slider/bg/23.jpg"), "html", null, true);
         yield "\">
                         <div class=\"container\">
@@ -163,7 +162,6 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                     <div class=\"custom-button-next\"></div>
                 </div>
             </div>
-
         </div>
         <!-- Slider Area End Here -->
 
@@ -192,7 +190,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                     <div class=\"col-lg-6\">
                         <div class=\"single-img img-hover-effect\">
                             <img class=\"img-full\" src=\"";
-        // line 115
+        // line 113
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("front-assets/images/about/about.jpg"), "html", null, true);
         yield "\" alt=\"About Banner\" />
                         </div>
@@ -200,8 +198,104 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
 
                 </div>
             </div>
-        </div>
+        </div>    
         <!-- End About Area -->
+
+          <!-- Begin Services Area -->
+        <div class=\"services-area section-space-y-axis-50\">
+          <div class=\"container\">
+              <div class=\"title-box\">
+                  <h2>
+                      Nos services                                           
+                  </h2>
+                  <p class=\"text-primary\">
+                      Nous proposons une gamme complète de services                  
+                  </p>
+              </div>
+              <div class=\"row mt-10\">
+                  <div class=\"col-lg-12\">
+                      <div class=\"swiper-container service-slider\">
+                          <div class=\"swiper-wrapper text-heading\">
+
+                              ";
+        // line 138
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["services"]) || array_key_exists("services", $context) ? $context["services"] : (function () { throw new RuntimeError('Variable "services" does not exist.', 138, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["service"]) {
+            // line 139
+            yield "                                  <div class=\"swiper-slide\">
+                                      <div class=\"service-item\">
+                                          <div class=\"service-img img-hover-effect\">
+                                              <a class=\"img-zoom-effect\" href=\"";
+            // line 142
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services_details", ["slug" => CoreExtension::getAttribute($this->env, $this->source, $context["service"], "slug", [], "any", false, false, false, 142)]), "html", null, true);
+            yield "\">
+                                                  ";
+            // line 143
+            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["service"], "images", [], "any", false, false, false, 143)) > 0)) {
+                // line 144
+                yield "                                                      <img
+                                                  src=\"";
+                // line 145
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/services/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["service"], "images", [], "any", false, false, false, 145), 0, [], "array", false, false, false, 145), "name", [], "any", false, false, false, 145))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "title", [], "any", false, false, false, 145), "html", null, true);
+                yield "\" />
+                                                      ";
+            } else {
+                // line 147
+                yield "                                                      <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/images/placeholder.webp"), "html", null, true);
+                yield "\" />
+                                                  ";
+            }
+            // line 149
+            yield "                                              </a>
+                                          </div>
+                                          <div class=\"service-content pt-6\">
+
+                                              <h2 class=\"mb-3\">
+                                                  <a class=\"title\">
+                                                      ";
+            // line 155
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "title", [], "any", false, false, false, 155), "html", null, true);
+            yield "
+                                                  </a>
+                                              </h2>
+                                              <p class=\"short-desc mb-7\">
+                                                  ";
+            // line 159
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((Twig\Extension\CoreExtension::slice($this->env->getCharset(), Twig\Extension\CoreExtension::striptags(CoreExtension::getAttribute($this->env, $this->source, $context["service"], "description", [], "any", false, false, false, 159)), 0, 70) . "..."), "html", null, true);
+            yield "
+                                              </p>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['service'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 166
+        yield "                          </div>
+
+                      </div>
+                      <!-- Add Arrows -->
+                      <div class=\"service-button-wrap\">
+                          <div class=\"service-button-prev\">
+                              <i class=\"bi bi-chevron-left\"></i>
+                          </div>
+                          <div class=\"service-button-next\">
+                              <i class=\"bi bi-chevron-right\"></i>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+      <!-- Services Area End  -->
     </section>
 ";
         
@@ -234,7 +328,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  196 => 115,  134 => 56,  109 => 34,  84 => 12,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  281 => 166,  268 => 159,  261 => 155,  253 => 149,  247 => 147,  240 => 145,  237 => 144,  235 => 143,  231 => 142,  226 => 139,  222 => 138,  194 => 113,  133 => 55,  108 => 33,  83 => 11,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -245,7 +339,6 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
     <section class=\"homepage\">
         <!-- Begin Slider Area -->
         <div class=\"slider-area\">
-
             <!-- Main Slider -->
             <div class=\"swiper-container home-slider swiper-arrow with-bg_white\">
                 <div class=\"swiper-wrapper\">
@@ -325,7 +418,6 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                     <div class=\"custom-button-next\"></div>
                 </div>
             </div>
-
         </div>
         <!-- Slider Area End Here -->
 
@@ -359,8 +451,71 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
 
                 </div>
             </div>
-        </div>
+        </div>    
         <!-- End About Area -->
+
+          <!-- Begin Services Area -->
+        <div class=\"services-area section-space-y-axis-50\">
+          <div class=\"container\">
+              <div class=\"title-box\">
+                  <h2>
+                      Nos services                                           
+                  </h2>
+                  <p class=\"text-primary\">
+                      Nous proposons une gamme complète de services                  
+                  </p>
+              </div>
+              <div class=\"row mt-10\">
+                  <div class=\"col-lg-12\">
+                      <div class=\"swiper-container service-slider\">
+                          <div class=\"swiper-wrapper text-heading\">
+
+                              {% for service in services %}
+                                  <div class=\"swiper-slide\">
+                                      <div class=\"service-item\">
+                                          <div class=\"service-img img-hover-effect\">
+                                              <a class=\"img-zoom-effect\" href=\"{{ path('services_details', {\"slug\": service.slug }) }}\">
+                                                  {% if service.images|length > 0 %}
+                                                      <img
+                                                  src=\"{{ asset('uploads/services/' ~ service.images[0].name) }}\" alt=\"{{ service.title }}\" />
+                                                      {% else %}
+                                                      <img src=\"{{ asset('admin-assets/images/placeholder.webp') }}\" />
+                                                  {% endif %}
+                                              </a>
+                                          </div>
+                                          <div class=\"service-content pt-6\">
+
+                                              <h2 class=\"mb-3\">
+                                                  <a class=\"title\">
+                                                      {{ service.title }}
+                                                  </a>
+                                              </h2>
+                                              <p class=\"short-desc mb-7\">
+                                                  {{ service.description|striptags|slice(0, 70) ~ '...' }}
+                                              </p>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          </div>
+
+                      </div>
+                      <!-- Add Arrows -->
+                      <div class=\"service-button-wrap\">
+                          <div class=\"service-button-prev\">
+                              <i class=\"bi bi-chevron-left\"></i>
+                          </div>
+                          <div class=\"service-button-next\">
+                              <i class=\"bi bi-chevron-right\"></i>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+      <!-- Services Area End  -->
     </section>
 {% endblock %}
 ", "front/home.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/templates/front/home.html.twig");

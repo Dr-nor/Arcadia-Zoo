@@ -32,6 +32,7 @@ return [
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\FrontController::index'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/services' => [[['_route' => 'services_index', '_controller' => 'App\\Controller\\ServicesController::index'], null, null, null, true, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -99,6 +100,7 @@ return [
                     .'|/edit(*:636)'
                     .'|(*:644)'
                 .')'
+                .'|/services/([^/]++)(*:671)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -133,8 +135,9 @@ return [
         593 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         623 => [[['_route' => 'app_opening_show', '_controller' => 'App\\Controller\\Admin\\OpeningController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         636 => [[['_route' => 'app_opening_edit', '_controller' => 'App\\Controller\\Admin\\OpeningController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        644 => [
-            [['_route' => 'app_opening_delete', '_controller' => 'App\\Controller\\Admin\\OpeningController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        644 => [[['_route' => 'app_opening_delete', '_controller' => 'App\\Controller\\Admin\\OpeningController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        671 => [
+            [['_route' => 'services_details', '_controller' => 'App\\Controller\\ServicesController::details'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

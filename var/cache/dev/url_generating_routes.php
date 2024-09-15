@@ -59,6 +59,8 @@ return [
     'home' => [[], ['_controller' => 'App\\Controller\\FrontController::index'], [], [['text', '/']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'services_index' => [[], ['_controller' => 'App\\Controller\\ServicesController::index'], [], [['text', '/services/']], [], [], []],
+    'services_details' => [['slug'], ['_controller' => 'App\\Controller\\ServicesController::details'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/services']], [], [], []],
     'App\Controller\Admin\AnimalController::index' => [[], ['_controller' => 'App\\Controller\\Admin\\AnimalController::index'], [], [['text', '/admin/animal/']], [], [], []],
     'App\Controller\Admin\AnimalController::new' => [[], ['_controller' => 'App\\Controller\\Admin\\AnimalController::new'], [], [['text', '/admin/animal/new']], [], [], []],
     'App\Controller\Admin\AnimalController::show' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AnimalController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/animal']], [], [], []],
@@ -101,4 +103,6 @@ return [
     'App\Controller\FrontController::index' => [[], ['_controller' => 'App\\Controller\\FrontController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\SecurityController::login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'App\Controller\SecurityController::logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'App\Controller\ServicesController::index' => [[], ['_controller' => 'App\\Controller\\ServicesController::index'], [], [['text', '/services/']], [], [], []],
+    'App\Controller\ServicesController::details' => [['slug'], ['_controller' => 'App\\Controller\\ServicesController::details'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/services']], [], [], []],
 ];
