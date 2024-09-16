@@ -21,7 +21,7 @@
                                         Rencontrez les merveilles du règne animal au Parc Arcadia                                  
                                     </p>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size lg-size btn-primary" href="/services">
+                                        <a class="btn btn-custom-size lg-size btn-primary" href="{{ path('services_index') }}">
                                             Découvrir                                      
                                         </a>
                                     </div>
@@ -43,7 +43,7 @@
                                         Émerveillement garanti à chaque visite                                     
                                     </p>
                                     <div class="button-wrap">
-                                        <a class="btn btn-custom-size lg-size btn-primary" href="/occasions">
+                                        <a class="btn btn-custom-size lg-size btn-primary" href="#">
                                             Découvrir                                        
                                         </a>
                                     </div>
@@ -65,7 +65,7 @@
                                     Voyagez au cœur de la nature avec Parc Arcadia                                    
                                 </p>
                                 <div class="button-wrap">
-                                    <a class="btn btn-custom-size lg-size btn-primary" href="/occasions">
+                                    <a class="btn btn-custom-size lg-size btn-primary" href="{{ path('habitats_index') }}">
                                         Découvrir                                        
                                     </a>
                                 </div>
@@ -157,6 +157,70 @@
                                               </h2>
                                               <p class="short-desc mb-7">
                                                   {{ service.description|striptags|slice(0, 70) ~ '...' }}
+                                              </p>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          </div>
+
+                      </div>
+                      <!-- Add Arrows -->
+                      <div class="service-button-wrap">
+                          <div class="service-button-prev">
+                              <i class="bi bi-chevron-left"></i>
+                          </div>
+                          <div class="service-button-next">
+                              <i class="bi bi-chevron-right"></i>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+      <!-- Services Area End  -->
+
+
+        <!-- Begin Services Area -->
+        <div class="services-area section-space-y-axis-50">
+          <div class="container">
+              <div class="title-box">
+                  <h2>
+                      Nos habitas                                           
+                  </h2>
+                  <p class="text-primary">
+                    Explorez les différents habitats du Zoo Arcadia 
+                  </p>
+              </div>
+              <div class="row mt-10">
+                  <div class="col-lg-12">
+                      <div class="swiper-container habitat-slider">
+                          <div class="swiper-wrapper text-heading">
+
+                              {% for habitat in habitats %}
+                                  <div class="swiper-slide">
+                                      <div class="service-item">
+                                          <div class="service-img img-hover-effect">
+                                              <a class="img-zoom-effect" href="{{ path('habitats_details', {"slug": habitat.slug }) }}">
+                                                  {% if habitat.images|length > 0 %}
+                                                      <img
+                                                  src="{{ asset('uploads/habitats/' ~ habitat.images[0].name) }}" alt="{{ habitat.title }}" />
+                                                      {% else %}
+                                                      <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                                  {% endif %}
+                                              </a>
+                                          </div>
+                                          <div class="service-content pt-6">
+
+                                              <h2 class="mb-3">
+                                                  <a class="title">
+                                                      {{ habitat.title }}
+                                                  </a>
+                                              </h2>
+                                              <p class="short-desc mb-7">
+                                                  {{ habitat.description|striptags|slice(0, 70) ~ '...' }}
                                               </p>
 
                                           </div>

@@ -166,6 +166,34 @@
 		});
 	}
 
+	/* --- habitat Slider--- */
+	if ($('.habitat-slider').elExists()) {
+		var mySwiper = new Swiper('.habitat-slider', {
+			slidesPerView: 4,
+			spaceBetween: 30,
+			loop: true,
+			navigation: {
+				nextEl: '.habitat-button-next',
+				prevEl: '.habitat-button-prev',
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				576: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 3,
+				},
+				1501: {
+					slidesPerView: 4,
+				}
+			}
+		});
+	}
+
+
 	/* --- Car Slider--- */
 	if ($('.car-slider').elExists()) {
 		var mySwiper = new Swiper('.car-slider', {
@@ -352,6 +380,66 @@
 			}
 		});
 	}
+
+
+	/* ---Habitat Details Horizontal Slider--- */
+	if ($('.single-habitat-slider').elExists()) {
+		var singleHabitat = new Swiper('.single-habitat-thumbs', {
+			spaceBetween: 10,
+			slidesPerView: 4,
+			observer: true,
+			observeParents: true,
+			freeMode: false,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			allowTouchMove: false,
+			loop: true,
+			navigation: {
+				nextEl: '.thumbs-button-next',
+				prevEl: '.thumbs-button-prev',
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					allowTouchMove: true
+				},
+				480: {
+					slidesPerView: 3,
+					allowTouchMove: true
+				},
+				768: {
+					slidesPerView: 4,
+					allowTouchMove: true
+				},
+				1200: {
+					slidesPerView: 4,
+					allowTouchMove: false
+				}
+			}
+		});
+		var singleHabitat = new Swiper('.single-habitat-slider', {
+			autoplay: false,
+			observer: true,
+			observeParents: true,
+			delay: 5000,
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			watchSlidesProgress: true,
+			watchSlidesVisibility: true,
+			allowTouchMove: true,
+			setWrapperSize: true,
+			waitForTransition: true,
+			loop: false,
+			navigation: {
+				nextEl: '.gallery-button-next',
+				prevEl: '.gallery-button-prev',
+			},
+			thumbs: {
+				swiper: singleHabitat
+			}
+		});
+	}
+
 
 
 	/* ---Scene--- */

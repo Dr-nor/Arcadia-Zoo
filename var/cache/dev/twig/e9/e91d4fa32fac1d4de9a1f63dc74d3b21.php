@@ -94,7 +94,10 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                         Rencontrez les merveilles du règne animal au Parc Arcadia                                  
                                     </p>
                                     <div class=\"button-wrap\">
-                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/services\">
+                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services_index");
+        yield "\">
                                             Découvrir                                      
                                         </a>
                                     </div>
@@ -119,7 +122,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                         Émerveillement garanti à chaque visite                                     
                                     </p>
                                     <div class=\"button-wrap\">
-                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/occasions\">
+                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"#\">
                                             Découvrir                                        
                                         </a>
                                     </div>
@@ -144,7 +147,10 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                     Voyagez au cœur de la nature avec Parc Arcadia                                    
                                 </p>
                                 <div class=\"button-wrap\">
-                                    <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/occasions\">
+                                    <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"";
+        // line 68
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("habitats_index");
+        yield "\">
                                         Découvrir                                        
                                     </a>
                                 </div>
@@ -296,6 +302,103 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
         </div>
       </div>
       <!-- Services Area End  -->
+
+
+        <!-- Begin Services Area -->
+        <div class=\"services-area section-space-y-axis-50\">
+          <div class=\"container\">
+              <div class=\"title-box\">
+                  <h2>
+                      Nos habitas                                           
+                  </h2>
+                  <p class=\"text-primary\">
+                    Explorez les différents habitats du Zoo Arcadia 
+                  </p>
+              </div>
+              <div class=\"row mt-10\">
+                  <div class=\"col-lg-12\">
+                      <div class=\"swiper-container habitat-slider\">
+                          <div class=\"swiper-wrapper text-heading\">
+
+                              ";
+        // line 202
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["habitats"]) || array_key_exists("habitats", $context) ? $context["habitats"] : (function () { throw new RuntimeError('Variable "habitats" does not exist.', 202, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["habitat"]) {
+            // line 203
+            yield "                                  <div class=\"swiper-slide\">
+                                      <div class=\"service-item\">
+                                          <div class=\"service-img img-hover-effect\">
+                                              <a class=\"img-zoom-effect\" href=\"";
+            // line 206
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("habitats_details", ["slug" => CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "slug", [], "any", false, false, false, 206)]), "html", null, true);
+            yield "\">
+                                                  ";
+            // line 207
+            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "images", [], "any", false, false, false, 207)) > 0)) {
+                // line 208
+                yield "                                                      <img
+                                                  src=\"";
+                // line 209
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/habitats/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "images", [], "any", false, false, false, 209), 0, [], "array", false, false, false, 209), "name", [], "any", false, false, false, 209))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "title", [], "any", false, false, false, 209), "html", null, true);
+                yield "\" />
+                                                      ";
+            } else {
+                // line 211
+                yield "                                                      <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/images/placeholder.webp"), "html", null, true);
+                yield "\" />
+                                                  ";
+            }
+            // line 213
+            yield "                                              </a>
+                                          </div>
+                                          <div class=\"service-content pt-6\">
+
+                                              <h2 class=\"mb-3\">
+                                                  <a class=\"title\">
+                                                      ";
+            // line 219
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "title", [], "any", false, false, false, 219), "html", null, true);
+            yield "
+                                                  </a>
+                                              </h2>
+                                              <p class=\"short-desc mb-7\">
+                                                  ";
+            // line 223
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((Twig\Extension\CoreExtension::slice($this->env->getCharset(), Twig\Extension\CoreExtension::striptags(CoreExtension::getAttribute($this->env, $this->source, $context["habitat"], "description", [], "any", false, false, false, 223)), 0, 70) . "..."), "html", null, true);
+            yield "
+                                              </p>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['habitat'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 230
+        yield "                          </div>
+
+                      </div>
+                      <!-- Add Arrows -->
+                      <div class=\"service-button-wrap\">
+                          <div class=\"service-button-prev\">
+                              <i class=\"bi bi-chevron-left\"></i>
+                          </div>
+                          <div class=\"service-button-next\">
+                              <i class=\"bi bi-chevron-right\"></i>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+      <!-- Services Area End  -->
     </section>
 ";
         
@@ -328,7 +431,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  281 => 166,  268 => 159,  261 => 155,  253 => 149,  247 => 147,  240 => 145,  237 => 144,  235 => 143,  231 => 142,  226 => 139,  222 => 138,  194 => 113,  133 => 55,  108 => 33,  83 => 11,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  384 => 230,  371 => 223,  364 => 219,  356 => 213,  350 => 211,  343 => 209,  340 => 208,  338 => 207,  334 => 206,  329 => 203,  325 => 202,  287 => 166,  274 => 159,  267 => 155,  259 => 149,  253 => 147,  246 => 145,  243 => 144,  241 => 143,  237 => 142,  232 => 139,  228 => 138,  200 => 113,  152 => 68,  136 => 55,  111 => 33,  99 => 24,  83 => 11,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -356,7 +459,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                         Rencontrez les merveilles du règne animal au Parc Arcadia                                  
                                     </p>
                                     <div class=\"button-wrap\">
-                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/services\">
+                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"{{ path('services_index') }}\">
                                             Découvrir                                      
                                         </a>
                                     </div>
@@ -378,7 +481,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                         Émerveillement garanti à chaque visite                                     
                                     </p>
                                     <div class=\"button-wrap\">
-                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/occasions\">
+                                        <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"#\">
                                             Découvrir                                        
                                         </a>
                                     </div>
@@ -400,7 +503,7 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                     Voyagez au cœur de la nature avec Parc Arcadia                                    
                                 </p>
                                 <div class=\"button-wrap\">
-                                    <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"/occasions\">
+                                    <a class=\"btn btn-custom-size lg-size btn-primary\" href=\"{{ path('habitats_index') }}\">
                                         Découvrir                                        
                                     </a>
                                 </div>
@@ -492,6 +595,70 @@ class __TwigTemplate_e5040195b3491b0eb6e4b9c675de037b extends Template
                                               </h2>
                                               <p class=\"short-desc mb-7\">
                                                   {{ service.description|striptags|slice(0, 70) ~ '...' }}
+                                              </p>
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              {% endfor %}
+                          </div>
+
+                      </div>
+                      <!-- Add Arrows -->
+                      <div class=\"service-button-wrap\">
+                          <div class=\"service-button-prev\">
+                              <i class=\"bi bi-chevron-left\"></i>
+                          </div>
+                          <div class=\"service-button-next\">
+                              <i class=\"bi bi-chevron-right\"></i>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+        </div>
+      </div>
+      <!-- Services Area End  -->
+
+
+        <!-- Begin Services Area -->
+        <div class=\"services-area section-space-y-axis-50\">
+          <div class=\"container\">
+              <div class=\"title-box\">
+                  <h2>
+                      Nos habitas                                           
+                  </h2>
+                  <p class=\"text-primary\">
+                    Explorez les différents habitats du Zoo Arcadia 
+                  </p>
+              </div>
+              <div class=\"row mt-10\">
+                  <div class=\"col-lg-12\">
+                      <div class=\"swiper-container habitat-slider\">
+                          <div class=\"swiper-wrapper text-heading\">
+
+                              {% for habitat in habitats %}
+                                  <div class=\"swiper-slide\">
+                                      <div class=\"service-item\">
+                                          <div class=\"service-img img-hover-effect\">
+                                              <a class=\"img-zoom-effect\" href=\"{{ path('habitats_details', {\"slug\": habitat.slug }) }}\">
+                                                  {% if habitat.images|length > 0 %}
+                                                      <img
+                                                  src=\"{{ asset('uploads/habitats/' ~ habitat.images[0].name) }}\" alt=\"{{ habitat.title }}\" />
+                                                      {% else %}
+                                                      <img src=\"{{ asset('admin-assets/images/placeholder.webp') }}\" />
+                                                  {% endif %}
+                                              </a>
+                                          </div>
+                                          <div class=\"service-content pt-6\">
+
+                                              <h2 class=\"mb-3\">
+                                                  <a class=\"title\">
+                                                      {{ habitat.title }}
+                                                  </a>
+                                              </h2>
+                                              <p class=\"short-desc mb-7\">
+                                                  {{ habitat.description|striptags|slice(0, 70) ~ '...' }}
                                               </p>
 
                                           </div>

@@ -72,7 +72,7 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                         </h3>
                         <ul class=\"widget-list-item\">
                             <li>
-                                <a href=\"#\">Accueil                                                                                                                                                               
+                                <a href=\"/\">Accueil                                                                                                                                                               
                                 </a>
                             </li>
                             <li>
@@ -84,7 +84,10 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                                 </a>
                             </li>
                             <li>
-                                <a href=\"/habitat\">
+                                <a href=\"";
+        // line 34
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("habitats_index");
+        yield "\">
                                     Habitas                                
                                 </a>
                             </li>
@@ -203,7 +206,7 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  148 => 93,  146 => 91,  81 => 29,  59 => 10,  48 => 1,);
+        return array (  151 => 93,  149 => 91,  89 => 34,  81 => 29,  59 => 10,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -232,7 +235,7 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                         </h3>
                         <ul class=\"widget-list-item\">
                             <li>
-                                <a href=\"#\">Accueil                                                                                                                                                               
+                                <a href=\"/\">Accueil                                                                                                                                                               
                                 </a>
                             </li>
                             <li>
@@ -241,7 +244,7 @@ class __TwigTemplate_8a4163c384f7356af3f61d9906fde22c extends Template
                                 </a>
                             </li>
                             <li>
-                                <a href=\"/habitat\">
+                                <a href=\"{{ path('habitats_index') }}\">
                                     Habitas                                
                                 </a>
                             </li>

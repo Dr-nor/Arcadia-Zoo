@@ -706,7 +706,8 @@
 }
 
 .service-button-next i,
-.service-button-prev i {
+.service-button-prev i, .habitat-button-next i,
+.habitat-button-prev i {
   background-color: var(--bs-secondary);
   color: #fff;
   width: 28px;
@@ -722,7 +723,8 @@
 }
 
 .service-button-next i:hover,
-.service-button-prev i:hover {
+.service-button-prev i:hover ,.habitat-button-next i:hover,
+.habitat-button-prev i:hover{
   background-color: var(--bs-primary);
 }
 
@@ -1529,22 +1531,22 @@
   border: 1px solid #dee2e6;
 }
 
-.single-car-slider,.single-service-slider {
+.single-car-slider,.single-service-slider, .single-habitat-slider {
   border: 1px solid #dee2e6;
   margin-bottom: 10px;
 }
 
-.single-car-slider .single-img  .single-service-slider .single-img{
+.single-car-slider .single-img,.single-service-slider .single-img,.single-habitat-slider .single-img{
   display: block;
 }
 
 
-.single-car-content>.title, .single-service-content>.title {
+.single-car-content>.title, .single-service-content>.title ,.single-habitat-content>.title {
   color: #444444;
   font-size: 30px;
 }
 
-.single-car-content .short-desc , .single-service-content .short-desc  {
+.single-car-content .short-desc , .single-service-content .short-desc,.single-habitat-content .short-desc  {
   color: #6c788c;
   line-height: 30px;
   font-weight: 300;

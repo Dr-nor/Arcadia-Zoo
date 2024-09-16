@@ -421,6 +421,13 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\FrontController"/>
       </call>
     </service>
+    <service id="App\Controller\HabitatsController" class="App\Controller\HabitatsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\HabitatsController"/>
+      </call>
+    </service>
     <service id="App\Controller\OpeningController" class="App\Controller\OpeningController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -533,7 +540,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.wWayRQL"/>
+      <argument type="service" id=".service_locator.oKC9GJv"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3461,7 +3468,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.wWayRQL"/>
+      <argument type="service" id=".service_locator.oKC9GJv"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7490,6 +7497,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HabitatsController" class="App\Controller\HabitatsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HabitatsController" class="App\Controller\HabitatsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\HabitatsController" class="App\Controller\HabitatsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\OpeningController" class="App\Controller\OpeningController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\OpeningController" class="App\Controller\OpeningController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\OpeningController" class="App\Controller\OpeningController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8588,18 +8598,31 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.nLtHlEw" method="withContext"/>
     </service>
-    <service id=".service_locator.ZYphyWq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1y9SnNu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="serviceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
+        <argument key="habitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.ZYphyWq.App\Controller\FrontController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.1y9SnNu.App\Controller\FrontController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\FrontController::index()"/>
       <argument>App\Controller\FrontController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.ZYphyWq" method="withContext"/>
+      <factory service=".service_locator.1y9SnNu" method="withContext"/>
+    </service>
+    <service id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HabitatsController::index()"/>
+      <argument>App\Controller\HabitatsController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.rKMHrg5" method="withContext"/>
+    </service>
+    <service id=".service_locator.nvY2WDd.App\Controller\HabitatsController::details()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HabitatsController::details()"/>
+      <argument>App\Controller\HabitatsController::details()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.nvY2WDd" method="withContext"/>
     </service>
     <service id=".service_locator.T8_IsXR.App\Controller\OpeningController::openingTimeShow()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\OpeningController::openingTimeShow()"/>
@@ -8631,7 +8654,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.HQ6Z48r" method="withContext"/>
     </service>
-    <service id=".service_locator.wWayRQL" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.oKC9GJv" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8677,7 +8700,9 @@
         <argument key="App\Controller\Admin\UserController::show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
         <argument key="App\Controller\Admin\UserController::edit" type="service_closure" id=".service_locator.Qh67eS1.App\Controller\Admin\UserController::edit()"/>
         <argument key="App\Controller\Admin\UserController::delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
-        <argument key="App\Controller\FrontController::index" type="service_closure" id=".service_locator.ZYphyWq.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\FrontController::index" type="service_closure" id=".service_locator.1y9SnNu.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\HabitatsController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
+        <argument key="App\Controller\HabitatsController::details" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\HabitatsController::details()"/>
         <argument key="App\Controller\OpeningController::openingTimeShow" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\OpeningController::openingTimeShow()"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\ServicesController::index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\ServicesController::index()"/>
@@ -8723,7 +8748,9 @@
         <argument key="App\Controller\Admin\UserController:show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
         <argument key="App\Controller\Admin\UserController:edit" type="service_closure" id=".service_locator.Qh67eS1.App\Controller\Admin\UserController::edit()"/>
         <argument key="App\Controller\Admin\UserController:delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
-        <argument key="App\Controller\FrontController:index" type="service_closure" id=".service_locator.ZYphyWq.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\FrontController:index" type="service_closure" id=".service_locator.1y9SnNu.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\HabitatsController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
+        <argument key="App\Controller\HabitatsController:details" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\HabitatsController::details()"/>
         <argument key="App\Controller\OpeningController:openingTimeShow" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\OpeningController::openingTimeShow()"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\ServicesController:index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\ServicesController::index()"/>
@@ -9334,6 +9361,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\HabitatsController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\HabitatsController"/>
+      <argument>App\Controller\HabitatsController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\OpeningController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\OpeningController"/>
       <argument>App\Controller\OpeningController</argument>
@@ -9550,6 +9583,7 @@
           <argument>App\Controller\Admin\TestimonialController</argument>
           <argument>App\Controller\Admin\UserController</argument>
           <argument>App\Controller\FrontController</argument>
+          <argument>App\Controller\HabitatsController</argument>
           <argument>App\Controller\OpeningController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\ServicesController</argument>
@@ -10988,7 +11022,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.wWayRQL"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.oKC9GJv"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -11066,7 +11100,7 @@
     <service id=".service_locator.MaqvS4." alias=".service_locator.hKA2je_"/>
     <service id=".service_locator.48fwbz1" alias=".service_locator.Qh67eS1"/>
     <service id=".service_locator.OS8hQ7u" alias=".service_locator.nLtHlEw"/>
-    <service id=".service_locator.11lsebI" alias=".service_locator.ZYphyWq"/>
+    <service id=".service_locator.amNNl2W" alias=".service_locator.1y9SnNu"/>
     <service id=".service_locator...2Ndi3" alias=".service_locator.mXDaS5b"/>
     <service id=".service_locator.b491maD" alias=".service_locator.QaaoWjx"/>
   </services>

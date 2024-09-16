@@ -1,4 +1,4 @@
-O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/css/front.css";s:10:"publicPath";s:67:"/assets/front-assets/css/front-39d7bc1e1044e97587a0b3e0ec4dd2dc.css";s:23:"publicPathWithoutDigest";s:34:"/assets/front-assets/css/front.css";s:15:"publicExtension";s:3:"css";s:7:"content";s:53878:"/*
+O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/css/front.css";s:10:"publicPath";s:67:"/assets/front-assets/css/front-abd26cfd8863a5ab2db409b7b4e6ae3a.css";s:23:"publicPathWithoutDigest";s:34:"/assets/front-assets/css/front.css";s:15:"publicExtension";s:3:"css";s:7:"content";s:54111:"/*
 
     CSS INDEX
     ===================
@@ -706,7 +706,8 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 .service-button-next i,
-.service-button-prev i {
+.service-button-prev i, .habitat-button-next i,
+.habitat-button-prev i {
   background-color: var(--bs-secondary);
   color: #fff;
   width: 28px;
@@ -722,7 +723,8 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 .service-button-next i:hover,
-.service-button-prev i:hover {
+.service-button-prev i:hover ,.habitat-button-next i:hover,
+.habitat-button-prev i:hover{
   background-color: var(--bs-primary);
 }
 
@@ -1529,22 +1531,22 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   border: 1px solid #dee2e6;
 }
 
-.single-car-slider,.single-service-slider {
+.single-car-slider,.single-service-slider, .single-habitat-slider {
   border: 1px solid #dee2e6;
   margin-bottom: 10px;
 }
 
-.single-car-slider .single-img  .single-service-slider .single-img{
+.single-car-slider .single-img,.single-service-slider .single-img,.single-habitat-slider .single-img{
   display: block;
 }
 
 
-.single-car-content>.title, .single-service-content>.title {
+.single-car-content>.title, .single-service-content>.title ,.single-habitat-content>.title {
   color: #444444;
   font-size: 30px;
 }
 
-.single-car-content .short-desc , .single-service-content .short-desc  {
+.single-car-content .short-desc , .single-service-content .short-desc,.single-habitat-content .short-desc  {
   color: #6c788c;
   line-height: 30px;
   font-weight: 300;
@@ -2667,4 +2669,4 @@ img {
 
 .copyright-text a:hover {
   color: var(--bs-primary);
-}";s:6:"digest";s:32:"39d7bc1e1044e97587a0b3e0ec4dd2dc";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:5:{i:0;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:92:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/left-arrow.png";s:10:"publicPath";s:88:"/assets/front-assets/images/slider/arrow/left-arrow-d6a63f556c0e3f362303d81bd326087a.png";s:23:"publicPathWithoutDigest";s:55:"/assets/front-assets/images/slider/arrow/left-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"d6a63f556c0e3f362303d81bd326087a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:47:"front-assets/images/slider/arrow/left-arrow.png";}i:1;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:93:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/right-arrow.png";s:10:"publicPath";s:89:"/assets/front-assets/images/slider/arrow/right-arrow-5dc9ea88bf49002eecadba632edb13bb.png";s:23:"publicPathWithoutDigest";s:56:"/assets/front-assets/images/slider/arrow/right-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"5dc9ea88bf49002eecadba632edb13bb";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:48:"front-assets/images/slider/arrow/right-arrow.png";}i:2;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:3;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:4;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:26:"front-assets/css/front.css";}
+}";s:6:"digest";s:32:"abd26cfd8863a5ab2db409b7b4e6ae3a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:5:{i:0;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:92:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/left-arrow.png";s:10:"publicPath";s:88:"/assets/front-assets/images/slider/arrow/left-arrow-d6a63f556c0e3f362303d81bd326087a.png";s:23:"publicPathWithoutDigest";s:55:"/assets/front-assets/images/slider/arrow/left-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"d6a63f556c0e3f362303d81bd326087a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:47:"front-assets/images/slider/arrow/left-arrow.png";}i:1;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:93:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/right-arrow.png";s:10:"publicPath";s:89:"/assets/front-assets/images/slider/arrow/right-arrow-5dc9ea88bf49002eecadba632edb13bb.png";s:23:"publicPathWithoutDigest";s:56:"/assets/front-assets/images/slider/arrow/right-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"5dc9ea88bf49002eecadba632edb13bb";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:48:"front-assets/images/slider/arrow/right-arrow.png";}i:2;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:3;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:4;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:26:"front-assets/css/front.css";}

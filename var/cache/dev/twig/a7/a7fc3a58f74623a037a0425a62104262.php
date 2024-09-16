@@ -116,7 +116,10 @@ class __TwigTemplate_7938aa1ad3e2323723b4d3d2f9b689e7 extends Template
                                         </a>
                                     </li>
                                     <li class=\"drop-holder\">
-                                        <a href=\"/habitat\">
+                                        <a href=\"";
+        // line 66
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("habitats_index");
+        yield "\">
                                             Habitats
                                                                                         
                                         </a>
@@ -204,14 +207,20 @@ class __TwigTemplate_7938aa1ad3e2323723b4d3d2f9b689e7 extends Template
 
                             </li>
                             <li>
-                                <a href=\"#\">
+                                <a href=\"";
+        // line 142
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("services_index");
+        yield "\">
                                     <span class=\"mm-text\">
                                         Services                                        
                                     </span>
                                 </a>
                             </li>
                             <li class=\"menu-item-has-children\">
-                                <a href=\"/habitat\">
+                                <a href=\"";
+        // line 149
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("habitats_index");
+        yield "\">
                                     <span class=\"mm-text\">
                                         Habitats                                          
                                     </span>
@@ -265,7 +274,7 @@ class __TwigTemplate_7938aa1ad3e2323723b4d3d2f9b689e7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  188 => 124,  152 => 90,  146 => 86,  138 => 82,  136 => 81,  112 => 60,  96 => 47,  48 => 1,);
+        return array (  222 => 149,  212 => 142,  191 => 124,  155 => 90,  149 => 86,  141 => 82,  139 => 81,  121 => 66,  112 => 60,  96 => 47,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -335,7 +344,7 @@ class __TwigTemplate_7938aa1ad3e2323723b4d3d2f9b689e7 extends Template
                                         </a>
                                     </li>
                                     <li class=\"drop-holder\">
-                                        <a href=\"/habitat\">
+                                        <a href=\"{{ path('habitats_index') }}\">
                                             Habitats
                                                                                         
                                         </a>
@@ -411,14 +420,14 @@ class __TwigTemplate_7938aa1ad3e2323723b4d3d2f9b689e7 extends Template
 
                             </li>
                             <li>
-                                <a href=\"#\">
+                                <a href=\"{{ path('services_index') }}\">
                                     <span class=\"mm-text\">
                                         Services                                        
                                     </span>
                                 </a>
                             </li>
                             <li class=\"menu-item-has-children\">
-                                <a href=\"/habitat\">
+                                <a href=\"{{ path('habitats_index') }}\">
                                     <span class=\"mm-text\">
                                         Habitats                                          
                                     </span>
