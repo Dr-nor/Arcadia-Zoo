@@ -412,7 +412,7 @@ class __TwigTemplate_6d1d7b03840a4b38fed1292f41767ae5 extends Template
         -->
 
         <!-- Begin Related animals Area -->
-        <div class=\"cars-related\">
+        <div class=\"animals-related\">
             <div class=\"animal-area section-space-y-axis-50\">
                 <div class=\"container\">
                     <div class=\"title-box\">
@@ -836,7 +836,7 @@ class __TwigTemplate_6d1d7b03840a4b38fed1292f41767ae5 extends Template
         -->
 
         <!-- Begin Related animals Area -->
-        <div class=\"cars-related\">
+        <div class=\"animals-related\">
             <div class=\"animal-area section-space-y-axis-50\">
                 <div class=\"container\">
                     <div class=\"title-box\">

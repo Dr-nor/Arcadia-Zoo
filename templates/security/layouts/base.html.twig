@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arcadia Zoo</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('front-assets/images/favicon.ico') }}" />
+
+    {% block stylesheets %}
+    <!-- Icons CSS (Icon Fonts) -->
+    <link rel="stylesheet" href="{{ asset('global-assets/css/icons.css') }}" />
+
+    <!-- Fonts CSS (Family Fonts) -->
+    <link rel="stylesheet" href="{{ asset('global-assets/css/fonts.css') }}" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{{ asset('global-assets/css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/css/back.css') }}">
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- Begin Main Content Area -->
+    {% block body %}{% endblock %}
+    <!-- Main Content Area End -->
+
+     {% block javascripts %}
+
+    <!--Plugins JS-->
+    <script src="{{ asset('global-assets/js/plugins/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('global-assets/js/plugins/bootstrap.bundle.min.js') }}" ></script>
+
+     <!--Main JS-->
+    <script src="{{ asset('admin-assets/js/back.js') }}"></script>
+    {% endblock %}
+
+</body>
+
+</html>

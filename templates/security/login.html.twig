@@ -1,37 +1,68 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
-
+{% extends 'security/layouts/base.html.twig' %}
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <section class="hold-transition login-page">
+        <a href="/" class="login-logo">
+            <img src="{{ asset('front-assets/images/logo/dark.svg') }}" width="200" alt="Logo" />
+        </a>
+        <div class="login-box">
+            <div class="card card-outline card-primary">
+                <div class="card-header text-center">
+                    <h3>
+                        Connexion
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p class="login-box-msg">
+                        Heureux de vous revoir !                   
+                                            
+                    </p>
+                    {% if app.user %}
+                            <div class=" mt-4 mb-3">
+                                Vous êtes bien connecté en tant :                               
+                                {{ app.user.userIdentifier }}
+                                ,                                
+                                <a href="{{ path('app_logout') }}">
+                                    Déconnexion                                     
+                                </a>
+                            </div>
+                    {% else %}
+                    <form method="post">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                        <div class="input-group mb-3">
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="Email*" required autofocus />
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa fa-envelope"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Mot de passe*" required />
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <span class="fa fa-lock"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Se connecter
+                                </button>
+                            </div>
+                        </div>
+                        {% if error %}
+                            <div class="alert alert-danger mt-4">
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                    </form>
+                    {% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                </div>
+            </div>
         </div>
-    {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </section>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Remember me
-        </label>
-    </div>
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
 {% endblock %}
