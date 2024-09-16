@@ -934,3 +934,9 @@ c13882,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_loc
 59c0dc,127.0.0.1,GET,http://127.0.0.1:8000/animals/Orycterope,1726470246,,200,request
 860c2a,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726470252,5cc8ed,200,request
 5cc8ed,127.0.0.1,GET,http://127.0.0.1:8000/,1726470252,,200,request
+4c384e,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726471243,d07941,200,request
+d07941,127.0.0.1,GET,http://127.0.0.1:8000/habitats/,1726471243,,200,request
+d30341,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726471261,3eb9a8,200,request
+3eb9a8,127.0.0.1,GET,http://127.0.0.1:8000/habitats/Savane,1726471261,,200,request
+03e234,127.0.0.1,GET,http://127.0.0.1:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DApp%255CController%255COpeningController%253A%253AopeningTimeShow,1726471277,217f28,200,request
+217f28,127.0.0.1,GET,http://127.0.0.1:8000/,1726471278,,200,request

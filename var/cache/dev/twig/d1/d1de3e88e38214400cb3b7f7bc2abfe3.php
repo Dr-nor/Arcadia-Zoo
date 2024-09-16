@@ -216,7 +216,176 @@ class __TwigTemplate_bb7433ca7617fe150a946e96cfcae507 extends Template
                 </div>
             </div>
         </div>
-";
+
+
+
+        <!-- Begin Animals Area -->
+        <div class=\"cars-section\">
+            <div class=\"animal-area section-space-y-axis-50\">
+                <div class=\"container\">
+                    <div class=\"title-box\">
+                        <h2>
+                            Animaux de  ";
+        // line 97
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["habitat"]) || array_key_exists("habitat", $context) ? $context["habitat"] : (function () { throw new RuntimeError('Variable "habitat" does not exist.', 97, $this->source); })()), "title", [], "any", false, false, false, 97), "html", null, true);
+        yield "                    
+                        </h2>
+                        <p class=\"text-primary\">
+                        Rencontrez nos animaux !                    
+                        </p>
+                    </div>
+                    <div class=\"row mt-10\">
+                        <div class=\"col-lg-12\">
+                            <div class=\"swiper-container animal-slider\">
+                                <div class=\"swiper-wrapper text-heading\">
+                                    ";
+        // line 107
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["animals"]) || array_key_exists("animals", $context) ? $context["animals"] : (function () { throw new RuntimeError('Variable "animals" does not exist.', 107, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["animal"]) {
+            // line 108
+            yield "                                        <div class=\"swiper-slide\">
+                                        <div class=\"animal-item\">
+                                        <div class=\"animal-inner\">
+                                            <a class='animal-link' href=\"";
+            // line 111
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animal_details", ["slug" => CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "slug", [], "any", false, false, false, 111)]), "html", null, true);
+            yield "\"></a>
+                                            <div class=\"animal-header\">
+                                                <div class=\"vprice_wrap\">
+                                                        <div class=\"price\">
+                                                            ";
+            // line 115
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "status", [], "any", false, false, false, 115), "html", null, true);
+            yield "
+                
+                                                        </div>
+                                                    </div>
+                                                    <a href=\"";
+            // line 119
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animal_details", ["slug" => CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "slug", [], "any", false, false, false, 119)]), "html", null, true);
+            yield "\">
+                                                        <div class=\"animal-img\">
+                                                            ";
+            // line 121
+            if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "images", [], "any", false, false, false, 121)) > 0)) {
+                // line 122
+                yield "                                                                <img
+                                                            src=\"";
+                // line 123
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/animals/" . CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "images", [], "any", false, false, false, 123), 0, [], "array", false, false, false, 123), "name", [], "any", false, false, false, 123))), "html", null, true);
+                yield "\" alt=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 123), "html", null, true);
+                yield "\" />
+                                                                ";
+            } else {
+                // line 125
+                yield "                                                                <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/images/placeholder.webp"), "html", null, true);
+                yield "\" />
+                                                            ";
+            }
+            // line 127
+            yield "                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <div class=\"animal-content\">
+                                                <div class=\"animal-content-top\">
+                                                    <div class=\"animal-content-top-left\">
+                                                        <a href=\"";
+            // line 133
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animal_details", ["slug" => CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "slug", [], "any", false, false, false, 133)]), "html", null, true);
+            yield "\" class=\"vtitle\">
+                                                            ";
+            // line 134
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 134), "html", null, true);
+            yield "
+                
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class=\"animal-content-middle\">
+                                                    <div class=\"inline-group\">
+                                                    <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                            <b>Habitat:</b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                ";
+            // line 146
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "HabitatId", [], "any", false, false, false, 146), "title", [], "any", false, false, false, 146), "html", null, true);
+            yield "                                                                
+                                                            </span>
+                                                        </div>
+                                                        <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                            <b>Race:  </b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                ";
+            // line 154
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "RaceId", [], "any", false, false, false, 154), "name", [], "any", false, false, false, 154), "html", null, true);
+            yield "
+                                                                Ans                                                                   
+                                                            </span>
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                    <b>Poids :  </b>                                                                                           
+                                                                                                                             
+                                                            </span>
+                                                            <span>
+                                                                ";
+            // line 166
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "weight", [], "any", false, false, false, 166), "html", null, true);
+            yield "
+                
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    </div>
+                
+                                                </div>
+                                              
+                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        </div>
+                                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 182
+        yield "                                </div>
+                            </div>
+                            <div class=\"animal-slider-bottom d-flex justify-content-between\">
+                                <!-- Add Arrows -->
+                                <div class=\"animal-button-wrap\">
+                                    <div class=\"animal-button-prev\">
+                                        <i class=\"bi bi-chevron-left\"></i>
+                                    </div>
+                                    <div class=\"animal-button-next\">
+                                        <i class=\"bi bi-chevron-right\"></i>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Animals Area End  -->
+
+
+    
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -247,7 +416,7 @@ class __TwigTemplate_bb7433ca7617fe150a946e96cfcae507 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  208 => 78,  202 => 75,  190 => 65,  181 => 62,  178 => 61,  174 => 60,  163 => 51,  154 => 49,  143 => 45,  139 => 44,  136 => 43,  131 => 42,  111 => 25,  97 => 14,  90 => 9,  84 => 7,  78 => 5,  76 => 4,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  364 => 182,  342 => 166,  327 => 154,  316 => 146,  301 => 134,  297 => 133,  289 => 127,  283 => 125,  276 => 123,  273 => 122,  271 => 121,  266 => 119,  259 => 115,  252 => 111,  247 => 108,  243 => 107,  230 => 97,  208 => 78,  202 => 75,  190 => 65,  181 => 62,  178 => 61,  174 => 60,  163 => 51,  154 => 49,  143 => 45,  139 => 44,  136 => 43,  131 => 42,  111 => 25,  97 => 14,  90 => 9,  84 => 7,  78 => 5,  76 => 4,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -339,6 +508,124 @@ class __TwigTemplate_bb7433ca7617fe150a946e96cfcae507 extends Template
                 </div>
             </div>
         </div>
-{% endblock %}", "front/habitats/details.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/templates/front/habitats/details.html.twig");
+
+
+
+        <!-- Begin Animals Area -->
+        <div class=\"cars-section\">
+            <div class=\"animal-area section-space-y-axis-50\">
+                <div class=\"container\">
+                    <div class=\"title-box\">
+                        <h2>
+                            Animaux de  {{habitat.title}}                    
+                        </h2>
+                        <p class=\"text-primary\">
+                        Rencontrez nos animaux !                    
+                        </p>
+                    </div>
+                    <div class=\"row mt-10\">
+                        <div class=\"col-lg-12\">
+                            <div class=\"swiper-container animal-slider\">
+                                <div class=\"swiper-wrapper text-heading\">
+                                    {% for animal in animals %}
+                                        <div class=\"swiper-slide\">
+                                        <div class=\"animal-item\">
+                                        <div class=\"animal-inner\">
+                                            <a class='animal-link' href=\"{{ path('animal_details', {\"slug\": animal.slug }) }}\"></a>
+                                            <div class=\"animal-header\">
+                                                <div class=\"vprice_wrap\">
+                                                        <div class=\"price\">
+                                                            {{ animal.status }}
+                
+                                                        </div>
+                                                    </div>
+                                                    <a href=\"{{ path('animal_details', {\"slug\": animal.slug }) }}\">
+                                                        <div class=\"animal-img\">
+                                                            {% if animal.images|length > 0 %}
+                                                                <img
+                                                            src=\"{{ asset('uploads/animals/' ~ animal.images[0].name) }}\" alt=\"{{ animal.name }}\" />
+                                                                {% else %}
+                                                                <img src=\"{{ asset('admin-assets/images/placeholder.webp') }}\" />
+                                                            {% endif %}
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <div class=\"animal-content\">
+                                                <div class=\"animal-content-top\">
+                                                    <div class=\"animal-content-top-left\">
+                                                        <a href=\"{{ path('animal_details', {\"slug\": animal.slug }) }}\" class=\"vtitle\">
+                                                            {{ animal.name }}
+                
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class=\"animal-content-middle\">
+                                                    <div class=\"inline-group\">
+                                                    <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                            <b>Habitat:</b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.HabitatId.title  }}                                                                
+                                                            </span>
+                                                        </div>
+                                                        <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                            <b>Race:  </b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.RaceId.name }}
+                                                                Ans                                                                   
+                                                            </span>
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class=\"inline-item\">
+                                                            <span class=\"attr\">
+                                                    <b>Poids :  </b>                                                                                           
+                                                                                                                             
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.weight }}
+                
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    </div>
+                
+                                                </div>
+                                              
+                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class=\"animal-slider-bottom d-flex justify-content-between\">
+                                <!-- Add Arrows -->
+                                <div class=\"animal-button-wrap\">
+                                    <div class=\"animal-button-prev\">
+                                        <i class=\"bi bi-chevron-left\"></i>
+                                    </div>
+                                    <div class=\"animal-button-next\">
+                                        <i class=\"bi bi-chevron-right\"></i>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Animals Area End  -->
+
+
+    
+    {% endblock %}", "front/habitats/details.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/templates/front/habitats/details.html.twig");
     }
 }

@@ -401,8 +401,8 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
       <!-- Habitats Area End  -->
 
 
-        <!-- Begin Vehicles Area -->
-        <div class=\"cars-section\">
+        <!-- Begin Animals Area -->
+        <div class=\"animals-section\">
             <div class=\"animal-area section-space-y-axis-50\">
                 <div class=\"container\">
                     <div class=\"title-box\">
@@ -565,7 +565,7 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
                 </div>
             </div>
         </div>
-        <!-- Vehicles Area End  -->
+        <!-- Animals Area End  -->
     </section>
 ";
         
@@ -852,8 +852,8 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
       <!-- Habitats Area End  -->
 
 
-        <!-- Begin Vehicles Area -->
-        <div class=\"cars-section\">
+        <!-- Begin Animals Area -->
+        <div class=\"animals-section\">
             <div class=\"animal-area section-space-y-axis-50\">
                 <div class=\"container\">
                     <div class=\"title-box\">
@@ -965,7 +965,7 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
                 </div>
             </div>
         </div>
-        <!-- Vehicles Area End  -->
+        <!-- Animals Area End  -->
     </section>
 {% endblock %}
 ", "front/home.html.twig", "/Applications/MAMP/htdocs/Arcadia-Zoo/templates/front/home.html.twig");

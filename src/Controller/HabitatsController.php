@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Habitat;
 use App\Repository\HabitatRepository;
+use App\Repository\AnimalRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,9 +27,11 @@ class HabitatsController extends AbstractController
      }
 
      #[Route('/{slug}', name: 'details')]
-     public function details(Habitat $habitat): Response
+     public function details(Habitat $habitat, AnimalRepository $animalRepository): Response
      {
-         return $this->render('front/habitats/details.html.twig', compact('habitat'));
+        $animals = $animalRepository->findBy(['habitat_id'=> $habitat->getId()]);
+
+         return $this->render('front/habitats/details.html.twig', compact('habitat','animals'));
      }
      
 

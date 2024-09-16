@@ -85,4 +85,122 @@
                 </div>
             </div>
         </div>
-{% endblock %}
+
+
+
+        <!-- Begin Animals Area -->
+        <div class="cars-section">
+            <div class="animal-area section-space-y-axis-50">
+                <div class="container">
+                    <div class="title-box">
+                        <h2>
+                            Animaux de  {{habitat.title}}                    
+                        </h2>
+                        <p class="text-primary">
+                        Rencontrez nos animaux !                    
+                        </p>
+                    </div>
+                    <div class="row mt-10">
+                        <div class="col-lg-12">
+                            <div class="swiper-container animal-slider">
+                                <div class="swiper-wrapper text-heading">
+                                    {% for animal in animals %}
+                                        <div class="swiper-slide">
+                                        <div class="animal-item">
+                                        <div class="animal-inner">
+                                            <a class='animal-link' href="{{ path('animal_details', {"slug": animal.slug }) }}"></a>
+                                            <div class="animal-header">
+                                                <div class="vprice_wrap">
+                                                        <div class="price">
+                                                            {{ animal.status }}
+                
+                                                        </div>
+                                                    </div>
+                                                    <a href="{{ path('animal_details', {"slug": animal.slug }) }}">
+                                                        <div class="animal-img">
+                                                            {% if animal.images|length > 0 %}
+                                                                <img
+                                                            src="{{ asset('uploads/animals/' ~ animal.images[0].name) }}" alt="{{ animal.name }}" />
+                                                                {% else %}
+                                                                <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                                            {% endif %}
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            <div class="animal-content">
+                                                <div class="animal-content-top">
+                                                    <div class="animal-content-top-left">
+                                                        <a href="{{ path('animal_details', {"slug": animal.slug }) }}" class="vtitle">
+                                                            {{ animal.name }}
+                
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="animal-content-middle">
+                                                    <div class="inline-group">
+                                                    <div class="inline-item">
+                                                            <span class="attr">
+                                                            <b>Habitat:</b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.HabitatId.title  }}                                                                
+                                                            </span>
+                                                        </div>
+                                                        <div class="inline-item">
+                                                            <span class="attr">
+                                                            <b>Race:  </b>                                                                                                                                                      
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.RaceId.name }}
+                                                                Ans                                                                   
+                                                            </span>
+                                                        </div>
+                                                        
+                                                        
+                                                        <div class="inline-item">
+                                                            <span class="attr">
+                                                    <b>Poids :  </b>                                                                                           
+                                                                                                                             
+                                                            </span>
+                                                            <span>
+                                                                {{ animal.weight }}
+                
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    </div>
+                
+                                                </div>
+                                              
+                
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="animal-slider-bottom d-flex justify-content-between">
+                                <!-- Add Arrows -->
+                                <div class="animal-button-wrap">
+                                    <div class="animal-button-prev">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </div>
+                                    <div class="animal-button-next">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Animals Area End  -->
+
+
+    
+    {% endblock %}
