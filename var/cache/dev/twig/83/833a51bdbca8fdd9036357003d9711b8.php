@@ -119,7 +119,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                     </a>
             </li>
 
-            <li class=\"nav-item  car-dropdown dropdown \" aria-expanded=\"true\">
+            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
             <a href=\"#\" class=\"nav-link dropdown-toggle\">
                 <i class=\"nav-icon fal fa-paw\"></i>
                 <p>
@@ -259,7 +259,7 @@ class __TwigTemplate_38d664088673a5ac9491f3b265207d31 extends Template
                     </a>
             </li>
 
-            <li class=\"nav-item  car-dropdown dropdown \" aria-expanded=\"true\">
+            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
             <a href=\"#\" class=\"nav-link dropdown-toggle\">
                 <i class=\"nav-icon fal fa-paw\"></i>
                 <p>

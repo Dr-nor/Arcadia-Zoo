@@ -6,6 +6,7 @@ use App\Entity\Testimonial;
 use App\Form\TestimonialType;
 use App\Repository\ServiceRepository;
 use App\Repository\HabitatRepository;
+use App\Repository\AnimalRepository;
 use App\Repository\TestimonialRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,13 +18,14 @@ class FrontController extends AbstractController
 {
     // Home
     #[Route('/', name: 'home', methods: ['GET', 'POST'])]
-    public function index(Request $request, EntityManagerInterface $entityManager,ServiceRepository $serviceRepository, HabitatRepository $habitatRepository): Response
+    public function index(Request $request, EntityManagerInterface $entityManager,ServiceRepository $serviceRepository, HabitatRepository $habitatRepository,AnimalRepository $animalRepository): Response
     {
 
         return $this->render('front/home.html.twig', [
             'controller_name' => 'FrontController',
             'services' => $serviceRepository->findAll(),
             'habitats' => $habitatRepository->findAll(),
+            'animals' => $animalRepository->findAll(),
             ]);
     }
   

@@ -1,4 +1,4 @@
-O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/css/front.css";s:10:"publicPath";s:67:"/assets/front-assets/css/front-abd26cfd8863a5ab2db409b7b4e6ae3a.css";s:23:"publicPathWithoutDigest";s:34:"/assets/front-assets/css/front.css";s:15:"publicExtension";s:3:"css";s:7:"content";s:54111:"/*
+O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/css/front.css";s:10:"publicPath";s:67:"/assets/front-assets/css/front-581f7107c7e9b8857660f8c13949c45d.css";s:23:"publicPathWithoutDigest";s:34:"/assets/front-assets/css/front.css";s:15:"publicExtension";s:3:"css";s:7:"content";s:54509:"/*
 
     CSS INDEX
     ===================
@@ -729,19 +729,19 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 /* ---Car Arrow--- */
-.car-button-wrap {
+.animal-button-wrap {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.car-button-prev {
+.animal-button-prev {
   margin-right: 3px;
 }
 
-.car-button-next i,
-.car-button-prev i {
+.animal-button-next i,
+.animal-button-prev i {
   background-color: var(--bs-secondary);
   color: #fff;
   width: 28px;
@@ -756,8 +756,8 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   border-end-start-radius: 3px;
 }
 
-.car-button-next i:hover,
-.car-button-prev i:hover {
+.animal-button-next i:hover,
+.animal-button-prev i:hover {
   background-color: var(--bs-primary);
 }
 
@@ -1297,36 +1297,36 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 /*----------------------------------------*/
 /*  07. Car Details
 /*----------------------------------------*/
-.car-slider {
+.animal-slider {
   padding-bottom: 4px;
   margin-bottom: -4px;
 }
 
-.car-category-img {
+.animal-category-img {
   overflow: hidden;
   display: block;
 }
 
-.car-category-img img {
+.animal-category-img img {
   width: 100%;
 }
 
-.car-category-content {
+.animal-category-content {
   text-align: center;
 }
 
-.car-category-content .title a {
+.animal-category-content .title a {
   color: #383838;
   font-size: 18px;
   font-weight: 400;
   display: block;
 }
 
-.car-category-content .title a:hover {
+.animal-category-content .title a:hover {
   color: var(--bs-primary);
 }
 
-.car-list-view .car-list-item {
+.animal-list-view .animal-list-item {
   border-bottom: 1px solid #48536536;
   background-color: #fff;
   height: 100%;
@@ -1339,7 +1339,7 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 @media (max-width: 991.98px) {
-  .car-list-view .car-list-item {
+  .animal-list-view .animal-list-item {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -1348,60 +1348,60 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   }
 }
 
-.car-list-view .car-list-img {
+.animal-list-view .animal-list-img {
   width: 350px;
 }
 
 @media (max-width: 991.98px) {
-  .car-list-view .car-list-img {
+  .animal-list-view .animal-list-img {
     width: 100%;
   }
 }
 
-.car-list-view .car-list-content {
+.animal-list-view .animal-list-content {
   width: calc(100% - 350px);
   padding-left: 20px;
 }
 
 @media (max-width: 991.98px) {
-  .car-list-view .car-list-content {
+  .animal-list-view .animal-list-content {
     width: 100%;
   }
 }
 
-.car-list-view .car-list-content .car-name {
+.animal-list-view .animal-list-content .animal-name {
   display: block;
   font-size: 20px;
   font-weight: 500;
   color: var(--bs-secondary)
 }
-.car-list-view .car-list-content .price-box span.new-price{
+.animal-list-view .animal-list-content .price-box span.new-price{
   font-size:20px;
 }
 
-.car-list-view .car-list-content .inline-group.has-sup,
-.car-list-view .car-list-content .detail-btn a {
+.animal-list-view .animal-list-content .inline-group.has-sup,
+.animal-list-view .animal-list-content .detail-btn a {
   font-size: 14px;
 }
 
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .car-list-view.with-sidebar .car-list-img {
+  .animal-list-view.with-sidebar .animal-list-img {
     width: 250px;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .car-list-view.with-sidebar .car-list-content {
+  .animal-list-view.with-sidebar .animal-list-content {
     width: calc(100% - 250px);
   }
 }
 
-.car-tab-nav {
+.animal-tab-nav {
   background-color: #f4f4f4;
 }
 
-.car-tab-nav li a.tab-btn {
+.animal-tab-nav li a.tab-btn {
   padding: 20px;
   text-align: center;
   width: auto;
@@ -1413,7 +1413,7 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   color: var(--bs-secondary)
 }
 
-.car-tab-nav li a.active {
+.animal-tab-nav li a.active {
   background-color: var(--bs-primary);
   color: #fff;
 }
@@ -1524,35 +1524,35 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   height: 150px;
 }
 
-/* ---Single Car--- */
-.single-car-img.with-border , .single-service-img.with-border {
+/* ---Single animal--- */
+.single-animal-img.with-border , .single-service-img.with-border {
   -webkit-box-shadow: 0px 5px 2px -1px rgb(255, 233, 233);
   box-shadow: 0px 5px 2px -1px rgb(255, 233, 233);
   border: 1px solid #dee2e6;
 }
 
-.single-car-slider,.single-service-slider, .single-habitat-slider {
+.single-animal-slider,.single-service-slider, .single-habitat-slider {
   border: 1px solid #dee2e6;
   margin-bottom: 10px;
 }
 
-.single-car-slider .single-img,.single-service-slider .single-img,.single-habitat-slider .single-img{
+.single-animal-slider .single-img,.single-service-slider .single-img,.single-habitat-slider .single-img{
   display: block;
 }
 
 
-.single-car-content>.title, .single-service-content>.title ,.single-habitat-content>.title {
+.single-animal-content>.title, .single-service-content>.title ,.single-habitat-content>.title {
   color: #444444;
   font-size: 30px;
 }
 
-.single-car-content .short-desc , .single-service-content .short-desc,.single-habitat-content .short-desc  {
+.single-animal-content .short-desc , .single-service-content .short-desc,.single-habitat-content .short-desc  {
   color: #6c788c;
   line-height: 30px;
   font-weight: 300;
 }
 
-.single-car-content .car-category {
+.single-animal-content .animal-category {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1564,61 +1564,61 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 @media (max-width: 479px) {
-  .single-car-content .car-category {
+  .single-animal-content .animal-category {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 }
 
-.single-car-content .car-category .title,
-.single-car-content .car-options .title {
+.single-animal-content .animal-category .title,
+.single-animal-content .animal-options .title {
   margin-right: 10px;
   color: #5f5f5f;
   font-weight: 500;
   font-size: 16px;
 }
 
-.single-car-content .car-category ul li,
-.single-car-content .car-options ul li {
+.single-animal-content .animal-category ul li,
+.single-animal-content .animal-options ul li {
   display: inline-block;
 }
 
-.single-car-content .car-category ul li * {
+.single-animal-content .animal-category ul li * {
   color: var(--bs-primary);
 }
 
-.single-car-content .car-category ul li *:hover {
+.single-animal-content .animal-category ul li *:hover {
   color: var(--bs-primary);
 }
 
-.single-car-content .car-options ul li {
+.single-animal-content .animal-options ul li {
   padding-right: 15px;
   padding-bottom: 10px;
 }
 
-.single-car-content .car-options ul li * {
+.single-animal-content .animal-options ul li * {
   font-size: 15px;
   color: var(--bs-secondary);
 }
 
-.single-car-content .car-options ul li i {
+.single-animal-content .animal-options ul li i {
   font-size: 22px;
   margin-right: 5px;
 }
 
-.single-car-content .car-options ul li *:hover {
+.single-animal-content .animal-options ul li *:hover {
   color: var(--bs-primary) !important;
 }
 
-.single-car-thumbs .swiper-slide, .single-service-thumbs .swiper-slide {
+.single-animal-thumbs .swiper-slide, .single-service-thumbs .swiper-slide {
   border: 1px solid #dee2e6;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
-.single-car-thumbs .swiper-slide:hover, .single-service-thumbs .swiper-slide:hover {
+.single-animal-thumbs .swiper-slide:hover, .single-service-thumbs .swiper-slide:hover {
   opacity: 1;
 }
 
@@ -1969,10 +1969,10 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 /*----------------------------------------*/
 /*  12. Cars shop
 /*----------------------------------------*/
-.car-topbar {
+.animal-topbar {
   border-bottom: 1px solid #48536536;
 }
-.car-topbar>ul {
+.animal-topbar>ul {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1980,15 +1980,15 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: flex-end;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: right;
 }
 
 @media (max-width: 575.98px) {
-  .car-topbar>ul {
+  .animal-topbar>ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -1998,63 +1998,63 @@ O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:71:"/Ap
 }
 
 @media (max-width: 575.98px) {
-  .car-topbar>ul>li:not(:last-child) {
+  .animal-topbar>ul>li:not(:last-child) {
     margin-bottom: 20px;
   }
 }
 
-.car-topbar>ul li a {
+.animal-topbar>ul li a {
   color: #6c6c6c;
 }
 
-.car-topbar>ul li.car-view-wrap {
+.animal-topbar>ul li.animal-view-wrap {
   border: 1px solid #dee2e6;
   padding: 10px;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .car-topbar>ul li.car-view-wrap {
+  .animal-topbar>ul li.animal-view-wrap {
     padding: 15px 20px;
   }
 }
 
-.car-topbar>ul li.car-view-wrap>ul li:not(:last-child) {
+.animal-topbar>ul li.animal-view-wrap>ul li:not(:last-child) {
   padding-right: 20px;
 }
 
-.car-topbar>ul li.car-view-wrap>ul li a.active {
+.animal-topbar>ul li.animal-view-wrap>ul li a.active {
   color: var(--bs-primary);
 }
 
-.car-topbar>ul li.page-count {
+.animal-topbar>ul li.page-count {
   border-radius: 30px;
   padding: 20px 25px 20px 0;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .car-topbar>ul li.page-count {
+  .animal-topbar>ul li.page-count {
     padding: 15px 20px;
   }
 }
 
-.car-topbar>ul li.page-count span {
+.animal-topbar>ul li.page-count span {
   color: var(--bs-primary);
 }
 
-.car-topbar>ul li.sort {
+.animal-topbar>ul li.sort {
   padding-left: 15px;
   padding-right: 15px;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .car-topbar>ul li.sort {
+  .animal-topbar>ul li.sort {
     padding-top: 5px;
     padding-bottom: 5px;
   }
 }
 
 
-.car-topbar>ul li.sort .nice-select .list {
+.animal-topbar>ul li.sort .nice-select .list {
   width: auto;
   left: auto;
   right: 0;
@@ -2432,58 +2432,55 @@ form#contact #map iframe {
 /*----------------------*/
 /* 15. Car Card - Grid 
 /*----------------------*/
-.car-item {
+.animal-item {
   margin-bottom: 30px;
   margin-top: 10px;
 }
 
-.car-inner {
+.animal-inner {
   background: #fff;
   transition: 0.3s ease-in;
   border-radius: 10px;
   border: 1px solid #f0f0f0;
 }
 
-.car-inner:hover {
+.animal-inner:hover {
   -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 
 }
 
-.car-inner:hover .price,
-.car-inner:hover .year {
-  color: var(--bs-primary);
-}
 
-.car-inner .car-header {
+
+.animal-inner .animal-header {
   position: relative;
   overflow: hidden;
   text-align: center;
   padding: 10px;
 }
 
-.car-inner .car-content .car-content-top {
+.animal-inner .animal-content .animal-content-top {
 
   padding: 24px 20px 10px 20px;
 }
 
-.car-inner .car-content .car-content-middle {
+.animal-inner .animal-content .animal-content-middle {
   border: 0;
   padding: 15px 20px 19px 20px;
 }
 
-.car-content-bottom {
+.animal-content-bottom {
   border-top: 1px solid #f0f0f0;
   padding: 14px 20px 15px 20px;
   display: flex;
 }
 
-.car-inner .car-content .car-content-top-right {
+.animal-inner .animal-content .animal-content-top-right {
   float: right;
   margin-bottom: 10px;
 }
 
-.car-inner .car-content .vtitle {
+.animal-inner .animal-content .vtitle {
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -2506,7 +2503,7 @@ form#contact #map iframe {
   padding-right: 5px;
 }
 
-.car-inner .car-content .car-content-middle .inline-item {
+.animal-inner .animal-content .animal-content-middle .inline-item {
   padding-right: 20px;
   white-space: nowrap;
 }
@@ -2526,15 +2523,15 @@ form#contact #map iframe {
   color: var(--bs-secondary);
 }
 
-.car-inner .car-header .car-img {
+.animal-inner .animal-header .animal-img {
   margin-top: 30px
 }
 
-.car-img {
+.animal-img {
   min-height: 150px;
 }
 
-.car-img img {
+.animal-img img {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -2544,21 +2541,26 @@ form#contact #map iframe {
   object-fit: cover;
 }
 
-.car-inner .car-header .vprice_wrap {
+.animal-inner .animal-header .vprice_wrap {
   position: absolute;
   display: flex;
-  background: #f5f5f59e;
-  border-radius: 4px;
+  background: var(--bs-primary);
+  border-radius: 50px;
   padding: 5px 10px;
   font-weight: 500;
-  margin: 10px;
   width: fit-content;
   float: left;
   z-index: 2;
-  color: var(--bs-secondary)
+  color: var(--bs-white);
+  left:3px;
+  top:5px;
+}
+.animal-inner .animal-header .vprice_wrap:hover{
+  background: var(--bs-white);
+  color: var(--bs-primary);
 }
 
-.car-inner .car-header .year_wrap {
+.animal-inner .animal-header .year_wrap {
   float: right;
 }
 
@@ -2669,4 +2671,4 @@ img {
 
 .copyright-text a:hover {
   color: var(--bs-primary);
-}";s:6:"digest";s:32:"abd26cfd8863a5ab2db409b7b4e6ae3a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:5:{i:0;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:92:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/left-arrow.png";s:10:"publicPath";s:88:"/assets/front-assets/images/slider/arrow/left-arrow-d6a63f556c0e3f362303d81bd326087a.png";s:23:"publicPathWithoutDigest";s:55:"/assets/front-assets/images/slider/arrow/left-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"d6a63f556c0e3f362303d81bd326087a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:47:"front-assets/images/slider/arrow/left-arrow.png";}i:1;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:93:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/right-arrow.png";s:10:"publicPath";s:89:"/assets/front-assets/images/slider/arrow/right-arrow-5dc9ea88bf49002eecadba632edb13bb.png";s:23:"publicPathWithoutDigest";s:56:"/assets/front-assets/images/slider/arrow/right-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"5dc9ea88bf49002eecadba632edb13bb";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:48:"front-assets/images/slider/arrow/right-arrow.png";}i:2;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:3;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:4;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:26:"front-assets/css/front.css";}
+}";s:6:"digest";s:32:"581f7107c7e9b8857660f8c13949c45d";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:5:{i:0;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:92:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/left-arrow.png";s:10:"publicPath";s:88:"/assets/front-assets/images/slider/arrow/left-arrow-d6a63f556c0e3f362303d81bd326087a.png";s:23:"publicPathWithoutDigest";s:55:"/assets/front-assets/images/slider/arrow/left-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"d6a63f556c0e3f362303d81bd326087a";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:47:"front-assets/images/slider/arrow/left-arrow.png";}i:1;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:93:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/slider/arrow/right-arrow.png";s:10:"publicPath";s:89:"/assets/front-assets/images/slider/arrow/right-arrow-5dc9ea88bf49002eecadba632edb13bb.png";s:23:"publicPathWithoutDigest";s:56:"/assets/front-assets/images/slider/arrow/right-arrow.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"5dc9ea88bf49002eecadba632edb13bb";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:48:"front-assets/images/slider/arrow/right-arrow.png";}i:2;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:3;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}i:4;O:41:"Symfony\Component\AssetMapper\MappedAsset":12:{s:10:"sourcePath";s:98:"/Applications/MAMP/htdocs/Arcadia-Zoo/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:10:"publicPath";s:94:"/assets/front-assets/images/testimonial/user/inner-icon/1-8025fbe139cc596e7f7a9aa86400b956.png";s:23:"publicPathWithoutDigest";s:61:"/assets/front-assets/images/testimonial/user/inner-icon/1.png";s:15:"publicExtension";s:3:"png";s:7:"content";N;s:6:"digest";s:32:"8025fbe139cc596e7f7a9aa86400b956";s:13:"isPredigested";b:0;s:8:"isVendor";b:0;s:55:" Symfony\Component\AssetMapper\MappedAsset dependencies";a:0:{}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:53:"front-assets/images/testimonial/user/inner-icon/1.png";}}s:59:" Symfony\Component\AssetMapper\MappedAsset fileDependencies";a:0:{}s:60:" Symfony\Component\AssetMapper\MappedAsset javaScriptImports";a:0:{}s:11:"logicalPath";s:26:"front-assets/css/front.css";}

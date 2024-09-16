@@ -195,14 +195,14 @@
 
 
 	/* --- Car Slider--- */
-	if ($('.car-slider').elExists()) {
-		var mySwiper = new Swiper('.car-slider', {
+	if ($('.animal-slider').elExists()) {
+		var mySwiper = new Swiper('.animal-slider', {
 			slidesPerView: 4,
 			spaceBetween: 30,
 			loop: true,
 			navigation: {
-				nextEl: '.car-button-next',
-				prevEl: '.car-button-prev',
+				nextEl: '.animal-button-next',
+				prevEl: '.animal-button-prev',
 			},
 			breakpoints: {
 				320: {
@@ -265,8 +265,8 @@
 
 
 	/* ---Car Details Horizontal Slider--- */
-	if ($('.single-car-slider').elExists()) {
-		var singleProduct = new Swiper('.single-car-thumbs', {
+	if ($('.single-animal-slider').elExists()) {
+		var singleProduct = new Swiper('.single-animal-thumbs', {
 			spaceBetween: 10,
 			slidesPerView: 4,
 			observer: true,
@@ -299,7 +299,7 @@
 				}
 			}
 		});
-		var singleProduct = new Swiper('.single-car-slider', {
+		var singleProduct = new Swiper('.single-animal-slider', {
 			autoplay: false,
 			observer: true,
 			observeParents: true,

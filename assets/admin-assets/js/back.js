@@ -57,8 +57,8 @@
     $('.main-header .dropdown-menu').toggleClass('show');
   });
 
-  $(".car-dropdown .dropdown-toggle").click(function (event) {
-    $('.car-dropdown .dropdown-menu').toggleClass('show');
+  $(".animal-dropdown .dropdown-toggle").click(function (event) {
+    $('.animal-dropdown .dropdown-menu').toggleClass('show');
   });
 
   /* Closes  dropdown on click outside the conatainer*/

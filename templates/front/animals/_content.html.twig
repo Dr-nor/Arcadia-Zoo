@@ -1,0 +1,166 @@
+<div class="tab-content text-charcoal pt-8">
+    <div class="page-count">
+    <span>{{ total }}</span> Résultats trouvés                             
+    </div>
+    <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
+        <div class="animal-grid-view row">
+            {% for animal in animals.data %}
+                <div class="col-xl-4 col-sm-6 ">
+                    <div class="animal-item">
+                        <div class="animal-inner">
+                            <a class='animal-link' href="{{ path('animal_details', {"slug": animal.slug }) }}"></a>
+                            <div class="animal-header">
+                                <div class="vprice_wrap">
+                                        <div class="price">
+                                            {{ animal.status }}
+
+                                        </div>
+                                    </div>
+                                    <a href="{{ path('animal_details', {"slug": animal.slug }) }}">
+                                        <div class="animal-img">
+                                            {% if animal.images|length > 0 %}
+                                                <img
+                                            src="{{ asset('uploads/animals/' ~ animal.images[0].name) }}" alt="{{ animal.name }}" />
+                                                {% else %}
+                                                <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                </div>
+                            <div class="animal-content">
+                                <div class="animal-content-top">
+                                    <div class="animal-content-top-left">
+                                        <a href="{{ path('animal_details', {"slug": animal.slug }) }}" class="vtitle">
+                                            {{ animal.name }}
+
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="animal-content-middle">
+                                    <div class="inline-group">
+                                    <div class="inline-item">
+                                            <span class="attr">
+                                            <b>Habitat:</b>                                                                                                                                                      
+                                            </span>
+                                            <span>
+                                                {{ animal.HabitatId.title  }}                                                                
+                                            </span>
+                                        </div>
+                                        <div class="inline-item">
+                                            <span class="attr">
+                                            <b>Race:  </b>                                                                                                                                                      
+                                            </span>
+                                            <span>
+                                                {{ animal.RaceId.name }}
+                                                Ans                                                                   
+                                            </span>
+                                        </div>
+                                        
+                                        
+                                        <div class="inline-item">
+                                            <span class="attr">
+                                    <b>Poids :  </b>                                                                                           
+                                                                                                             
+                                            </span>
+                                            <span>
+                                                {{ animal.weight }}
+
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+
+                                </div>
+                              
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="list-view" role="tabpanel" aria-labelledby="list-view-tab">
+        <div class="animal-list-view row">
+            {% for animal in animals.data %}
+                <div class="col-12">
+                    <div class="animal-list-item mb-2">
+                        <div class="animal-list-img">
+                            <a href="{{ path('animal_details', {"slug": animal.slug }) }}">
+                                <div class="single-animal-img img-zoom-effect">
+                                    {% if animal.images|length > 0 %}
+                                        <img
+                                    src="{{ asset('uploads/animals/' ~ animal.images[0].name) }}" alt="{{ animal.name }}" />
+                                        {% else %}
+                                        <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                    {% endif %}
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="animal-list-content">
+                            <a class="animal-name pb-2" href="{{ path('animal_details', {"slug": animal.slug }) }}">
+                                {{ animal.name }}
+
+                            </a>
+                            <p class="text">
+                                {{ animal.description|striptags|slice(0, 70) ~ '...'  }}
+                            </p>
+                            
+
+                         
+                            <div class="animal-content-bottom">
+
+                            
+
+                                <div class="detail-btn">
+                                    <a class="text-primary" href="{{ path('animal_details', {"slug": animal.slug }) }}">
+                                        Voir plus                                                                                                                                                                        
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% set queryParams = app.request.query.all %}
+{% set queryString = queryParams|filter((v, k) => k != "page" and k != "ajax")|url_encode %}
+
+
+<ul class="pagination">
+    <li class="{{ (page == 1) ? 'disabled' : '' }} page-item">
+        <a href="?page=1&{{queryString}}" class="page-link">
+            <i class="bi bi-chevron-bar-left"></i>
+        </a>
+    </li>    
+    <li class="{{ (page == 1) ? 'disabled' : '' }} page-item">
+        <a href="{{ (page > 1) ? '?page=' ~ (page - 1) : '' }}&{{queryString}}" class="page-link">
+            <i class="bi bi-chevron-left"></i>
+        </a>
+    </li>
+    {% set pages = (total / limit)|round(0, 'ceil') %}
+    {% for item in 1..pages %}
+        <li class="{{ (page == item) ? 'active' : '' }} page-item">
+            <a href="?page={{ item }}&{{queryString}}" class="page-link">{{ item }}</a>
+        </li>
+    {% endfor %}
+    <li class="{{ (page == pages) ? 'disabled' : '' }} page-item">
+        <a href="{{ (page < pages) ? '?page=' ~ (page + 1) : '' }}&{{queryString}}" class="page-link">
+            <i class="bi bi-chevron-right"></i>
+        </a>
+    </li>
+    <li class="{{ (page == pages) ? 'disabled' : '' }} page-item">
+        <a href="?page={{ pages }}&{{queryString}}" class="page-link">
+            <i class="bi bi-chevron-bar-right"></i>
+        </a>
+    </li>
+
+</ul>
