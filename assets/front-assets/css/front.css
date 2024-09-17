@@ -1795,12 +1795,13 @@
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.testimonial-item.swiper-slide-active:before {
-  content: url("../images/testimonial/user/inner-icon/1.png");
+/* .testimonial-item.swiper-slide-active:before {
+  content : '\f1b0';
+  font-family:"FontAwesome";
   position: absolute;
   bottom: -6px;
   right: 0;
-}
+} */
 
 .testimonial-item .user-info {
   display: -webkit-box;

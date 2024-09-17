@@ -548,7 +548,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.y47HmHv"/>
+      <argument type="service" id=".service_locator.7qacYUT"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3476,7 +3476,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.y47HmHv"/>
+      <argument type="service" id=".service_locator.7qacYUT"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8643,20 +8643,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WfXzZIK" method="withContext"/>
     </service>
-    <service id=".service_locator.4g8Ecex" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.za2P_c4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="serviceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
         <argument key="habitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
         <argument key="animalRepository" type="service_closure" id="App\Repository\AnimalRepository"/>
+        <argument key="testimonialRepository" type="service_closure" id="App\Repository\TestimonialRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.4g8Ecex.App\Controller\FrontController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.za2P_c4.App\Controller\FrontController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\FrontController::index()"/>
       <argument>App\Controller\FrontController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.4g8Ecex" method="withContext"/>
+      <factory service=".service_locator.za2P_c4" method="withContext"/>
     </service>
     <service id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HabitatsController::index()"/>
@@ -8707,7 +8708,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.HQ6Z48r" method="withContext"/>
     </service>
-    <service id=".service_locator.y47HmHv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.7qacYUT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8755,7 +8756,7 @@
         <argument key="App\Controller\Admin\UserController::delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
         <argument key="App\Controller\AnimalsController::index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController::details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
-        <argument key="App\Controller\FrontController::index" type="service_closure" id=".service_locator.4g8Ecex.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\FrontController::index" type="service_closure" id=".service_locator.za2P_c4.App\Controller\FrontController::index()"/>
         <argument key="App\Controller\HabitatsController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
         <argument key="App\Controller\HabitatsController::details" type="service_closure" id=".service_locator.qNZ4ueE.App\Controller\HabitatsController::details()"/>
         <argument key="App\Controller\OpeningController::openingTimeShow" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\OpeningController::openingTimeShow()"/>
@@ -8805,7 +8806,7 @@
         <argument key="App\Controller\Admin\UserController:delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
         <argument key="App\Controller\AnimalsController:index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController:details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
-        <argument key="App\Controller\FrontController:index" type="service_closure" id=".service_locator.4g8Ecex.App\Controller\FrontController::index()"/>
+        <argument key="App\Controller\FrontController:index" type="service_closure" id=".service_locator.za2P_c4.App\Controller\FrontController::index()"/>
         <argument key="App\Controller\HabitatsController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
         <argument key="App\Controller\HabitatsController:details" type="service_closure" id=".service_locator.qNZ4ueE.App\Controller\HabitatsController::details()"/>
         <argument key="App\Controller\OpeningController:openingTimeShow" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\OpeningController::openingTimeShow()"/>
@@ -11092,7 +11093,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.y47HmHv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.7qacYUT"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -11172,7 +11173,7 @@
     <service id=".service_locator.OS8hQ7u" alias=".service_locator.nLtHlEw"/>
     <service id=".service_locator.8whD9T7" alias=".service_locator.bbmnh0J"/>
     <service id=".service_locator.tFDNzcu" alias=".service_locator.WfXzZIK"/>
-    <service id=".service_locator.w0sADhj" alias=".service_locator.4g8Ecex"/>
+    <service id=".service_locator.ajTm75a" alias=".service_locator.za2P_c4"/>
     <service id=".service_locator.e2p_HkI" alias=".service_locator.qNZ4ueE"/>
     <service id=".service_locator...2Ndi3" alias=".service_locator.mXDaS5b"/>
     <service id=".service_locator.b491maD" alias=".service_locator.QaaoWjx"/>

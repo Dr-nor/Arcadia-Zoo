@@ -361,5 +361,147 @@
             </div>
         </div>
         <!-- Animals Area End  -->
+
+           <!-- Begin Testimonial Area -->
+           <div class="testimonial-area  section-space-y-axis-50">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-12">
+                       <div class="title-box">
+                           <h2>
+                               Témoignages                       
+                           </h2>
+                           <p class="text-primary">
+                               Ce que disent nos clients                          
+                           </p>
+                       </div>
+                       <div class="testimonial-swiper">
+                           <div class="swiper-container testimonial-slider">
+                               <div class="swiper-wrapper">
+                                   {% for testimonial in testimonials %}
+                                   <div class="swiper-slide testimonial-item">
+                                       <div class="user-info mb-3">
+                                           <div class="user-shape-wrap">
+                                               <div class="user-shape">
+                                                   <img src="{{ asset('front-assets/images/testimonial/user/shape/1.png') }}" alt="User Image" />
+                                               </div>
+                                               <div class="user-img">
+                                                   <img src="{{ asset('front-assets/images/testimonial/user/user.png') }}" alt="User Image" />
+                                               </div>
+                                           </div>
+                                           <div class="user-content">
+                                               <h4 class="user-name mb-1">
+                                                   {{testimonial.Pseudonym}}                                              
+                                               </h4>
+                                               {% if testimonial.note|length  >0 %}
+                                               <div class="rating-box">
+                                                   <ul>
+                                                       {% for i in 1.. testimonial.note %}
+                                                       <li>
+                                                           <i class="bi bi-star-fill"></i>
+                                                       </li>
+                                                       {% endfor %}
+                                                       
+                                                      
+                                                   </ul>
+                                               </div>
+                                                   
+                                               {% endif %}
+                                               
+                                           </div>
+                                       </div>
+                                       <p class="user-comment mb-6">
+                                          {{testimonial.comment}}                               
+                                       </p>
+
+                                   </div>
+                                   {% endfor %}
+                                   
+                               </div>
+                               <!-- Add Pagination -->
+                               <div class="testimonial-pagination with-bg"></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- Testimonial Area End  -->
+
+       <!-- Begin Feedback Form Area -->
+      
+       <div class="section-space-y-axis-50">
+           <div class="container">
+               <div class="row">
+                   <div class="flash-wrapper my-2">
+                   {% for label, messages in app.flashes %}
+                       {% for message in messages %}
+                           <div class="alert alert-{{ label }} alert-dismissible mt-4" role="alert">
+                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"><i class="bi bi-x"></i></button>
+                               <div class="alert-message">
+                                   {{ message|raw }}
+                               </div>
+                           </div>
+                       {% endfor %}
+                   {% endfor %}
+                   </div>
+                   <div class="col-lg-12">
+                       <div class="title-box">
+                           <h2>
+                               Laisser un témoignage                            
+                           </h2>
+                           <p class="text-primary">
+                               Votre adresse e-mail et votre numéro de téléphone ne seront pas publiés.                                                            
+                           </p>
+                       </div>
+                       
+
+                      
+                       {{ form_start(form , {'attr': {'class': 'feedback-form pt-8'}}) }}
+                           <div class="rating">
+                               <span>
+                                   Évaluation                                                                      
+                               </span>
+                               <input type="radio" id="star1" name="{{ field_name(form.note) }}" value="5" />
+                               <label class="star" for="star1" title="Awesome" aria-hidden="true"></label>
+                               <input type="radio" id="star2" name="{{ field_name(form.note) }}" value="4" />
+                               <label class="star" for="star2" title="Great" aria-hidden="true"></label>
+                               <input type="radio" id="star3" name="{{ field_name(form.note) }}" value="3" />
+                               <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                               <input type="radio" id="star4" name="{{ field_name(form.note) }}" value="2" />
+                               <label class="star" for="star4" title="Good" aria-hidden="true"></label>
+                               <input type="radio" id="star5" name="{{ field_name(form.note) }}" value="1" />
+                               <label class="star" for="star5" title="Bad" aria-hidden="true"></label>
+                           </div>
+                           <div class="group-input">
+                               <div class="form-field me-md-6 mb-6 mb-md-0">
+                                   {{ form_widget(form.pseudonym, {'attr': {'class': 'input-field', "placeholder":"Nom*"}}) }} 
+                               </div>
+                               <div class="form-field me-md-6 mb-6 mb-md-0">
+                                   {{ form_widget(form.email, {'attr': {'class': 'input-field', "placeholder":"Email*"}}) }} 
+                               </div>
+                               <div class="form-field  mb-6 mb-md-0">
+                                   {{ form_widget(form.phone, {'attr': {'class': 'input-field', "placeholder":"Numéro de téléphone"}}) }} 
+                               </div>
+                           </div>
+                           <div class="form-field  mt-6">
+                               {{ form_widget(form.comment, {'attr': {'class': 'textarea-field', "placeholder":"Décrivez votre expérience..."}}) }} 
+
+                           </div>
+                           <div class="button-wrap mt-8">
+                               <button class="btn btn-custom-size lg-size btn-primary">{{ button_label|default('Envoyer') }}</button>
+                           </div>
+
+                           
+                       {{ form_end(form) }}
+
+                           </div>
+                       </div>
+
+                   </div>
+               </div>
+           </div>
+       </div>
+   <!-- Feedback Form Area End  -->
     </section>
 {% endblock %}
