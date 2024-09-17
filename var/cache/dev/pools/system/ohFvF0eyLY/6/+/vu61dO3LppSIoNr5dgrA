@@ -1,0 +1,3 @@
+<?php //e4f81139d979fff49833ed1fdd654e64
+
+return [PHP_INT_MAX, 'front-assets/js/plugins/parallax.min.js'];

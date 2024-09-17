@@ -1,0 +1,27 @@
+<div class="widget-item">
+    <h3 class="widget-title mb-5">
+        horaires d'ouverture 
+            
+    </h3>
+    <div class="pb-2">
+        <ul>
+            {% for opening in openings %}
+            <li class="d-flex justify-content-between">
+            <div>
+                {{opening.weekday}}         
+            </div>
+            <div>
+                {% if opening.is_closed %}
+                    Fermé
+                {% else %}
+                <span>{{opening.StartTime|date('H:i')}}<span> <span>- {{opening.EndTime|date('H:i')}}</span>
+                {% endif %}
+            </div>
+        </li>
+                
+            {% endfor %}
+           
+           
+        </ul>
+    </div>
+</div>

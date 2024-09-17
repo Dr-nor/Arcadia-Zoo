@@ -1,0 +1,3 @@
+<?php //1b87ed7fdbac618c06e6b18038af1729
+
+return [PHP_INT_MAX, 'front-assets/css/plugins/jquery-ui.min.css'];

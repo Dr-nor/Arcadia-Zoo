@@ -1,3 +1,0 @@
-<?php //1663e74302d1a2b0e6b89dc16f81ed64
-
-return [PHP_INT_MAX, 'admin-assets/css/plugins/datatables.css'];

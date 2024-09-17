@@ -1,0 +1,74 @@
+{% extends 'front/layouts/base.html.twig' %}
+{% block body %}
+    <section class="services-page">
+        <div class="breadcrumb-area breadcrumb-height overlay" data-bg-image="{{ asset('front-assets/images/breadcrumb/bg/1.jpg') }}">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-item text-white">
+                            <h2 class="breadcrumb-heading">
+                                Nos services                             
+                                                            
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a class="text-primary" href="/">
+                                        Accueil                                     
+                                                                                
+                                        <i class="bi bi-chevron-double-right"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    Services                          
+                                                                    
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="services-area section-space-y-axis-50">
+            <div class="container">
+                <div class="row">
+                    {% for service in services.data %}
+                        <div class="col-xl-4 col-sm-6 ">
+                            <div class="service-item">
+                                <div class="service-img img-hover-effect">
+                                    <a class="img-zoom-effect" href="{{ path('services_details', {"slug": service.slug }) }}">
+                                        {% if service.images|length > 0 %}
+                                            <img
+                                        src="{{ asset('uploads/services/' ~ service.images[0].name) }}" alt="{{ service.title }}" />
+                                            {% else %}
+                                            <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                        {% endif %}
+                                    </a>
+                                </div>
+                                <div class="service-content pt-6">
+
+                                    <h2 class="mb-3">
+                                        <a class="title">
+                                            {{ service.title }}
+                                        </a>
+                                    </h2>
+                                    <p class="short-desc mb-7">
+                                        {{ service.description|striptags|slice(0, 70) ~ '...' }}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                {% set path = 'services_index' %}
+                {% set pages = services.pages %}
+                {% set currentPage = services.page %}
+                {% include('front/layouts/pagination.html.twig') %}
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

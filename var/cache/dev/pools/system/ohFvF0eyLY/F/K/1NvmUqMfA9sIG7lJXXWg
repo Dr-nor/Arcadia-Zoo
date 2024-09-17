@@ -1,0 +1,3 @@
+<?php //ca861083234470f2a6f45f7d22f0ee5a
+
+return [PHP_INT_MAX, 'front-assets/images/slider/arrow/left-arrow.png'];

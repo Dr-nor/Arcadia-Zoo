@@ -1,0 +1,341 @@
+{% extends 'front/layouts/base.html.twig' %}
+{% block body %}
+    <section class="single-animal-page">
+
+        <div class="breadcrumb-area breadcrumb-height overlay" data-bg-image="{{ asset('front-assets/images/breadcrumb/bg/1.jpg') }}">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-item text-white">
+                            <h2 class="breadcrumb-heading">
+                                {{ animal.name }}
+                            </h2>
+                            <ul>
+                                <li>
+                                    <a class="text-primary" href="/">
+                                        Accueil 
+                                                                                                                        
+                                                                                
+                                        <i class="bi bi-chevron-double-right"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    {{ animal.name }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-animal-area section-space-top-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="single-animal-img">
+                            <div class="swiper-container single-animal-slider">
+                                <div class="swiper-wrapper">
+                                    {% for image in animal.images %}
+                                        <div class="swiper-slide">
+                                            <a href="{{ asset('uploads/animals/' ~ image.name) }}" class="single-img gallery-popup">
+                                                <img class="img-full" src="{{ asset('uploads/animals/' ~ image.name) }}" alt="{{ image.name }}" />
+                                            </a>
+                                        </div>
+                                    {% else %}
+                                        <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="animal-thumb-wrap pt-5 pt-lg-0 row">
+                            <div class="col-12">
+                                <div class="thumbs-arrow-holder p-0">
+                                    <div class="swiper-container single-animal-thumbs">
+                                        <div class="swiper-wrapper">
+                                            {% for image in animal.images %}
+                                                <a href="#" class="swiper-slide">
+                                                    <img class="img-full" src="{{ asset('uploads/animals/mini/300x300-' ~ image.name ) }}" alt="Thumbnail" />
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pt-9 pt-lg-0">
+                        <div class="single-animal-content">
+                            <div class="d-flex  justify-content-between">
+                                <div>
+                                    <h2 class="title mb-3">
+                                        {{ animal.name }}
+                                    </h2>
+                                    <p class="subtitl">
+                                        {{ animal.description }}
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                    Habitat :                                                             
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.HabitatId.title}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                    Race :                                                             
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.RaceId.name}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                Espérance de vie médiane:                                                            
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.medianlife}}</a></li> Ans
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                Taille:                                                             
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.size}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                Poids:                                                             
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.weight}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                    Nouriture:                                                             
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.diet}}</a></li>
+                                </ul>
+                            </div>
+                            <div class="animal-category pt-4">
+                                <span class="title">
+                                Statut de conservation:                                                           
+                                </span>
+                                <ul>
+                                    <li><a>{{ animal.status}}</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--    <div class="animal-tab-area section-space-y-axis-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="nav animal-tab-nav mb-10" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="tab-btn active" id="information-tab" data-bs-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="false">
+                                    Information                                 
+                                                                    
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content animal-tab-content">
+                            <div class="tab-pane fade show active" id="information" role="tabpanel" aria-labelledby="information-tab">
+                                <div class="animal-information-body">
+                                    <div class="d-flex flex-wrap mb-3">
+                                        {% if animal.medianlife %}
+                                            <div class="mb-5 w-50">
+                                                <div class="op-text">
+                                                Espérance de vie médiane:                                         
+                                                                                                
+                                                </div>
+                                                <div class="op-text-base">
+                                                    {{ animal.medianlife }}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if animal.size %}
+                                            <div class="mb-5 w-50">
+                                                <div class="op-text">
+                                                    Taille                                           
+                                                                                                
+                                                </div>
+                                                <div class="op-text-base">
+                                                    {{ animal.size }}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        {% if animal.weight %}
+                                            <div class="mb-5 w-50">
+                                                <div class="op-text">
+                                                    Poids
+                                                                                                    
+                                                </div>
+                                                <div class="op-text-base">
+                                                    {{ animal.weight }}
+                                                </div>
+                                            </div>
+
+                                        {% endif %}
+
+                                        {% if animal.diet %}
+                                            <div class="mb-5 w-50">
+                                                <div class="op-text">
+                                                Nouriture                                      
+                                                                                                
+                                                </div>
+                                                <div class="op-text-base">
+                                                    {{ animal.diet }}
+                                                </div>
+                                            </div>
+
+                                        {% endif %}
+                                        {% if animal.status %}
+                                            <div class="mb-5 w-50">
+                                                <div class="op-text">
+                                                Statut de conservation                                         
+                                                                                                    
+                                                </div>
+                                                <div class="op-text-base">
+                                                    {{ animal.status }}
+                                                </div>
+                                            </div>
+
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        -->
+
+        <!-- Begin Related animals Area -->
+        <div class="animals-related">
+            <div class="animal-area section-space-y-axis-50">
+                <div class="container">
+                    <div class="title-box">
+                        <h2>
+                            Animaux similaires                     
+                        </h2>
+                        <p class="text-primary">
+                            Ces animaux peuvent également vous intéresser                            
+                        </p>
+                    </div>
+                    <div class="row mt-10">
+                        <div class="col-lg-12">
+                            <div class="swiper-container animal-slider">
+                                <div class="swiper-wrapper text-heading">
+                                    {% for similarAnimal in similarAnimals %}
+                                        <div class="swiper-slide">
+                                            <div class="animal-item">
+                                                <div class="animal-inner">
+                                                    <a class='animal-link' href="{{ path('animal_details', {"slug": similarAnimal.slug }) }}"></a>
+                                                    <div class="animal-header">
+                                                        
+                                                        <a href="{{ path('animal_details', {"slug": similarAnimal.slug }) }}">
+                                                            <div class="animal-img">
+                                                                {% if similarAnimal.images|length > 0 %}
+                                                                    <img
+                                                                src="{{ asset('uploads/animals/' ~ similarAnimal.images[0].name) }}" alt="{{ similarAnimal.name }}" />
+                                                                    {% else %}
+                                                                    <img src="{{ asset('admin-assets/images/placeholder.webp') }}" />
+                                                                {% endif %}
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="animal-content">
+                                                        <div class="animal-content-top">
+                                                            
+                                                            <div class="animal-content-top-left">
+                                                                <a href="{{ path('animal_details', {"slug": similarAnimal.slug }) }}" class="vtitle">
+                                                                    {{ similarAnimal.name }}
+
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="animal-content-middle">
+                                                            <p class="description">
+                                                                {{ similarAnimal.description|striptags|slice(0, 70) ~ '...'   }}
+                                                            </p>
+                                                            <div class="inline-group">
+                                                                <div class="inline-item">
+                                                                    <span class="attr">
+                                                                <b>Habitat: </b>                                                                                                                                   
+                                                                    </span>
+                                                                    <span>
+                                                                        {{ similarAnimal.HabitatId.title  }}
+                                                                    </span>
+                                                                </div>
+                                                                <div class="inline-item">
+                                                                    <span class="attr">
+                                                                    <b> Race : </b>                                                     
+                                                                    </span>
+                                                                    <span>
+                                                                        {{ similarAnimal.RaceId.name }}
+
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="animal-content-bottom">
+                                                          
+
+                                                            <div class="detail-btn">
+                                                                <a class="text-primary" href="{{ path('animal_details', {"slug": similarAnimal.slug }) }}">
+                                                                    Voir plus                                             
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                            <div class="animal-slider-bottom d-flex justify-content-between">
+                                <!-- Add Arrows -->
+                                <div class="animal-button-wrap">
+                                    <div class="animal-button-prev">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </div>
+                                    <div class="animal-button-next">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Related Animal Area End -->
+
+    </section>
+{% endblock %}

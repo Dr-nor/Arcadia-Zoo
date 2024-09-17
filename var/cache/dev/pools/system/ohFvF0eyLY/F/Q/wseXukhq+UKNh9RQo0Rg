@@ -1,0 +1,3 @@
+<?php //f539633393bcebd422cde1b9b061a8cc
+
+return [PHP_INT_MAX, 'front-assets/css/front.css'];

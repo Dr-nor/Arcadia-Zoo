@@ -1,0 +1,3 @@
+<?php //ab84708a6d63c5cc206d7b900edcb4e6
+
+return [PHP_INT_MAX, 'global-assets/js/plugins/jquery-ui.min.js'];
