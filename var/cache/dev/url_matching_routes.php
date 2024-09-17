@@ -31,6 +31,7 @@ return [
         '/admin/user/new' => [[['_route' => 'app_user_new', '_controller' => 'App\\Controller\\Admin\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/animals' => [[['_route' => 'animal_index', '_controller' => 'App\\Controller\\AnimalsController::index'], null, null, null, true, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\FrontController::index'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\FrontController::contact'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/habitats' => [[['_route' => 'habitats_index', '_controller' => 'App\\Controller\\HabitatsController::index'], null, null, null, true, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
