@@ -42,53 +42,73 @@
                         </p>
                     </a>
             </li>
-            <li class="nav-item">
-                    <a href="{{ path('app_habitat_index') }}" class="nav-link">
-                        <i class="nav-icon  fal fa-tree"></i>
+
+            <li class="nav-item animal-dropdown dropdown" aria-expanded="true">
+                <a href="#" class="nav-link dropdown-toggle">
+                    <i class="nav-icon fal  fal fa-tree"></i>
+                    <p>
+                        Habitats
+                    </p>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="nav-item ml-4">
+                        <a href="{{ path('app_habitat_index') }}" class="nav-link">
+                            <p>
+                                Liste des habitats
+                            </p>
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item ml-4">
+                    <a href="{{ path('app_habitatreport_index') }}" class="nav-link">
                         <p>
-                            Habitats
+                            Rapports vétérinaire
                         </p>
                     </a>
+                </li>
+
+                </ul>
             </li>
+
 
             <li class="nav-item  animal-dropdown dropdown " aria-expanded="true">
-            <a href="#" class="nav-link dropdown-toggle">
-                <i class="nav-icon fal fa-paw"></i>
-                <p>
-                    Animaux
-                </p>
-            </a>
+                <a href="#" class="nav-link dropdown-toggle">
+                    <i class="nav-icon fal fa-paw"></i>
+                    <p>
+                        Animaux
+                    </p>
+                </a>
 
-            <ul class="dropdown-menu dropdown-menu-dark">
-                <li class="nav-item ml-4">
-                    <a href="{{ path('app_animal_index') }}" class="nav-link">
-                        <p>
-                            Liste des animaux
-                        </p>
-                    </a>
-                </li>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li class="nav-item ml-4">
+                        <a href="{{ path('app_animal_index') }}" class="nav-link">
+                            <p>
+                                Liste des animaux
+                            </p>
+                        </a>
+                    </li>
             
-                <li class="nav-item ml-4">
-                    <a href="{{ path('app_race_index') }}" class="nav-link">
+                    <li class="nav-item ml-4">
+                        <a href="{{ path('app_race_index') }}" class="nav-link">
+                            <p>
+                                Races
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ml-4">
+                    <a href="{{ path('app_dailydiet_index') }}" class="nav-link">
                         <p>
-                            Races
+                            Alimentation
                         </p>
                     </a>
                 </li>
                 <li class="nav-item ml-4">
-                <a href="{{ path('app_dailydiet_index') }}" class="nav-link">
-                    <p>
-                        Alimentation
-                    </p>
-                </a>
-            </li>
-            <li class="nav-item ml-4">
-                <a href="{{ path('app_vetreport_index') }}" class="nav-link">
-                    <p>
-                        Rapports vétérinaire
-                    </p>
-                </a>
-            </li>
+                    <a href="{{ path('app_vetreport_index') }}" class="nav-link">
+                        <p>
+                            Rapports vétérinaire
+                        </p>
+                    </a>
+                </li>
             </ul>
         </li>
 

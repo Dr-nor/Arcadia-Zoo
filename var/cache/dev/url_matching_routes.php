@@ -23,6 +23,8 @@ return [
         '/user/dashboard' => [[['_route' => 'app_user_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::user'], null, null, null, false, false, null]],
         '/admin/habitat' => [[['_route' => 'app_habitat_index', '_controller' => 'App\\Controller\\Admin\\HabitatController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/habitat/new' => [[['_route' => 'app_habitat_new', '_controller' => 'App\\Controller\\Admin\\HabitatController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/admin/habitatreport' => [[['_route' => 'app_habitatreport_index', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/admin/habitatreport/new' => [[['_route' => 'app_habitatreport_new', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/opening' => [[['_route' => 'app_opening_index', '_controller' => 'App\\Controller\\Admin\\OpeningController::index'], null, ['GET' => 0], null, true, false, null]],
         '/opening/new' => [[['_route' => 'app_opening_new', '_controller' => 'App\\Controller\\Admin\\OpeningController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/race' => [[['_route' => 'app_race_index', '_controller' => 'App\\Controller\\Admin\\RaceController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -84,72 +86,79 @@ return [
                             .'|/edit(*:330)'
                             .'|(*:338)'
                         .')'
-                        .'|habitat/(?'
-                            .'|([^/]++)(?'
-                                .'|(*:369)'
-                                .'|/edit(*:382)'
-                                .'|(*:390)'
+                        .'|habitat(?'
+                            .'|/(?'
+                                .'|([^/]++)(?'
+                                    .'|(*:372)'
+                                    .'|/edit(*:385)'
+                                    .'|(*:393)'
+                                .')'
+                                .'|delete/image/([^/]++)(*:423)'
                             .')'
-                            .'|delete/image/([^/]++)(*:420)'
+                            .'|report/([^/]++)(?'
+                                .'|(*:450)'
+                                .'|/edit(*:463)'
+                                .'|(*:471)'
+                            .')'
                         .')'
                         .'|race/([^/]++)(?'
-                            .'|(*:445)'
-                            .'|/edit(*:458)'
-                            .'|(*:466)'
+                            .'|(*:497)'
+                            .'|/edit(*:510)'
+                            .'|(*:518)'
                         .')'
                         .'|service/(?'
                             .'|([^/]++)(?'
-                                .'|(*:497)'
-                                .'|/edit(*:510)'
-                                .'|(*:518)'
+                                .'|(*:549)'
+                                .'|/edit(*:562)'
+                                .'|(*:570)'
                             .')'
-                            .'|delete/image/([^/]++)(*:548)'
+                            .'|delete/image/([^/]++)(*:600)'
                         .')'
                         .'|testimonial/([^/]++)(?'
-                            .'|(*:580)'
-                            .'|/edit(*:593)'
-                            .'|(*:601)'
+                            .'|(*:632)'
+                            .'|/edit(*:645)'
+                            .'|(*:653)'
                         .')'
                         .'|user/([^/]++)(?'
-                            .'|(*:626)'
-                            .'|/edit(*:639)'
-                            .'|(*:647)'
+                            .'|(*:678)'
+                            .'|/edit(*:691)'
+                            .'|(*:699)'
                         .')'
                         .'|vetreport/([^/]++)(?'
-                            .'|(*:677)'
-                            .'|/edit(*:690)'
-                            .'|(*:698)'
+                            .'|(*:729)'
+                            .'|/edit(*:742)'
+                            .'|(*:750)'
                         .')'
                     .')'
-                    .'|nimals/([^/]++)(*:723)'
+                    .'|nimals/([^/]++)(*:775)'
                 .')'
                 .'|/opening/([^/]++)(?'
-                    .'|(*:752)'
-                    .'|/edit(*:765)'
-                    .'|(*:773)'
+                    .'|(*:804)'
+                    .'|/edit(*:817)'
+                    .'|(*:825)'
                 .')'
                 .'|/employe/(?'
                     .'|dailydiet/([^/]++)(?'
-                        .'|(*:815)'
-                        .'|/edit(*:828)'
-                        .'|(*:836)'
+                        .'|(*:867)'
+                        .'|/edit(*:880)'
+                        .'|(*:888)'
                     .')'
                     .'|service/(?'
                         .'|([^/]++)(?'
-                            .'|(*:867)'
-                            .'|/edit(*:880)'
-                            .'|(*:888)'
+                            .'|(*:919)'
+                            .'|/edit(*:932)'
+                            .'|(*:940)'
                         .')'
-                        .'|delete/image/([^/]++)(*:918)'
+                        .'|delete/image/([^/]++)(*:970)'
                     .')'
                     .'|testimonial/([^/]++)(?'
-                        .'|(*:950)'
-                        .'|/edit(*:963)'
-                        .'|(*:971)'
+                        .'|(*:1002)'
+                        .'|/edit(*:1016)'
+                        .'|(*:1025)'
                     .')'
                 .')'
-                .'|/habitats/([^/]++)(*:999)'
-                .'|/services/([^/]++)(*:1025)'
+                .'|/habitats/([^/]++)(*:1054)'
+                .'|/services/([^/]++)(*:1081)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -168,42 +177,45 @@ return [
         317 => [[['_route' => 'app_dailydiet_show', '_controller' => 'App\\Controller\\Admin\\DailydietController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         330 => [[['_route' => 'app_dailydiet_edit', '_controller' => 'App\\Controller\\Admin\\DailydietController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         338 => [[['_route' => 'app_dailydiet_delete', '_controller' => 'App\\Controller\\Admin\\DailydietController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        369 => [[['_route' => 'app_habitat_show', '_controller' => 'App\\Controller\\Admin\\HabitatController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        382 => [[['_route' => 'app_habitat_edit', '_controller' => 'App\\Controller\\Admin\\HabitatController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        390 => [[['_route' => 'app_habitat_delete', '_controller' => 'App\\Controller\\Admin\\HabitatController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        420 => [[['_route' => 'app_habitat_delete_image', '_controller' => 'App\\Controller\\Admin\\HabitatController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        445 => [[['_route' => 'app_race_show', '_controller' => 'App\\Controller\\Admin\\RaceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        458 => [[['_route' => 'app_race_edit', '_controller' => 'App\\Controller\\Admin\\RaceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        466 => [[['_route' => 'app_race_delete', '_controller' => 'App\\Controller\\Admin\\RaceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        497 => [[['_route' => 'app_service_show', '_controller' => 'App\\Controller\\Admin\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        510 => [[['_route' => 'app_service_edit', '_controller' => 'App\\Controller\\Admin\\ServiceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        518 => [[['_route' => 'app_service_delete', '_controller' => 'App\\Controller\\Admin\\ServiceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        548 => [[['_route' => 'app_service_delete_image', '_controller' => 'App\\Controller\\Admin\\ServiceController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        580 => [[['_route' => 'app_testimonial_show', '_controller' => 'App\\Controller\\Admin\\TestimonialController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        593 => [[['_route' => 'app_testimonial_edit', '_controller' => 'App\\Controller\\Admin\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        601 => [[['_route' => 'app_testimonial_delete', '_controller' => 'App\\Controller\\Admin\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        626 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        639 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        647 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        677 => [[['_route' => 'app_vetreport_show', '_controller' => 'App\\Controller\\Admin\\VetreportController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        690 => [[['_route' => 'app_vetreport_edit', '_controller' => 'App\\Controller\\Admin\\VetreportController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        698 => [[['_route' => 'app_vetreport_delete', '_controller' => 'App\\Controller\\Admin\\VetreportController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        723 => [[['_route' => 'animal_details', '_controller' => 'App\\Controller\\AnimalsController::details'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-        752 => [[['_route' => 'app_opening_show', '_controller' => 'App\\Controller\\Admin\\OpeningController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        765 => [[['_route' => 'app_opening_edit', '_controller' => 'App\\Controller\\Admin\\OpeningController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        773 => [[['_route' => 'app_opening_delete', '_controller' => 'App\\Controller\\Admin\\OpeningController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        815 => [[['_route' => 'employe_dailydiet_show', '_controller' => 'App\\Controller\\Employe\\DailydietController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        828 => [[['_route' => 'employe_dailydiet_edit', '_controller' => 'App\\Controller\\Employe\\DailydietController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        836 => [[['_route' => 'employe_dailydiet_delete', '_controller' => 'App\\Controller\\Employe\\DailydietController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        867 => [[['_route' => 'employe_service_show', '_controller' => 'App\\Controller\\Employe\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        880 => [[['_route' => 'employe_service_edit', '_controller' => 'App\\Controller\\Employe\\ServiceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        888 => [[['_route' => 'employe_service_delete', '_controller' => 'App\\Controller\\Employe\\ServiceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        918 => [[['_route' => 'employe_service_delete_image', '_controller' => 'App\\Controller\\Employe\\ServiceController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        950 => [[['_route' => 'employe_testimonial_show', '_controller' => 'App\\Controller\\Employe\\TestimonialController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        963 => [[['_route' => 'employe_testimonial_edit', '_controller' => 'App\\Controller\\Employe\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        971 => [[['_route' => 'employe_testimonial_delete', '_controller' => 'App\\Controller\\Employe\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        999 => [[['_route' => 'habitats_details', '_controller' => 'App\\Controller\\HabitatsController::details'], ['slug'], null, null, false, true, null]],
-        1025 => [
+        372 => [[['_route' => 'app_habitat_show', '_controller' => 'App\\Controller\\Admin\\HabitatController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        385 => [[['_route' => 'app_habitat_edit', '_controller' => 'App\\Controller\\Admin\\HabitatController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        393 => [[['_route' => 'app_habitat_delete', '_controller' => 'App\\Controller\\Admin\\HabitatController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        423 => [[['_route' => 'app_habitat_delete_image', '_controller' => 'App\\Controller\\Admin\\HabitatController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        450 => [[['_route' => 'app_habitatreport_show', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        463 => [[['_route' => 'app_habitatreport_edit', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        471 => [[['_route' => 'app_habitatreport_delete', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        497 => [[['_route' => 'app_race_show', '_controller' => 'App\\Controller\\Admin\\RaceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        510 => [[['_route' => 'app_race_edit', '_controller' => 'App\\Controller\\Admin\\RaceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        518 => [[['_route' => 'app_race_delete', '_controller' => 'App\\Controller\\Admin\\RaceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        549 => [[['_route' => 'app_service_show', '_controller' => 'App\\Controller\\Admin\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        562 => [[['_route' => 'app_service_edit', '_controller' => 'App\\Controller\\Admin\\ServiceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        570 => [[['_route' => 'app_service_delete', '_controller' => 'App\\Controller\\Admin\\ServiceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        600 => [[['_route' => 'app_service_delete_image', '_controller' => 'App\\Controller\\Admin\\ServiceController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        632 => [[['_route' => 'app_testimonial_show', '_controller' => 'App\\Controller\\Admin\\TestimonialController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        645 => [[['_route' => 'app_testimonial_edit', '_controller' => 'App\\Controller\\Admin\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        653 => [[['_route' => 'app_testimonial_delete', '_controller' => 'App\\Controller\\Admin\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        678 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\Admin\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        691 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\Admin\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        699 => [[['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\Admin\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        729 => [[['_route' => 'app_vetreport_show', '_controller' => 'App\\Controller\\Admin\\VetreportController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        742 => [[['_route' => 'app_vetreport_edit', '_controller' => 'App\\Controller\\Admin\\VetreportController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        750 => [[['_route' => 'app_vetreport_delete', '_controller' => 'App\\Controller\\Admin\\VetreportController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        775 => [[['_route' => 'animal_details', '_controller' => 'App\\Controller\\AnimalsController::details'], ['slug'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        804 => [[['_route' => 'app_opening_show', '_controller' => 'App\\Controller\\Admin\\OpeningController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        817 => [[['_route' => 'app_opening_edit', '_controller' => 'App\\Controller\\Admin\\OpeningController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        825 => [[['_route' => 'app_opening_delete', '_controller' => 'App\\Controller\\Admin\\OpeningController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        867 => [[['_route' => 'employe_dailydiet_show', '_controller' => 'App\\Controller\\Employe\\DailydietController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        880 => [[['_route' => 'employe_dailydiet_edit', '_controller' => 'App\\Controller\\Employe\\DailydietController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        888 => [[['_route' => 'employe_dailydiet_delete', '_controller' => 'App\\Controller\\Employe\\DailydietController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        919 => [[['_route' => 'employe_service_show', '_controller' => 'App\\Controller\\Employe\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        932 => [[['_route' => 'employe_service_edit', '_controller' => 'App\\Controller\\Employe\\ServiceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        940 => [[['_route' => 'employe_service_delete', '_controller' => 'App\\Controller\\Employe\\ServiceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        970 => [[['_route' => 'employe_service_delete_image', '_controller' => 'App\\Controller\\Employe\\ServiceController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        1002 => [[['_route' => 'employe_testimonial_show', '_controller' => 'App\\Controller\\Employe\\TestimonialController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1016 => [[['_route' => 'employe_testimonial_edit', '_controller' => 'App\\Controller\\Employe\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1025 => [[['_route' => 'employe_testimonial_delete', '_controller' => 'App\\Controller\\Employe\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        1054 => [[['_route' => 'habitats_details', '_controller' => 'App\\Controller\\HabitatsController::details'], ['slug'], null, null, false, true, null]],
+        1081 => [
             [['_route' => 'services_details', '_controller' => 'App\\Controller\\ServicesController::details'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
