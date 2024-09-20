@@ -2,7 +2,6 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Animal;
 use App\Entity\Dailydiet;
 use App\Form\DailydietType;
 use App\Repository\DailydietRepository;

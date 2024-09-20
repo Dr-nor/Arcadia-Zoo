@@ -21,6 +21,7 @@ return [
         '/admin/dashboard' => [[['_route' => 'app_admin_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
         '/employe/dashboard' => [[['_route' => 'app_employe_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::employe'], null, null, null, false, false, null]],
         '/user/dashboard' => [[['_route' => 'app_user_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::user'], null, null, null, false, false, null]],
+        '/veterinary/dashboard' => [[['_route' => 'app_veterinary_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::veterinary'], null, null, null, false, false, null]],
         '/admin/habitat' => [[['_route' => 'app_habitat_index', '_controller' => 'App\\Controller\\Admin\\HabitatController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/habitat/new' => [[['_route' => 'app_habitat_new', '_controller' => 'App\\Controller\\Admin\\HabitatController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/habitatreport' => [[['_route' => 'app_habitatreport_index', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -50,6 +51,11 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/services' => [[['_route' => 'services_index', '_controller' => 'App\\Controller\\ServicesController::index'], null, null, null, true, false, null]],
+        '/veterinary/dailydiet' => [[['_route' => 'vet_dailydiet_index', '_controller' => 'App\\Controller\\Veterinary\\DailydietController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/veterinary/habitatreport' => [[['_route' => 'vet_habitatreport_index', '_controller' => 'App\\Controller\\Veterinary\\HabitatreportController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/veterinary/habitatreport/new' => [[['_route' => 'vet_habitatreport_new', '_controller' => 'App\\Controller\\Veterinary\\HabitatreportController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/veterinary/vetreport' => [[['_route' => 'vet_vetreport_index', '_controller' => 'App\\Controller\\Veterinary\\VetreportController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/veterinary/vetreport/new' => [[['_route' => 'vet_vetreport_new', '_controller' => 'App\\Controller\\Veterinary\\VetreportController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -159,6 +165,21 @@ return [
                 .')'
                 .'|/habitats/([^/]++)(*:1054)'
                 .'|/services/([^/]++)(*:1081)'
+                .'|/veterinary/(?'
+                    .'|dailydiet/([^/]++)(?'
+                        .'|(*:1126)'
+                    .')'
+                    .'|habitatreport/([^/]++)(?'
+                        .'|(*:1161)'
+                        .'|/edit(*:1175)'
+                        .'|(*:1184)'
+                    .')'
+                    .'|vetreport/([^/]++)(?'
+                        .'|(*:1215)'
+                        .'|/edit(*:1229)'
+                        .'|(*:1238)'
+                    .')'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -215,8 +236,18 @@ return [
         1016 => [[['_route' => 'employe_testimonial_edit', '_controller' => 'App\\Controller\\Employe\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         1025 => [[['_route' => 'employe_testimonial_delete', '_controller' => 'App\\Controller\\Employe\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
         1054 => [[['_route' => 'habitats_details', '_controller' => 'App\\Controller\\HabitatsController::details'], ['slug'], null, null, false, true, null]],
-        1081 => [
-            [['_route' => 'services_details', '_controller' => 'App\\Controller\\ServicesController::details'], ['slug'], null, null, false, true, null],
+        1081 => [[['_route' => 'services_details', '_controller' => 'App\\Controller\\ServicesController::details'], ['slug'], null, null, false, true, null]],
+        1126 => [
+            [['_route' => 'vet_dailydiet_show', '_controller' => 'App\\Controller\\Veterinary\\DailydietController::show'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => 'vet_dailydiet_delete', '_controller' => 'App\\Controller\\Veterinary\\DailydietController::delete'], ['id'], ['POST' => 0], null, false, true, null],
+        ],
+        1161 => [[['_route' => 'vet_habitatreport_show', '_controller' => 'App\\Controller\\Veterinary\\HabitatreportController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1175 => [[['_route' => 'vet_habitatreport_edit', '_controller' => 'App\\Controller\\Veterinary\\HabitatreportController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1184 => [[['_route' => 'vet_habitatreport_delete', '_controller' => 'App\\Controller\\Veterinary\\HabitatreportController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        1215 => [[['_route' => 'vet_vetreport_show', '_controller' => 'App\\Controller\\Veterinary\\VetreportController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1229 => [[['_route' => 'vet_vetreport_edit', '_controller' => 'App\\Controller\\Veterinary\\VetreportController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1238 => [
+            [['_route' => 'vet_vetreport_delete', '_controller' => 'App\\Controller\\Veterinary\\VetreportController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

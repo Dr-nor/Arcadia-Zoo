@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Repository\HabitatreportRepository;
 use App\Repository\HabitatRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\TestimonialRepository;
@@ -9,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
+use App\Repository\VetreportRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 class DashboardController extends AbstractController
@@ -38,8 +40,18 @@ class DashboardController extends AbstractController
     public function user(): Response
     {
         return $this->render('admin/dashboard/user-dashboard.html.twig', [
-            'controller_name' => 'EmployeDashboardController',
+            'controller_name' => 'UserDashboardController',
         
+        ]);
+    }
+
+    #[Route('/veterinary/dashboard', name: 'app_veterinary_dashboard')]
+    public function veterinary(VetreportRepository $vetreportRepository, HabitatreportRepository $habitatreportRepository): Response
+    {
+        return $this->render('admin/dashboard/veterinary-dashboard.html.twig', [
+            'controller_name' => 'VeterinaryDashboardController',
+            'animalrepports' =>  $vetreportRepository->findBy(['user'=> $this->getUser()]),
+            'habitatrepports' => $habitatreportRepository->findBy(['user'=> $this->getUser()]),
         ]);
     }
 }
