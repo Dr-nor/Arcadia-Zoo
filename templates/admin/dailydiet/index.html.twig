@@ -43,6 +43,7 @@
                             <th>Animal</th>
                             <th>Nourriture</th>
                             <th>Quantité</th>
+                            <th>Employé</th>
                             <th width="100">Actions</th>
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@
                             <td>{{ dailydiet.AnimalId.name }}</td>
                             <td>{{ dailydiet.diet }}</td>
                             <td>{{ dailydiet.qty }}</td>
+                            <td>{{ dailydiet.user ? dailydiet.user.fullname }}</td>
                             <td>
                                 <a class="text-info w-4 h-4" href="{{ path('app_dailydiet_edit', {'id': dailydiet.id}) }}"><i class="nav-icon bi bi-pencil-fill"></i></a>
                                 <form class="display-inline" method="post" action="{{ path('app_dailydiet_delete', {'id': dailydiet.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">

@@ -40,7 +40,7 @@ class UserController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
-            $this->addFlash('success', 'Employé ajouté avec succès');
+            $this->addFlash('success', 'Utilisateur ajouté avec succès');
 
 
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
@@ -74,7 +74,7 @@ class UserController extends AbstractController
             
             $user->setPassword($hashedPassword);
             $entityManager->flush();
-            $this->addFlash('success', 'Employé modifié avec succès');
+            $this->addFlash('success', 'Utilisateur modifié avec succès');
 
 
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);

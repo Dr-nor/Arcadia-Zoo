@@ -152,7 +152,7 @@ class __TwigTemplate_52db5fea415812809cadde652b7057ac extends Template
                 yield "                                    ";
                 if (($context["role"] == "ROLE_USER")) {
                     // line 59
-                    yield "                                    Employé
+                    yield "                                    Utilisateur
                                     ";
                 } elseif ((                // line 60
 $context["role"] == "ROLE_VET")) {
@@ -164,34 +164,39 @@ $context["role"] == "ROLE_ADMIN")) {
                     // line 63
                     yield "                                    Administrateur
                                     ";
+                } elseif ((                // line 64
+$context["role"] == "ROLE_EMPLOYE")) {
+                    // line 65
+                    yield "                                    Employé
+                                    ";
                 }
-                // line 65
+                // line 67
                 yield "                                    ,
                                 ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 67
+            // line 69
             yield "                                
                             </td>
                             <td>";
-            // line 69
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "created_at", [], "any", false, false, false, 69), "Y-m-d H:i:s"), "html", null, true);
+            // line 71
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "created_at", [], "any", false, false, false, 71), "Y-m-d H:i:s"), "html", null, true);
             yield "</td>
                             <td>
                                 ";
-            // line 72
+            // line 74
             yield "                                <a class=\"text-info w-4 h-4\" href=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 72)]), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 74)]), "html", null, true);
             yield "\"><i class=\"nav-icon bi bi-pencil-fill\"></i></a>
                                 <form class=\"display-inline\" method=\"post\" action=\"";
-            // line 73
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 73)]), "html", null, true);
+            // line 75
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 75)]), "html", null, true);
             yield "\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
                                     <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 74
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 74))), "html", null, true);
+            // line 76
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 76))), "html", null, true);
             yield "\">
                                      <button class=\"btn text-danger\"><i class=\"nav-icon bi bi-trash-fill\"></i></button>
                                 </form>
@@ -202,7 +207,7 @@ $context["role"] == "ROLE_ADMIN")) {
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 81
+            // line 83
             yield "                        <tr>
                             <td>Aucun enregistrement trouvé.</td>
                             <td class=\"hidden\"></td>
@@ -211,14 +216,14 @@ $context["role"] == "ROLE_ADMIN")) {
                             <td class=\"hidden\"></td>
                         </tr>
                     ";
-            // line 89
+            // line 91
             yield "
                          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 91
+        // line 93
         yield "                        
                     </tbody>
                 </table>\t\t\t\t\t\t\t\t\t\t
@@ -261,7 +266,7 @@ $context["role"] == "ROLE_ADMIN")) {
      */
     public function getDebugInfo(): array
     {
-        return array (  222 => 91,  215 => 89,  206 => 81,  194 => 74,  190 => 73,  185 => 72,  180 => 69,  176 => 67,  169 => 65,  165 => 63,  163 => 62,  160 => 61,  158 => 60,  155 => 59,  152 => 58,  148 => 57,  143 => 55,  139 => 54,  135 => 53,  132 => 52,  130 => 51,  125 => 50,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  227 => 93,  220 => 91,  211 => 83,  199 => 76,  195 => 75,  190 => 74,  185 => 71,  181 => 69,  174 => 67,  170 => 65,  168 => 64,  165 => 63,  163 => 62,  160 => 61,  158 => 60,  155 => 59,  152 => 58,  148 => 57,  143 => 55,  139 => 54,  135 => 53,  132 => 52,  130 => 51,  125 => 50,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -324,11 +329,13 @@ $context["role"] == "ROLE_ADMIN")) {
                             <td>
                                 {% for role in user.roles %}
                                     {% if role == \"ROLE_USER\" %}
-                                    Employé
+                                    Utilisateur
                                     {% elseif  role ==\"ROLE_VET\" %}
                                     Vétérinaire
                                     {% elseif  role == \"ROLE_ADMIN\" %}
                                     Administrateur
+                                    {% elseif  role == \"ROLE_EMPLOYE\" %}
+                                    Employé
                                     {% endif %}
                                     ,
                                 {% endfor %}

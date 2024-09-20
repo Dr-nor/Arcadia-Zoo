@@ -39,6 +39,8 @@ class DailydietController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            // On attribue l'utilisateur
+            $Dailydiet->setUser($this->getUser());
             
             // On stock
             $entityManager->persist($Dailydiet);

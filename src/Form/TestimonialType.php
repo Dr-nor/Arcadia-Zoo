@@ -49,7 +49,7 @@ class TestimonialType extends AbstractType
             ->add('comment')
             ->add('note')
             ;
-            if (true === $this->authChecker->isGranted('ROLE_ADMIN')) {
+            if ((true === $this->authChecker->isGranted('ROLE_ADMIN')) || (true === $this->authChecker->isGranted('ROLE_EMPLOYE'))  ){
                     $builder->add('active');
             }
         

@@ -430,6 +430,28 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\AnimalsController"/>
       </call>
     </service>
+    <service id="App\Controller\Employe\DailydietController" class="App\Controller\Employe\DailydietController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Employe\DailydietController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Employe\ServiceController" class="App\Controller\Employe\ServiceController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Employe\ServiceController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Employe\TestimonialController" class="App\Controller\Employe\TestimonialController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Employe\TestimonialController"/>
+      </call>
+    </service>
     <service id="App\Controller\FrontController" class="App\Controller\FrontController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -570,7 +592,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VDFFehw"/>
+      <argument type="service" id=".service_locator.8UHKdfq"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3500,7 +3522,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VDFFehw"/>
+      <argument type="service" id=".service_locator.8UHKdfq"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -6597,6 +6619,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.mUM.Rxd"/>
+        <argument type="collection">
+          <argument>ROLE_EMPLOYE</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
@@ -7217,6 +7246,14 @@
         <argument type="service" id=".security.request_matcher.MMXiH1D"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.1ACq1Hj" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/employe</argument>
+    </service>
+    <service id=".security.request_matcher.mUM.Rxd" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+      <argument type="collection">
+        <argument type="service" id=".security.request_matcher.1ACq1Hj"/>
+      </argument>
+    </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
@@ -7546,6 +7583,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Employe\DailydietController" class="App\Controller\Employe\DailydietController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Employe\DailydietController" class="App\Controller\Employe\DailydietController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Employe\DailydietController" class="App\Controller\Employe\DailydietController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Employe\ServiceController" class="App\Controller\Employe\ServiceController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Employe\ServiceController" class="App\Controller\Employe\ServiceController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Employe\ServiceController" class="App\Controller\Employe\ServiceController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Employe\TestimonialController" class="App\Controller\Employe\TestimonialController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Employe\TestimonialController" class="App\Controller\Employe\TestimonialController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Employe\TestimonialController" class="App\Controller\Employe\TestimonialController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\FrontController" class="App\Controller\FrontController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -8325,6 +8371,19 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.pmIsgEj" method="withContext"/>
     </service>
+    <service id=".service_locator.RddNrxu" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="serviceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
+        <argument key="testimonialRepository" type="service_closure" id="App\Repository\TestimonialRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DashboardController::employe()"/>
+      <argument>App\Controller\Admin\DashboardController::employe()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.RddNrxu" method="withContext"/>
+    </service>
     <service id=".service_locator.rKMHrg5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8723,6 +8782,102 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.WfXzZIK" method="withContext"/>
     </service>
+    <service id=".service_locator.i8XRal3.App\Controller\Employe\DailydietController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController::index()"/>
+      <argument>App\Controller\Employe\DailydietController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.i8XRal3" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Employe\DailydietController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController::new()"/>
+      <argument>App\Controller\Employe\DailydietController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.WMseQ83.App\Controller\Employe\DailydietController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController::show()"/>
+      <argument>App\Controller\Employe\DailydietController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WMseQ83" method="withContext"/>
+    </service>
+    <service id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController::edit()"/>
+      <argument>App\Controller\Employe\DailydietController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.hzYJuTC" method="withContext"/>
+    </service>
+    <service id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController::delete()"/>
+      <argument>App\Controller\Employe\DailydietController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.hzYJuTC" method="withContext"/>
+    </service>
+    <service id=".service_locator.PuhjwKK.App\Controller\Employe\ServiceController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::index()"/>
+      <argument>App\Controller\Employe\ServiceController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.PuhjwKK" method="withContext"/>
+    </service>
+    <service id=".service_locator.vMw.xEU.App\Controller\Employe\ServiceController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::new()"/>
+      <argument>App\Controller\Employe\ServiceController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vMw.xEU" method="withContext"/>
+    </service>
+    <service id=".service_locator.HQ6Z48r.App\Controller\Employe\ServiceController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::show()"/>
+      <argument>App\Controller\Employe\ServiceController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.HQ6Z48r" method="withContext"/>
+    </service>
+    <service id=".service_locator.B6iH7lH.App\Controller\Employe\ServiceController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::edit()"/>
+      <argument>App\Controller\Employe\ServiceController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.B6iH7lH" method="withContext"/>
+    </service>
+    <service id=".service_locator.zhttGGF.App\Controller\Employe\ServiceController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::delete()"/>
+      <argument>App\Controller\Employe\ServiceController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.zhttGGF" method="withContext"/>
+    </service>
+    <service id=".service_locator.t3TbjcM.App\Controller\Employe\ServiceController::deleteImage()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController::deleteImage()"/>
+      <argument>App\Controller\Employe\ServiceController::deleteImage()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.t3TbjcM" method="withContext"/>
+    </service>
+    <service id=".service_locator.ufefr24.App\Controller\Employe\TestimonialController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController::index()"/>
+      <argument>App\Controller\Employe\TestimonialController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ufefr24" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Employe\TestimonialController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController::new()"/>
+      <argument>App\Controller\Employe\TestimonialController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZKETimn.App\Controller\Employe\TestimonialController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController::show()"/>
+      <argument>App\Controller\Employe\TestimonialController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZKETimn" method="withContext"/>
+    </service>
+    <service id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController::edit()"/>
+      <argument>App\Controller\Employe\TestimonialController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Ga.aiw8" method="withContext"/>
+    </service>
+    <service id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController::delete()"/>
+      <argument>App\Controller\Employe\TestimonialController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.Ga.aiw8" method="withContext"/>
+    </service>
     <service id=".service_locator.za2P_c4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8801,7 +8956,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.HQ6Z48r" method="withContext"/>
     </service>
-    <service id=".service_locator.VDFFehw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.8UHKdfq" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8820,6 +8975,7 @@
         <argument key="App\Controller\Admin\DailydietController::edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::edit()"/>
         <argument key="App\Controller\Admin\DailydietController::delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
         <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController::employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
         <argument key="App\Controller\Admin\HabitatController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
         <argument key="App\Controller\Admin\HabitatController::new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
         <argument key="App\Controller\Admin\HabitatController::show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
@@ -8854,6 +9010,22 @@
         <argument key="App\Controller\Admin\UserController::delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
         <argument key="App\Controller\AnimalsController::index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController::details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
+        <argument key="App\Controller\Employe\DailydietController::index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Employe\DailydietController::index()"/>
+        <argument key="App\Controller\Employe\DailydietController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Employe\DailydietController::new()"/>
+        <argument key="App\Controller\Employe\DailydietController::show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Employe\DailydietController::show()"/>
+        <argument key="App\Controller\Employe\DailydietController::edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::edit()"/>
+        <argument key="App\Controller\Employe\DailydietController::delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::delete()"/>
+        <argument key="App\Controller\Employe\ServiceController::index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Employe\ServiceController::index()"/>
+        <argument key="App\Controller\Employe\ServiceController::new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Employe\ServiceController::new()"/>
+        <argument key="App\Controller\Employe\ServiceController::show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Employe\ServiceController::show()"/>
+        <argument key="App\Controller\Employe\ServiceController::edit" type="service_closure" id=".service_locator.B6iH7lH.App\Controller\Employe\ServiceController::edit()"/>
+        <argument key="App\Controller\Employe\ServiceController::delete" type="service_closure" id=".service_locator.zhttGGF.App\Controller\Employe\ServiceController::delete()"/>
+        <argument key="App\Controller\Employe\ServiceController::deleteImage" type="service_closure" id=".service_locator.t3TbjcM.App\Controller\Employe\ServiceController::deleteImage()"/>
+        <argument key="App\Controller\Employe\TestimonialController::index" type="service_closure" id=".service_locator.ufefr24.App\Controller\Employe\TestimonialController::index()"/>
+        <argument key="App\Controller\Employe\TestimonialController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Employe\TestimonialController::new()"/>
+        <argument key="App\Controller\Employe\TestimonialController::show" type="service_closure" id=".service_locator.ZKETimn.App\Controller\Employe\TestimonialController::show()"/>
+        <argument key="App\Controller\Employe\TestimonialController::edit" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::edit()"/>
+        <argument key="App\Controller\Employe\TestimonialController::delete" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::delete()"/>
         <argument key="App\Controller\FrontController::index" type="service_closure" id=".service_locator.za2P_c4.App\Controller\FrontController::index()"/>
         <argument key="App\Controller\FrontController::contact" type="service_closure" id=".service_locator.Iodm6uY.App\Controller\FrontController::contact()"/>
         <argument key="App\Controller\HabitatsController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
@@ -8876,6 +9048,7 @@
         <argument key="App\Controller\Admin\DailydietController:edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::edit()"/>
         <argument key="App\Controller\Admin\DailydietController:delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
         <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController:employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
         <argument key="App\Controller\Admin\HabitatController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
         <argument key="App\Controller\Admin\HabitatController:new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
         <argument key="App\Controller\Admin\HabitatController:show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
@@ -8910,6 +9083,22 @@
         <argument key="App\Controller\Admin\UserController:delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
         <argument key="App\Controller\AnimalsController:index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController:details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
+        <argument key="App\Controller\Employe\DailydietController:index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Employe\DailydietController::index()"/>
+        <argument key="App\Controller\Employe\DailydietController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Employe\DailydietController::new()"/>
+        <argument key="App\Controller\Employe\DailydietController:show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Employe\DailydietController::show()"/>
+        <argument key="App\Controller\Employe\DailydietController:edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::edit()"/>
+        <argument key="App\Controller\Employe\DailydietController:delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Employe\DailydietController::delete()"/>
+        <argument key="App\Controller\Employe\ServiceController:index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\Employe\ServiceController::index()"/>
+        <argument key="App\Controller\Employe\ServiceController:new" type="service_closure" id=".service_locator.vMw.xEU.App\Controller\Employe\ServiceController::new()"/>
+        <argument key="App\Controller\Employe\ServiceController:show" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\Employe\ServiceController::show()"/>
+        <argument key="App\Controller\Employe\ServiceController:edit" type="service_closure" id=".service_locator.B6iH7lH.App\Controller\Employe\ServiceController::edit()"/>
+        <argument key="App\Controller\Employe\ServiceController:delete" type="service_closure" id=".service_locator.zhttGGF.App\Controller\Employe\ServiceController::delete()"/>
+        <argument key="App\Controller\Employe\ServiceController:deleteImage" type="service_closure" id=".service_locator.t3TbjcM.App\Controller\Employe\ServiceController::deleteImage()"/>
+        <argument key="App\Controller\Employe\TestimonialController:index" type="service_closure" id=".service_locator.ufefr24.App\Controller\Employe\TestimonialController::index()"/>
+        <argument key="App\Controller\Employe\TestimonialController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Employe\TestimonialController::new()"/>
+        <argument key="App\Controller\Employe\TestimonialController:show" type="service_closure" id=".service_locator.ZKETimn.App\Controller\Employe\TestimonialController::show()"/>
+        <argument key="App\Controller\Employe\TestimonialController:edit" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::edit()"/>
+        <argument key="App\Controller\Employe\TestimonialController:delete" type="service_closure" id=".service_locator.Ga.aiw8.App\Controller\Employe\TestimonialController::delete()"/>
         <argument key="App\Controller\FrontController:index" type="service_closure" id=".service_locator.za2P_c4.App\Controller\FrontController::index()"/>
         <argument key="App\Controller\FrontController:contact" type="service_closure" id=".service_locator.Iodm6uY.App\Controller\FrontController::contact()"/>
         <argument key="App\Controller\HabitatsController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\HabitatsController::index()"/>
@@ -9534,6 +9723,24 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Employe\DailydietController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\DailydietController"/>
+      <argument>App\Controller\Employe\DailydietController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Employe\ServiceController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\ServiceController"/>
+      <argument>App\Controller\Employe\ServiceController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Employe\TestimonialController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Employe\TestimonialController"/>
+      <argument>App\Controller\Employe\TestimonialController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\FrontController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\FrontController"/>
       <argument>App\Controller\FrontController</argument>
@@ -9763,6 +9970,9 @@
           <argument>App\Controller\Admin\TestimonialController</argument>
           <argument>App\Controller\Admin\UserController</argument>
           <argument>App\Controller\AnimalsController</argument>
+          <argument>App\Controller\Employe\DailydietController</argument>
+          <argument>App\Controller\Employe\ServiceController</argument>
+          <argument>App\Controller\Employe\TestimonialController</argument>
           <argument>App\Controller\FrontController</argument>
           <argument>App\Controller\HabitatsController</argument>
           <argument>App\Controller\OpeningController</argument>
@@ -11215,7 +11425,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VDFFehw"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.8UHKdfq"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -11269,6 +11479,7 @@
     <service id=".service_locator.DottvD9" alias=".service_locator.WMseQ83"/>
     <service id=".service_locator.OM9ohlh" alias=".service_locator.hzYJuTC"/>
     <service id=".service_locator.HSXKVs3" alias=".service_locator.pmIsgEj"/>
+    <service id=".service_locator.SkmyL.h" alias=".service_locator.RddNrxu"/>
     <service id=".service_locator.s0mTIkg" alias=".service_locator.rKMHrg5"/>
     <service id=".service_locator.K_01ED8" alias=".service_locator.PKLkl9R"/>
     <service id=".service_locator.XoGdWV0" alias=".service_locator.nvY2WDd"/>

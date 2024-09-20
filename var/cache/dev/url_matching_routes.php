@@ -19,6 +19,8 @@ return [
         '/admin/dailydiet' => [[['_route' => 'app_dailydiet_index', '_controller' => 'App\\Controller\\Admin\\DailydietController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/dailydiet/new' => [[['_route' => 'app_dailydiet_new', '_controller' => 'App\\Controller\\Admin\\DailydietController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/dashboard' => [[['_route' => 'app_admin_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
+        '/employe/dashboard' => [[['_route' => 'app_employe_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::employe'], null, null, null, false, false, null]],
+        '/user/dashboard' => [[['_route' => 'app_user_dashboard', '_controller' => 'App\\Controller\\Admin\\DashboardController::user'], null, null, null, false, false, null]],
         '/admin/habitat' => [[['_route' => 'app_habitat_index', '_controller' => 'App\\Controller\\Admin\\HabitatController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/habitat/new' => [[['_route' => 'app_habitat_new', '_controller' => 'App\\Controller\\Admin\\HabitatController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/opening' => [[['_route' => 'app_opening_index', '_controller' => 'App\\Controller\\Admin\\OpeningController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -32,6 +34,12 @@ return [
         '/admin/user' => [[['_route' => 'app_user_index', '_controller' => 'App\\Controller\\Admin\\UserController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/user/new' => [[['_route' => 'app_user_new', '_controller' => 'App\\Controller\\Admin\\UserController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/animals' => [[['_route' => 'animal_index', '_controller' => 'App\\Controller\\AnimalsController::index'], null, null, null, true, false, null]],
+        '/employe/dailydiet' => [[['_route' => 'employe_dailydiet_index', '_controller' => 'App\\Controller\\Employe\\DailydietController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/employe/dailydiet/new' => [[['_route' => 'employe_dailydiet_new', '_controller' => 'App\\Controller\\Employe\\DailydietController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/employe/service' => [[['_route' => 'employe_service_index', '_controller' => 'App\\Controller\\Employe\\ServiceController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/employe/service/new' => [[['_route' => 'employe_service_new', '_controller' => 'App\\Controller\\Employe\\ServiceController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/employe/testimonial' => [[['_route' => 'employe_testimonial_index', '_controller' => 'App\\Controller\\Employe\\TestimonialController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/employe/testimonial/new' => [[['_route' => 'employe_testimonial_new', '_controller' => 'App\\Controller\\Employe\\TestimonialController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\FrontController::index'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\FrontController::contact'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/habitats' => [[['_route' => 'habitats_index', '_controller' => 'App\\Controller\\HabitatsController::index'], null, null, null, true, false, null]],
@@ -113,8 +121,28 @@ return [
                     .'|/edit(*:714)'
                     .'|(*:722)'
                 .')'
-                .'|/habitats/([^/]++)(*:749)'
-                .'|/services/([^/]++)(*:775)'
+                .'|/employe/(?'
+                    .'|dailydiet/([^/]++)(?'
+                        .'|(*:764)'
+                        .'|/edit(*:777)'
+                        .'|(*:785)'
+                    .')'
+                    .'|service/(?'
+                        .'|([^/]++)(?'
+                            .'|(*:816)'
+                            .'|/edit(*:829)'
+                            .'|(*:837)'
+                        .')'
+                        .'|delete/image/([^/]++)(*:867)'
+                    .')'
+                    .'|testimonial/([^/]++)(?'
+                        .'|(*:899)'
+                        .'|/edit(*:912)'
+                        .'|(*:920)'
+                    .')'
+                .')'
+                .'|/habitats/([^/]++)(*:948)'
+                .'|/services/([^/]++)(*:974)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -154,8 +182,18 @@ return [
         701 => [[['_route' => 'app_opening_show', '_controller' => 'App\\Controller\\Admin\\OpeningController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         714 => [[['_route' => 'app_opening_edit', '_controller' => 'App\\Controller\\Admin\\OpeningController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         722 => [[['_route' => 'app_opening_delete', '_controller' => 'App\\Controller\\Admin\\OpeningController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        749 => [[['_route' => 'habitats_details', '_controller' => 'App\\Controller\\HabitatsController::details'], ['slug'], null, null, false, true, null]],
-        775 => [
+        764 => [[['_route' => 'employe_dailydiet_show', '_controller' => 'App\\Controller\\Employe\\DailydietController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        777 => [[['_route' => 'employe_dailydiet_edit', '_controller' => 'App\\Controller\\Employe\\DailydietController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        785 => [[['_route' => 'employe_dailydiet_delete', '_controller' => 'App\\Controller\\Employe\\DailydietController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        816 => [[['_route' => 'employe_service_show', '_controller' => 'App\\Controller\\Employe\\ServiceController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        829 => [[['_route' => 'employe_service_edit', '_controller' => 'App\\Controller\\Employe\\ServiceController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        837 => [[['_route' => 'employe_service_delete', '_controller' => 'App\\Controller\\Employe\\ServiceController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        867 => [[['_route' => 'employe_service_delete_image', '_controller' => 'App\\Controller\\Employe\\ServiceController::deleteImage'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        899 => [[['_route' => 'employe_testimonial_show', '_controller' => 'App\\Controller\\Employe\\TestimonialController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        912 => [[['_route' => 'employe_testimonial_edit', '_controller' => 'App\\Controller\\Employe\\TestimonialController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        920 => [[['_route' => 'employe_testimonial_delete', '_controller' => 'App\\Controller\\Employe\\TestimonialController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        948 => [[['_route' => 'habitats_details', '_controller' => 'App\\Controller\\HabitatsController::details'], ['slug'], null, null, false, true, null]],
+        974 => [
             [['_route' => 'services_details', '_controller' => 'App\\Controller\\ServicesController::details'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

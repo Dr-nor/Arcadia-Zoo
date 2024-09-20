@@ -30,8 +30,9 @@ class Dailydiet
 
     #[ORM\ManyToOne]
     private ?Animal $animal_id = null;
-
-
+    
+    #[ORM\ManyToOne]
+    private ?User $user = null;
 
     public function __construct()
     {
@@ -83,6 +84,18 @@ class Dailydiet
     public function setAnimalId(?Animal $animal_id): static
     {
         $this->animal_id = $animal_id;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

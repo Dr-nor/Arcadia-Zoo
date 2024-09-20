@@ -1,0 +1,71 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+    <!-- Begin Dashboard Section -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Dashboard
+                                                
+                        </h1>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                  
+                    <!-- Services widget -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box card">
+                            <div class="inner">
+                                <h3>
+                                    {{ services|length }}
+                                </h3>
+                                <p>
+                                    Services
+                                                            
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-concierge-bell"></i>
+                            </div>
+                            <a href="{{ path('employe_service_index') }}" class="small-box-footer text-dark">
+                                Plus d'info  
+                                                        
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Animals widget -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box card">
+                            <div class="inner">
+                                <h3>
+                                    {{ testimonials|length }}
+                                </h3>
+                                <p>
+                                    Témoignages                       
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-paw"></i>
+                            </div>
+                            <a href="{{ path('employe_testimonial_index') }}" class="small-box-footer text-dark">
+                                Plus d'info  
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<!--  Dashboard Section End -->
+{% endblock %}

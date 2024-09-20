@@ -116,50 +116,55 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
                             <th>Animal</th>
                             <th>Nourriture</th>
                             <th>Quantité</th>
+                            <th>Employé</th>
                             <th width=\"100\">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         ";
-        // line 50
+        // line 51
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["dailydiets"]) || array_key_exists("dailydiets", $context) ? $context["dailydiets"] : (function () { throw new RuntimeError('Variable "dailydiets" does not exist.', 50, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["dailydiets"]) || array_key_exists("dailydiets", $context) ? $context["dailydiets"] : (function () { throw new RuntimeError('Variable "dailydiets" does not exist.', 51, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["dailydiet"]) {
-            // line 51
+            // line 52
             yield "                        <tr>
                             <td>";
-            // line 52
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 52), "html", null, true);
-            yield "</td>
-                            <td>";
             // line 53
-            ((CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "createdAt", [], "any", false, false, false, 53)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "createdAt", [], "any", false, false, false, 53), "Y-m-d H:i:s"), "html", null, true)) : (yield ""));
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 53), "html", null, true);
             yield "</td>
                             <td>";
             // line 54
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "AnimalId", [], "any", false, false, false, 54), "name", [], "any", false, false, false, 54), "html", null, true);
+            ((CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "createdAt", [], "any", false, false, false, 54)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "createdAt", [], "any", false, false, false, 54), "Y-m-d H:i:s"), "html", null, true)) : (yield ""));
             yield "</td>
                             <td>";
             // line 55
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "diet", [], "any", false, false, false, 55), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "AnimalId", [], "any", false, false, false, 55), "name", [], "any", false, false, false, 55), "html", null, true);
             yield "</td>
                             <td>";
             // line 56
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "qty", [], "any", false, false, false, 56), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "diet", [], "any", false, false, false, 56), "html", null, true);
+            yield "</td>
+                            <td>";
+            // line 57
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "qty", [], "any", false, false, false, 57), "html", null, true);
+            yield "</td>
+                            <td>";
+            // line 58
+            ((CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "user", [], "any", false, false, false, 58)) ? (yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "user", [], "any", false, false, false, 58), "fullname", [], "any", false, false, false, 58), "html", null, true)) : (yield ""));
             yield "</td>
                             <td>
                                 <a class=\"text-info w-4 h-4\" href=\"";
-            // line 58
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+            // line 60
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 60)]), "html", null, true);
             yield "\"><i class=\"nav-icon bi bi-pencil-fill\"></i></a>
                                 <form class=\"display-inline\" method=\"post\" action=\"";
-            // line 59
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 59)]), "html", null, true);
+            // line 61
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_delete", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 61)]), "html", null, true);
             yield "\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
                                     <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 60
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 60))), "html", null, true);
+            // line 62
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["dailydiet"], "id", [], "any", false, false, false, 62))), "html", null, true);
             yield "\">
                                      <button class=\"btn text-danger\"><i class=\"nav-icon bi bi-trash-fill\"></i></button>
                                 </form>
@@ -170,7 +175,7 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 67
+            // line 69
             yield "                        <tr>
                             <td>Aucun enregistrement trouvé.</td>
                             <td class=\"hidden\"></td>
@@ -179,14 +184,14 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
                             <td class=\"hidden\"></td>
                         </tr>
                     ";
-            // line 75
+            // line 77
             yield "
                          ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dailydiet'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 77
+        // line 79
         yield "                        
                     </tbody>
                 </table>\t\t\t\t\t\t\t\t\t\t
@@ -228,7 +233,7 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  190 => 77,  183 => 75,  174 => 67,  162 => 60,  158 => 59,  154 => 58,  149 => 56,  145 => 55,  141 => 54,  137 => 53,  133 => 52,  130 => 51,  125 => 50,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  195 => 79,  188 => 77,  179 => 69,  167 => 62,  163 => 61,  159 => 60,  154 => 58,  150 => 57,  146 => 56,  142 => 55,  138 => 54,  134 => 53,  131 => 52,  126 => 51,  86 => 14,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -278,6 +283,7 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
                             <th>Animal</th>
                             <th>Nourriture</th>
                             <th>Quantité</th>
+                            <th>Employé</th>
                             <th width=\"100\">Actions</th>
                         </tr>
                     </thead>
@@ -289,6 +295,7 @@ class __TwigTemplate_d2a190b9f3cd9df0675d3a36939c248c extends Template
                             <td>{{ dailydiet.AnimalId.name }}</td>
                             <td>{{ dailydiet.diet }}</td>
                             <td>{{ dailydiet.qty }}</td>
+                            <td>{{ dailydiet.user ? dailydiet.user.fullname }}</td>
                             <td>
                                 <a class=\"text-info w-4 h-4\" href=\"{{ path('app_dailydiet_edit', {'id': dailydiet.id}) }}\"><i class=\"nav-icon bi bi-pencil-fill\"></i></a>
                                 <form class=\"display-inline\" method=\"post\" action=\"{{ path('app_dailydiet_delete', {'id': dailydiet.id}) }}\" onsubmit=\"return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');\">
