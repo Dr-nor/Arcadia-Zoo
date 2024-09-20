@@ -26,6 +26,9 @@
             <h4 class="h4 mb-0"><strong>{{ app.user.Fullname }}</strong></h4>
             <div class="mb-3">{{ app.user.userIdentifier }}</div>
             <div class="dropdown-divider"></div>
+            <a href="{{ path('app_editpass') }}"class="dropdown-item">
+                <i class="bi bi-lock mr-2"></i> Changer le mot de passe
+            </a>
             <div class="dropdown-divider"></div>
             <a href="{{ path('app_logout') }}" class="dropdown-item ">
                 <i class="bi bi-box-arrow-right mr-2"></i> Déconnexion							
