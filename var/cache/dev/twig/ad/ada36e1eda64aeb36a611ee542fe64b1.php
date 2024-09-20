@@ -505,7 +505,7 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
             // line 313
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["animal"], "RaceId", [], "any", false, false, false, 313), "name", [], "any", false, false, false, 313), "html", null, true);
             yield "
-                                                                Ans                                                                   
+                                                                                                                           
                                                             </span>
                                                         </div>
                                                         
@@ -1155,7 +1155,7 @@ class __TwigTemplate_275b502b7effff6bd57db39e054e4f82 extends Template
                                                             </span>
                                                             <span>
                                                                 {{ animal.RaceId.name }}
-                                                                Ans                                                                   
+                                                                                                                           
                                                             </span>
                                                         </div>
                                                         

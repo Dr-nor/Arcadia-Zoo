@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Repository\HabitatreportRepository;
 use App\Repository\HabitatRepository;
+use App\Repository\AnimalRepository;
 use App\Repository\ServiceRepository;
 use App\Repository\TestimonialRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,13 +17,14 @@ use Doctrine\ORM\EntityManagerInterface;
 class DashboardController extends AbstractController
 {
     #[Route('/admin/dashboard', name: 'app_admin_dashboard')]
-    public function index(UserRepository $userRepository, EntityManagerInterface $entityManager, ServiceRepository $serviceRepository , HabitatRepository $habitatRepository ): Response
+    public function index(UserRepository $userRepository, EntityManagerInterface $entityManager, ServiceRepository $serviceRepository , HabitatRepository $habitatRepository ,AnimalRepository $animalRepository ): Response
     {
         return $this->render('admin/dashboard/admin-dashboard.html.twig', [
             'controller_name' => 'DashboardController',
             'users' => $userRepository->findAll(),
             'services' =>  $serviceRepository->findAll(),
             'habitat' =>  $habitatRepository->findAll(),
+            'animals' =>  $animalRepository->findAll(),
         ]);
     }
 

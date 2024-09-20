@@ -653,7 +653,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.Wk2evA4"/>
+      <argument type="service" id=".service_locator.H501smD"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3585,7 +3585,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.Wk2evA4"/>
+      <argument type="service" id=".service_locator.H501smD"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8445,20 +8445,21 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.hzYJuTC" method="withContext"/>
     </service>
-    <service id=".service_locator.pmIsgEj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LjvqMMC" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="serviceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
         <argument key="habitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
+        <argument key="animalRepository" type="service_closure" id="App\Repository\AnimalRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LjvqMMC.App\Controller\Admin\DashboardController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\DashboardController::index()"/>
       <argument>App\Controller\Admin\DashboardController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.pmIsgEj" method="withContext"/>
+      <factory service=".service_locator.LjvqMMC" method="withContext"/>
     </service>
     <service id=".service_locator.RddNrxu" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -9247,7 +9248,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QKXNuJ9" method="withContext"/>
     </service>
-    <service id=".service_locator.Wk2evA4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.H501smD" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -9265,7 +9266,7 @@
         <argument key="App\Controller\Admin\DailydietController::show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Admin\DailydietController::show()"/>
         <argument key="App\Controller\Admin\DailydietController::edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::edit()"/>
         <argument key="App\Controller\Admin\DailydietController::delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
-        <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.LjvqMMC.App\Controller\Admin\DashboardController::index()"/>
         <argument key="App\Controller\Admin\DashboardController::employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
         <argument key="App\Controller\Admin\DashboardController::veterinary" type="service_closure" id=".service_locator.SMEzWKM.App\Controller\Admin\DashboardController::veterinary()"/>
         <argument key="App\Controller\Admin\HabitatController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
@@ -9363,7 +9364,7 @@
         <argument key="App\Controller\Admin\DailydietController:show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Admin\DailydietController::show()"/>
         <argument key="App\Controller\Admin\DailydietController:edit" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::edit()"/>
         <argument key="App\Controller\Admin\DailydietController:delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
-        <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
+        <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.LjvqMMC.App\Controller\Admin\DashboardController::index()"/>
         <argument key="App\Controller\Admin\DashboardController:employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
         <argument key="App\Controller\Admin\DashboardController:veterinary" type="service_closure" id=".service_locator.SMEzWKM.App\Controller\Admin\DashboardController::veterinary()"/>
         <argument key="App\Controller\Admin\HabitatController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
@@ -11824,7 +11825,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Wk2evA4"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.H501smD"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -11877,7 +11878,7 @@
     <service id=".service_locator.4KsIGyf" alias=".service_locator.P.blNFL"/>
     <service id=".service_locator.DottvD9" alias=".service_locator.WMseQ83"/>
     <service id=".service_locator.OM9ohlh" alias=".service_locator.hzYJuTC"/>
-    <service id=".service_locator.HSXKVs3" alias=".service_locator.pmIsgEj"/>
+    <service id=".service_locator.rqiFhF7" alias=".service_locator.LjvqMMC"/>
     <service id=".service_locator.SkmyL.h" alias=".service_locator.RddNrxu"/>
     <service id=".service_locator.CoHjseh" alias=".service_locator.SMEzWKM"/>
     <service id=".service_locator.s0mTIkg" alias=".service_locator.rKMHrg5"/>

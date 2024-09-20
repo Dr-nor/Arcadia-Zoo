@@ -1,3 +1,0 @@
-<?php //bd15135b5e6422a8bedcea260c54ce05
-
-return [PHP_INT_MAX, 'global-assets/js/plugins/jquery-migrate-3.3.2.min.js'];
