@@ -56,11 +56,13 @@
                             <td>
                                 {% for role in user.roles %}
                                     {% if role == "ROLE_USER" %}
-                                    Employé
+                                    Utilisateur
                                     {% elseif  role =="ROLE_VET" %}
                                     Vétérinaire
                                     {% elseif  role == "ROLE_ADMIN" %}
                                     Administrateur
+                                    {% elseif  role == "ROLE_EMPLOYE" %}
+                                    Employé
                                     {% endif %}
                                     ,
                                 {% endfor %}

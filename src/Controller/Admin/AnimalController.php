@@ -3,8 +3,6 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Image;
-use App\Entity\Motor;
-use App\Entity\Options;
 use App\Entity\Animal;
 use App\Form\AnimalType;
 use App\Repository\AnimalRepository;
@@ -35,7 +33,7 @@ class AnimalController extends AbstractController
     }
 
     #[Route('/new', name: 'app_animal_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager, ImageService  $imageService, SluggerInterface $slugger, EntityManagerInterface $Motorentity,  EntityManagerInterface $Optionsentity): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, ImageService  $imageService, SluggerInterface $slugger): Response
     {
         $Animal = new Animal();
         $form = $this->createForm(AnimalType::class, $Animal);
@@ -83,7 +81,7 @@ class AnimalController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_animal_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Animal $Animal, EntityManagerInterface $entityManager, ImageService $imageService, SluggerInterface $slugger , EntityManagerInterface $Motorentity,  EntityManagerInterface $Optionsentity): Response
+    public function edit(Request $request, Animal $Animal, EntityManagerInterface $entityManager, ImageService $imageService, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(AnimalType::class, $Animal);
         $form->handleRequest($request);

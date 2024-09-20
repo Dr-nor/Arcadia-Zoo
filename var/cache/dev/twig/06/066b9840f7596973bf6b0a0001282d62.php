@@ -149,12 +149,22 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
                         </p>
                     </a>
                 </li>
+                <li class=\"nav-item ml-4\">
+                <a href=\"";
+        // line 79
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_index");
+        yield "\" class=\"nav-link\">
+                    <p>
+                        Alimentation
+                    </p>
+                </a>
+            </li>
             </ul>
         </li>
 
             <li class=\"nav-item\">
                 <a href=\"";
-        // line 82
+        // line 89
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_testimonial_index");
         yield "\" class=\"nav-link\">
                     <i class=\"nav-icon fal fa-comment-lines\"></i>
@@ -201,7 +211,7 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  158 => 82,  145 => 72,  134 => 64,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  168 => 89,  155 => 79,  145 => 72,  134 => 64,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -283,6 +293,13 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
                         </p>
                     </a>
                 </li>
+                <li class=\"nav-item ml-4\">
+                <a href=\"{{ path('app_dailydiet_index') }}\" class=\"nav-link\">
+                    <p>
+                        Alimentation
+                    </p>
+                </a>
+            </li>
             </ul>
         </li>
 

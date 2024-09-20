@@ -28,7 +28,7 @@ class UserType extends AbstractType
             ->add('fullname')
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'Employé' => 'ROLE_USER',
+                    'Employé' => 'ROLE_EMPLOYE',
                     'Vétérinaire' => 'ROLE_VET',
                     'Administrateur' => 'ROLE_ADMIN'
                 ],

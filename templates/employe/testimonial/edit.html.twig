@@ -1,0 +1,107 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Modifier
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right d-flex flex-end">
+                        <form class="mr-4" method="post" action="{{ path('employe_testimonial_delete', {'id': testimonial.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ testimonial.id) }}">
+                            <button class="btn btn-secondary  ml-3">Delete</button>
+                        </form>
+                        <a href="{{ path('employe_testimonial_index') }}" class="btn btn-primary">
+                            Retour                                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+            {{ form_start(form) }}
+
+            <div class="card">
+                <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <div class="rating">
+                                <span>
+                                Évaluation
+                                </span>
+                                <input type="radio" id="star1" name="{{ field_name(form.note) }}" value="5" />
+                                <label class="star" for="star1" title="Awesome" aria-hidden="true"></label>
+                                <input type="radio" id="star2" name="{{ field_name(form.note) }}" value="4" />
+                                <label class="star" for="star2" title="Great" aria-hidden="true"></label>
+                                <input type="radio" id="star3" name="{{ field_name(form.note) }}" value="3" />
+                                <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                                <input type="radio" id="star4" name="{{ field_name(form.note) }}" value="2" />
+                                <label class="star" for="star4" title="Good" aria-hidden="true"></label>
+                                <input type="radio" id="star5" name="{{ field_name(form.note) }}" value="1" />
+                                <label class="star" for="star5" title="Bad" aria-hidden="true"></label>
+                                <input type="hidden" name="notestored" value="{{testimonial.note}}">
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3 float-end">
+                            <label for="active">
+                            Active
+                            </label>
+                            {{ form_widget(form.active) }} 
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="pseudonym">
+                                Pseudonyme*
+                            </label>
+                        {{ form_widget(form.pseudonym, {'attr': {'class': 'form-control'}}) }}                                
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="email">
+                                Email*
+                            </label>
+                             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}                                
+                         </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="phone">
+                                Téléphone
+                            </label>
+                             {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}                                
+                         </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label for="comment">Commentaire</label>
+                            {{ form_widget(form.comment, {'attr': {'class': 'form-control' }}) }}               
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="pb-5 pt-3">
+                    
+                    <button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+                </div>
+            {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
+{% endblock %}
+

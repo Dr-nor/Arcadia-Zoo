@@ -83,29 +83,41 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
             yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/admin-sidebar.html.twig");
             yield "
         ";
+        } elseif ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_EMPLOYE")) {
+            // line 39
+            yield "            ";
+            yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/employe-sidebar.html.twig");
+            yield "
+        ";
+        } else {
+            // line 41
+            yield "            ";
+            yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/user-sidebar.html.twig");
+            yield "
+        ";
         }
-        // line 39
+        // line 43
         yield "        
         ";
-        // line 40
+        // line 44
         yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/flash.html.twig");
         yield "
         <!-- Begin Main Content Area -->
           ";
-        // line 42
+        // line 46
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
-        // line 43
+        // line 47
         yield "         <!-- Main Content Area End -->
         ";
-        // line 44
+        // line 48
         yield Twig\Extension\CoreExtension::include($this->env, $context, "admin/layouts/footer.html.twig");
         yield "
 \t\t</div>
 
         ";
-        // line 47
+        // line 51
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 60
+        // line 64
         yield "\t</body>
 </html>";
         
@@ -175,7 +187,7 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
         return; yield '';
     }
 
-    // line 42
+    // line 46
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,7 +206,7 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
         return; yield '';
     }
 
-    // line 47
+    // line 51
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -204,40 +216,40 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 48
+        // line 52
         yield "
         <!--Plugins JS-->
         <script src=\"";
-        // line 50
+        // line 54
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/jquery-3.6.0.min.js"), "html", null, true);
         yield "\"></script>
         <script src=\"";
-        // line 51
+        // line 55
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/bootstrap.bundle.min.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 52
+        // line 56
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/datatables.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 53
+        // line 57
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/fullscreen.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 54
+        // line 58
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/plugins/pushmenu.js"), "html", null, true);
         yield "\" ></script>
         <script src=\"";
-        // line 55
+        // line 59
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/plugins/jquery.nice-select.js"), "html", null, true);
         yield "\"></script>
          <script src=\"";
-        // line 56
+        // line 60
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("global-assets/js/pro.min.js"), "html", null, true);
         yield "\"></script>
         <!--Main JS-->
         <script src=\"";
-        // line 58
+        // line 62
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("admin-assets/js/back.js"), "html", null, true);
         yield "\"></script>
         ";
@@ -271,7 +283,7 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  241 => 58,  236 => 56,  232 => 55,  228 => 54,  224 => 53,  220 => 52,  216 => 51,  212 => 50,  208 => 48,  198 => 47,  179 => 42,  166 => 29,  162 => 28,  154 => 23,  150 => 22,  144 => 19,  138 => 16,  134 => 15,  131 => 14,  121 => 13,  109 => 60,  107 => 47,  101 => 44,  98 => 43,  96 => 42,  91 => 40,  88 => 39,  82 => 37,  80 => 36,  76 => 35,  70 => 31,  68 => 13,  63 => 11,  51 => 1,);
+        return array (  253 => 62,  248 => 60,  244 => 59,  240 => 58,  236 => 57,  232 => 56,  228 => 55,  224 => 54,  220 => 52,  210 => 51,  191 => 46,  178 => 29,  174 => 28,  166 => 23,  162 => 22,  156 => 19,  150 => 16,  146 => 15,  143 => 14,  133 => 13,  121 => 64,  119 => 51,  113 => 48,  110 => 47,  108 => 46,  103 => 44,  100 => 43,  94 => 41,  88 => 39,  82 => 37,  80 => 36,  76 => 35,  70 => 31,  68 => 13,  63 => 11,  51 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -313,6 +325,10 @@ class __TwigTemplate_ed791c287ad4543c0bbc23aac80f9558 extends Template
         {{ include('admin/layouts/header.html.twig') }}
         {% if is_granted('ROLE_ADMIN') %}
             {{ include('admin/layouts/admin-sidebar.html.twig') }}
+        {% elseif is_granted('ROLE_EMPLOYE') %}
+            {{ include('admin/layouts/employe-sidebar.html.twig') }}
+        {% else %}
+            {{ include('admin/layouts/user-sidebar.html.twig') }}
         {% endif %}
         
         {{ include('admin/layouts/flash.html.twig') }}

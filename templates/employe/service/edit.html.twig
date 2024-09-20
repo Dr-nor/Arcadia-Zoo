@@ -1,0 +1,86 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid my-2">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Modifier
+                        </h1>
+                    </div>
+                    <div class="col-sm-6 text-right d-flex flex-end">
+                        <form class="mr-4" method="post" action="{{ path('employe_service_delete', {'id': service.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
+                            <button class="btn btn-secondary  ml-3">Delete</button>
+                        </form>
+                        <a href="{{ path('employe_service_index') }}" class="btn btn-primary">
+                            Retour                                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+            {{ form_start(form) }}
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="title">
+                                    Titre
+                                    </label>
+                                    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                 </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="mb-3">
+                                    <label for="description">
+                                        Description
+                                    </label>
+                                {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}                                
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="images">
+                                        Images
+                                    </label>
+                                    <ul class="image-list">
+                                    {% for image in service.images %}
+                                        <li>
+                                            <img src="{{ asset('uploads/services/mini/300x300-' ~ image.name ) }}" alt="Image" width="150">
+                                            <a  class="delete-img" href="{{ path('employe_service_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}"><i class="nav-icon bi bi-trash-fill"></i></a>
+                                        </li>
+                                    {% endfor %}  
+                                </ul> 
+                                    {{ form_widget(form.images) }}
+                             
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="pb-5 pt-3">
+                    
+                    <button class="btn btn-primary">{{ button_label|default('Sauvegarder') }}</button>
+                </div>
+            {{ form_end(form) }}
+
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('admin-assets/js/images.js') }}" defer></script>  <!-- defer:  charger aprés le contenu de la page -->
+{% endblock %}
+
+
