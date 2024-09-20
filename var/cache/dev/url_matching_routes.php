@@ -28,6 +28,7 @@ return [
         '/admin/habitatreport/new' => [[['_route' => 'app_habitatreport_new', '_controller' => 'App\\Controller\\Admin\\HabitatreportController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/opening' => [[['_route' => 'app_opening_index', '_controller' => 'App\\Controller\\Admin\\OpeningController::index'], null, ['GET' => 0], null, true, false, null]],
         '/opening/new' => [[['_route' => 'app_opening_new', '_controller' => 'App\\Controller\\Admin\\OpeningController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/profile/editpassword' => [[['_route' => 'app_editpass', '_controller' => 'App\\Controller\\Admin\\ProfileController::editpass'], null, null, null, false, false, null]],
         '/admin/race' => [[['_route' => 'app_race_index', '_controller' => 'App\\Controller\\Admin\\RaceController::index'], null, ['GET' => 0], null, true, false, null]],
         '/admin/race/new' => [[['_route' => 'app_race_new', '_controller' => 'App\\Controller\\Admin\\RaceController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/admin/service' => [[['_route' => 'app_service_index', '_controller' => 'App\\Controller\\Admin\\ServiceController::index'], null, ['GET' => 0], null, true, false, null]],

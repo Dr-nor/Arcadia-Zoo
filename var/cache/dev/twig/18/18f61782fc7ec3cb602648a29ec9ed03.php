@@ -82,9 +82,15 @@ class __TwigTemplate_2368f1723388335b9ed28d8682bf804c extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "user", [], "any", false, false, false, 27), "userIdentifier", [], "any", false, false, false, 27), "html", null, true);
         yield "</div>
             <div class=\"dropdown-divider\"></div>
+            <a href=\"";
+        // line 29
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_editpass");
+        yield "\"class=\"dropdown-item\">
+                <i class=\"bi bi-lock mr-2\"></i> Changer le mot de passe
+            </a>
             <div class=\"dropdown-divider\"></div>
             <a href=\"";
-        // line 30
+        // line 33
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
         yield "\" class=\"dropdown-item \">
                 <i class=\"bi bi-box-arrow-right mr-2\"></i> Déconnexion\t\t\t\t\t\t\t
@@ -126,7 +132,7 @@ class __TwigTemplate_2368f1723388335b9ed28d8682bf804c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  88 => 30,  82 => 27,  78 => 26,  72 => 23,  48 => 1,);
+        return array (  94 => 33,  87 => 29,  82 => 27,  78 => 26,  72 => 23,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -159,6 +165,9 @@ class __TwigTemplate_2368f1723388335b9ed28d8682bf804c extends Template
             <h4 class=\"h4 mb-0\"><strong>{{ app.user.Fullname }}</strong></h4>
             <div class=\"mb-3\">{{ app.user.userIdentifier }}</div>
             <div class=\"dropdown-divider\"></div>
+            <a href=\"{{ path('app_editpass') }}\"class=\"dropdown-item\">
+                <i class=\"bi bi-lock mr-2\"></i> Changer le mot de passe
+            </a>
             <div class=\"dropdown-divider\"></div>
             <a href=\"{{ path('app_logout') }}\" class=\"dropdown-item \">
                 <i class=\"bi bi-box-arrow-right mr-2\"></i> Déconnexion\t\t\t\t\t\t\t
