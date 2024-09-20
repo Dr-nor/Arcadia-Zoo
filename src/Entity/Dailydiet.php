@@ -14,7 +14,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: DailydietRepository::class)]
 class Dailydiet
 {
-    use SlugTrait;
     use CreatedAtTrait;
 
     #[ORM\Id]
@@ -28,7 +27,6 @@ class Dailydiet
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $qty = null;
-
 
     #[ORM\ManyToOne]
     private ?Animal $animal_id = null;
