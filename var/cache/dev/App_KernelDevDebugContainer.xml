@@ -387,6 +387,14 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\HabitatController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\HabitatreportController" class="App\Controller\Admin\HabitatreportController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\HabitatreportController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -420,6 +428,14 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\UserController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Admin\VetreportController" class="App\Controller\Admin\VetreportController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Admin\VetreportController"/>
       </call>
     </service>
     <service id="App\Controller\AnimalsController" class="App\Controller\AnimalsController" public="true" autowire="true" autoconfigure="true">
@@ -487,6 +503,30 @@
         <argument type="service" id=".service_locator.QaaoWjx.App\Controller\ServicesController"/>
       </call>
     </service>
+    <service id="App\Controller\Veterinary\DailydietController" class="App\Controller\Veterinary\DailydietController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Veterinary\DailydietController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Veterinary\HabitatreportController" class="App\Controller\Veterinary\HabitatreportController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Veterinary\HabitatreportController"/>
+      </call>
+    </service>
+    <service id="App\Controller\Veterinary\VetreportController" class="App\Controller\Veterinary\VetreportController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="monolog.logger"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.QaaoWjx.App\Controller\Veterinary\VetreportController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.password_hasher_factory"/>
@@ -501,6 +541,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\HabitatreportType" class="App\Form\HabitatreportType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true">
@@ -519,6 +562,9 @@
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\VetreportType" class="App\Form\VetreportType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -532,6 +578,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\HabitatreportRepository" class="App\Repository\HabitatreportRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -556,6 +606,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\VetreportRepository" class="App\Repository\VetreportRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -592,7 +646,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.8UHKdfq"/>
+      <argument type="service" id=".service_locator.hvnhNf6"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1514,11 +1568,13 @@
         <argument>App\Form\ContactType</argument>
         <argument>App\Form\DailydietType</argument>
         <argument>App\Form\HabitatType</argument>
+        <argument>App\Form\HabitatreportType</argument>
         <argument>App\Form\OpeningType</argument>
         <argument>App\Form\RaceType</argument>
         <argument>App\Form\ServiceType</argument>
         <argument>App\Form\TestimonialType</argument>
         <argument>App\Form\UserType</argument>
+        <argument>App\Form\VetreportType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3522,7 +3578,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.8UHKdfq"/>
+      <argument type="service" id=".service_locator.hvnhNf6"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -4032,7 +4088,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.FW7WGp8"/>
+      <argument type="service" id=".service_locator.k4DkIaV"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5303,7 +5359,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.kKyZ9cx"/>
+      <argument type="service" id=".service_locator.pY6mrMh"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7565,6 +7621,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\HabitatController" class="App\Controller\Admin\HabitatController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\HabitatreportController" class="App\Controller\Admin\HabitatreportController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\HabitatreportController" class="App\Controller\Admin\HabitatreportController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\HabitatreportController" class="App\Controller\Admin\HabitatreportController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\OpeningController" class="App\Controller\Admin\OpeningController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7580,6 +7639,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\UserController" class="App\Controller\Admin\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\VetreportController" class="App\Controller\Admin\VetreportController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\VetreportController" class="App\Controller\Admin\VetreportController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\VetreportController" class="App\Controller\Admin\VetreportController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AnimalsController" class="App\Controller\AnimalsController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7607,6 +7669,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ServicesController" class="App\Controller\ServicesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Veterinary\DailydietController" class="App\Controller\Veterinary\DailydietController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Veterinary\DailydietController" class="App\Controller\Veterinary\DailydietController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Veterinary\DailydietController" class="App\Controller\Veterinary\DailydietController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Veterinary\HabitatreportController" class="App\Controller\Veterinary\HabitatreportController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Veterinary\HabitatreportController" class="App\Controller\Veterinary\HabitatreportController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Veterinary\HabitatreportController" class="App\Controller\Veterinary\HabitatreportController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Veterinary\VetreportController" class="App\Controller\Veterinary\VetreportController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Veterinary\VetreportController" class="App\Controller\Veterinary\VetreportController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Veterinary\VetreportController" class="App\Controller\Veterinary\VetreportController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AdminFixtures" class="App\DataFixtures\AdminFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AnimalType" class="App\Form\AnimalType" autowire="true" abstract="true"/>
@@ -7617,6 +7688,8 @@
     <service id=".abstract.instanceof.App\Form\DailydietType" class="App\Form\DailydietType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\HabitatType" class="App\Form\HabitatType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\HabitatreportType" class="App\Form\HabitatreportType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\HabitatreportType" class="App\Form\HabitatreportType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\OpeningType" class="App\Form\OpeningType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RaceType" class="App\Form\RaceType" autowire="true" abstract="true"/>
@@ -7627,6 +7700,8 @@
     <service id=".abstract.instanceof.App\Form\TestimonialType" class="App\Form\TestimonialType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VetreportType" class="App\Form\VetreportType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\VetreportType" class="App\Form\VetreportType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AnimalRepository" class="App\Repository\AnimalRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
@@ -7635,6 +7710,8 @@
     <service id=".abstract.instanceof.App\Repository\DailydietRepository" class="App\Repository\DailydietRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\HabitatRepository" class="App\Repository\HabitatRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\HabitatreportRepository" class="App\Repository\HabitatreportRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\HabitatreportRepository" class="App\Repository\HabitatreportRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ImageRepository" class="App\Repository\ImageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OpeningRepository" class="App\Repository\OpeningRepository" autowire="true" abstract="true"/>
@@ -7647,6 +7724,8 @@
     <service id=".abstract.instanceof.App\Repository\TestimonialRepository" class="App\Repository\TestimonialRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VetreportRepository" class="App\Repository\VetreportRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\VetreportRepository" class="App\Repository\VetreportRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.pRu6x_4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8384,6 +8463,19 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.RddNrxu" method="withContext"/>
     </service>
+    <service id=".service_locator.SMEzWKM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="vetreportRepository" type="service_closure" id="App\Repository\VetreportRepository"/>
+        <argument key="habitatreportRepository" type="service_closure" id="App\Repository\HabitatreportRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.SMEzWKM.App\Controller\Admin\DashboardController::veterinary()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\DashboardController::veterinary()"/>
+      <argument>App\Controller\Admin\DashboardController::veterinary()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SMEzWKM" method="withContext"/>
+    </service>
     <service id=".service_locator.rKMHrg5" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8463,6 +8555,55 @@
       <argument>App\Controller\Admin\HabitatController::deleteImage()</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.sDoT5rV" method="withContext"/>
+    </service>
+    <service id=".service_locator.NuhFOKn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="habitatreportepository" type="service_closure" id="App\Repository\HabitatreportRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.NuhFOKn.App\Controller\Admin\HabitatreportController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController::index()"/>
+      <argument>App\Controller\Admin\HabitatreportController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.NuhFOKn" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Admin\HabitatreportController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController::new()"/>
+      <argument>App\Controller\Admin\HabitatreportController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.wT0LS6t" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Habitatreport" type="service_closure" id=".errored..service_locator.wT0LS6t.App\Entity\Habitatreport"/>
+      </argument>
+    </service>
+    <service id=".service_locator.wT0LS6t.App\Controller\Admin\HabitatreportController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController::show()"/>
+      <argument>App\Controller\Admin\HabitatreportController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.wT0LS6t" method="withContext"/>
+    </service>
+    <service id=".service_locator.2jYvYwd" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Habitatreport" type="service_closure" id=".errored..service_locator.2jYvYwd.App\Entity\Habitatreport"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController::edit()"/>
+      <argument>App\Controller\Admin\HabitatreportController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.2jYvYwd" method="withContext"/>
+    </service>
+    <service id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController::delete()"/>
+      <argument>App\Controller\Admin\HabitatreportController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.2jYvYwd" method="withContext"/>
     </service>
     <service id=".service_locator.T8_IsXR" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
@@ -8754,6 +8895,55 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.nLtHlEw" method="withContext"/>
     </service>
+    <service id=".service_locator.ZSL8qBo" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="vetreportepository" type="service_closure" id="App\Repository\VetreportRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZSL8qBo.App\Controller\Admin\VetreportController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController::index()"/>
+      <argument>App\Controller\Admin\VetreportController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZSL8qBo" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Admin\VetreportController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController::new()"/>
+      <argument>App\Controller\Admin\VetreportController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.gFLsUIg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Vetreport" type="service_closure" id=".errored..service_locator.gFLsUIg.App\Entity\Vetreport"/>
+      </argument>
+    </service>
+    <service id=".service_locator.gFLsUIg.App\Controller\Admin\VetreportController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController::show()"/>
+      <argument>App\Controller\Admin\VetreportController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.gFLsUIg" method="withContext"/>
+    </service>
+    <service id=".service_locator.QKXNuJ9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="Vetreport" type="service_closure" id=".errored..service_locator.QKXNuJ9.App\Entity\Vetreport"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController::edit()"/>
+      <argument>App\Controller\Admin\VetreportController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QKXNuJ9" method="withContext"/>
+    </service>
+    <service id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController::delete()"/>
+      <argument>App\Controller\Admin\VetreportController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QKXNuJ9" method="withContext"/>
+    </service>
     <service id=".service_locator.bbmnh0J" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8956,7 +9146,85 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.HQ6Z48r" method="withContext"/>
     </service>
-    <service id=".service_locator.8UHKdfq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.i8XRal3.App\Controller\Veterinary\DailydietController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\DailydietController::index()"/>
+      <argument>App\Controller\Veterinary\DailydietController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.i8XRal3" method="withContext"/>
+    </service>
+    <service id=".service_locator.WMseQ83.App\Controller\Veterinary\DailydietController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\DailydietController::show()"/>
+      <argument>App\Controller\Veterinary\DailydietController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.WMseQ83" method="withContext"/>
+    </service>
+    <service id=".service_locator.hzYJuTC.App\Controller\Veterinary\DailydietController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\DailydietController::delete()"/>
+      <argument>App\Controller\Veterinary\DailydietController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.hzYJuTC" method="withContext"/>
+    </service>
+    <service id=".service_locator.NuhFOKn.App\Controller\Veterinary\HabitatreportController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController::index()"/>
+      <argument>App\Controller\Veterinary\HabitatreportController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.NuhFOKn" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Veterinary\HabitatreportController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController::new()"/>
+      <argument>App\Controller\Veterinary\HabitatreportController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.wT0LS6t.App\Controller\Veterinary\HabitatreportController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController::show()"/>
+      <argument>App\Controller\Veterinary\HabitatreportController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.wT0LS6t" method="withContext"/>
+    </service>
+    <service id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController::edit()"/>
+      <argument>App\Controller\Veterinary\HabitatreportController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.2jYvYwd" method="withContext"/>
+    </service>
+    <service id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController::delete()"/>
+      <argument>App\Controller\Veterinary\HabitatreportController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.2jYvYwd" method="withContext"/>
+    </service>
+    <service id=".service_locator.ZSL8qBo.App\Controller\Veterinary\VetreportController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController::index()"/>
+      <argument>App\Controller\Veterinary\VetreportController::index()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.ZSL8qBo" method="withContext"/>
+    </service>
+    <service id=".service_locator.P.blNFL.App\Controller\Veterinary\VetreportController::new()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController::new()"/>
+      <argument>App\Controller\Veterinary\VetreportController::new()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.P.blNFL" method="withContext"/>
+    </service>
+    <service id=".service_locator.gFLsUIg.App\Controller\Veterinary\VetreportController::show()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController::show()"/>
+      <argument>App\Controller\Veterinary\VetreportController::show()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.gFLsUIg" method="withContext"/>
+    </service>
+    <service id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::edit()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController::edit()"/>
+      <argument>App\Controller\Veterinary\VetreportController::edit()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QKXNuJ9" method="withContext"/>
+    </service>
+    <service id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::delete()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController::delete()"/>
+      <argument>App\Controller\Veterinary\VetreportController::delete()</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QKXNuJ9" method="withContext"/>
+    </service>
+    <service id=".service_locator.hvnhNf6" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
@@ -8976,12 +9244,18 @@
         <argument key="App\Controller\Admin\DailydietController::delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
         <argument key="App\Controller\Admin\DashboardController::index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
         <argument key="App\Controller\Admin\DashboardController::employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
+        <argument key="App\Controller\Admin\DashboardController::veterinary" type="service_closure" id=".service_locator.SMEzWKM.App\Controller\Admin\DashboardController::veterinary()"/>
         <argument key="App\Controller\Admin\HabitatController::index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
         <argument key="App\Controller\Admin\HabitatController::new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
         <argument key="App\Controller\Admin\HabitatController::show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
         <argument key="App\Controller\Admin\HabitatController::edit" type="service_closure" id=".service_locator.fpBl.q0.App\Controller\Admin\HabitatController::edit()"/>
         <argument key="App\Controller\Admin\HabitatController::delete" type="service_closure" id=".service_locator.O38RXnT.App\Controller\Admin\HabitatController::delete()"/>
         <argument key="App\Controller\Admin\HabitatController::deleteImage" type="service_closure" id=".service_locator.sDoT5rV.App\Controller\Admin\HabitatController::deleteImage()"/>
+        <argument key="App\Controller\Admin\HabitatreportController::index" type="service_closure" id=".service_locator.NuhFOKn.App\Controller\Admin\HabitatreportController::index()"/>
+        <argument key="App\Controller\Admin\HabitatreportController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\HabitatreportController::new()"/>
+        <argument key="App\Controller\Admin\HabitatreportController::show" type="service_closure" id=".service_locator.wT0LS6t.App\Controller\Admin\HabitatreportController::show()"/>
+        <argument key="App\Controller\Admin\HabitatreportController::edit" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::edit()"/>
+        <argument key="App\Controller\Admin\HabitatreportController::delete" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::delete()"/>
         <argument key="App\Controller\Admin\OpeningController::index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
         <argument key="App\Controller\Admin\OpeningController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
         <argument key="App\Controller\Admin\OpeningController::show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
@@ -9008,6 +9282,11 @@
         <argument key="App\Controller\Admin\UserController::show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
         <argument key="App\Controller\Admin\UserController::edit" type="service_closure" id=".service_locator.Qh67eS1.App\Controller\Admin\UserController::edit()"/>
         <argument key="App\Controller\Admin\UserController::delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
+        <argument key="App\Controller\Admin\VetreportController::index" type="service_closure" id=".service_locator.ZSL8qBo.App\Controller\Admin\VetreportController::index()"/>
+        <argument key="App\Controller\Admin\VetreportController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\VetreportController::new()"/>
+        <argument key="App\Controller\Admin\VetreportController::show" type="service_closure" id=".service_locator.gFLsUIg.App\Controller\Admin\VetreportController::show()"/>
+        <argument key="App\Controller\Admin\VetreportController::edit" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::edit()"/>
+        <argument key="App\Controller\Admin\VetreportController::delete" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::delete()"/>
         <argument key="App\Controller\AnimalsController::index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController::details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
         <argument key="App\Controller\Employe\DailydietController::index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Employe\DailydietController::index()"/>
@@ -9034,6 +9313,19 @@
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\ServicesController::index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\ServicesController::index()"/>
         <argument key="App\Controller\ServicesController::details" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\ServicesController::details()"/>
+        <argument key="App\Controller\Veterinary\DailydietController::index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Veterinary\DailydietController::index()"/>
+        <argument key="App\Controller\Veterinary\DailydietController::show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Veterinary\DailydietController::show()"/>
+        <argument key="App\Controller\Veterinary\DailydietController::delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Veterinary\DailydietController::delete()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController::index" type="service_closure" id=".service_locator.NuhFOKn.App\Controller\Veterinary\HabitatreportController::index()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Veterinary\HabitatreportController::new()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController::show" type="service_closure" id=".service_locator.wT0LS6t.App\Controller\Veterinary\HabitatreportController::show()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController::edit" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::edit()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController::delete" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::delete()"/>
+        <argument key="App\Controller\Veterinary\VetreportController::index" type="service_closure" id=".service_locator.ZSL8qBo.App\Controller\Veterinary\VetreportController::index()"/>
+        <argument key="App\Controller\Veterinary\VetreportController::new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Veterinary\VetreportController::new()"/>
+        <argument key="App\Controller\Veterinary\VetreportController::show" type="service_closure" id=".service_locator.gFLsUIg.App\Controller\Veterinary\VetreportController::show()"/>
+        <argument key="App\Controller\Veterinary\VetreportController::edit" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::edit()"/>
+        <argument key="App\Controller\Veterinary\VetreportController::delete" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::delete()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Controller\Admin\AnimalController:index" type="service_closure" id=".service_locator.2.72aJ_.App\Controller\Admin\AnimalController::index()"/>
@@ -9049,12 +9341,18 @@
         <argument key="App\Controller\Admin\DailydietController:delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Admin\DailydietController::delete()"/>
         <argument key="App\Controller\Admin\DashboardController:index" type="service_closure" id=".service_locator.pmIsgEj.App\Controller\Admin\DashboardController::index()"/>
         <argument key="App\Controller\Admin\DashboardController:employe" type="service_closure" id=".service_locator.RddNrxu.App\Controller\Admin\DashboardController::employe()"/>
+        <argument key="App\Controller\Admin\DashboardController:veterinary" type="service_closure" id=".service_locator.SMEzWKM.App\Controller\Admin\DashboardController::veterinary()"/>
         <argument key="App\Controller\Admin\HabitatController:index" type="service_closure" id=".service_locator.rKMHrg5.App\Controller\Admin\HabitatController::index()"/>
         <argument key="App\Controller\Admin\HabitatController:new" type="service_closure" id=".service_locator.PKLkl9R.App\Controller\Admin\HabitatController::new()"/>
         <argument key="App\Controller\Admin\HabitatController:show" type="service_closure" id=".service_locator.nvY2WDd.App\Controller\Admin\HabitatController::show()"/>
         <argument key="App\Controller\Admin\HabitatController:edit" type="service_closure" id=".service_locator.fpBl.q0.App\Controller\Admin\HabitatController::edit()"/>
         <argument key="App\Controller\Admin\HabitatController:delete" type="service_closure" id=".service_locator.O38RXnT.App\Controller\Admin\HabitatController::delete()"/>
         <argument key="App\Controller\Admin\HabitatController:deleteImage" type="service_closure" id=".service_locator.sDoT5rV.App\Controller\Admin\HabitatController::deleteImage()"/>
+        <argument key="App\Controller\Admin\HabitatreportController:index" type="service_closure" id=".service_locator.NuhFOKn.App\Controller\Admin\HabitatreportController::index()"/>
+        <argument key="App\Controller\Admin\HabitatreportController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\HabitatreportController::new()"/>
+        <argument key="App\Controller\Admin\HabitatreportController:show" type="service_closure" id=".service_locator.wT0LS6t.App\Controller\Admin\HabitatreportController::show()"/>
+        <argument key="App\Controller\Admin\HabitatreportController:edit" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::edit()"/>
+        <argument key="App\Controller\Admin\HabitatreportController:delete" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Admin\HabitatreportController::delete()"/>
         <argument key="App\Controller\Admin\OpeningController:index" type="service_closure" id=".service_locator.T8_IsXR.App\Controller\Admin\OpeningController::index()"/>
         <argument key="App\Controller\Admin\OpeningController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\OpeningController::new()"/>
         <argument key="App\Controller\Admin\OpeningController:show" type="service_closure" id=".service_locator.DcatOPi.App\Controller\Admin\OpeningController::show()"/>
@@ -9081,6 +9379,11 @@
         <argument key="App\Controller\Admin\UserController:show" type="service_closure" id=".service_locator.hKA2je_.App\Controller\Admin\UserController::show()"/>
         <argument key="App\Controller\Admin\UserController:edit" type="service_closure" id=".service_locator.Qh67eS1.App\Controller\Admin\UserController::edit()"/>
         <argument key="App\Controller\Admin\UserController:delete" type="service_closure" id=".service_locator.nLtHlEw.App\Controller\Admin\UserController::delete()"/>
+        <argument key="App\Controller\Admin\VetreportController:index" type="service_closure" id=".service_locator.ZSL8qBo.App\Controller\Admin\VetreportController::index()"/>
+        <argument key="App\Controller\Admin\VetreportController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Admin\VetreportController::new()"/>
+        <argument key="App\Controller\Admin\VetreportController:show" type="service_closure" id=".service_locator.gFLsUIg.App\Controller\Admin\VetreportController::show()"/>
+        <argument key="App\Controller\Admin\VetreportController:edit" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::edit()"/>
+        <argument key="App\Controller\Admin\VetreportController:delete" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Admin\VetreportController::delete()"/>
         <argument key="App\Controller\AnimalsController:index" type="service_closure" id=".service_locator.bbmnh0J.App\Controller\AnimalsController::index()"/>
         <argument key="App\Controller\AnimalsController:details" type="service_closure" id=".service_locator.WfXzZIK.App\Controller\AnimalsController::details()"/>
         <argument key="App\Controller\Employe\DailydietController:index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Employe\DailydietController::index()"/>
@@ -9107,6 +9410,19 @@
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.mXDaS5b.App\Controller\SecurityController::login()"/>
         <argument key="App\Controller\ServicesController:index" type="service_closure" id=".service_locator.PuhjwKK.App\Controller\ServicesController::index()"/>
         <argument key="App\Controller\ServicesController:details" type="service_closure" id=".service_locator.HQ6Z48r.App\Controller\ServicesController::details()"/>
+        <argument key="App\Controller\Veterinary\DailydietController:index" type="service_closure" id=".service_locator.i8XRal3.App\Controller\Veterinary\DailydietController::index()"/>
+        <argument key="App\Controller\Veterinary\DailydietController:show" type="service_closure" id=".service_locator.WMseQ83.App\Controller\Veterinary\DailydietController::show()"/>
+        <argument key="App\Controller\Veterinary\DailydietController:delete" type="service_closure" id=".service_locator.hzYJuTC.App\Controller\Veterinary\DailydietController::delete()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController:index" type="service_closure" id=".service_locator.NuhFOKn.App\Controller\Veterinary\HabitatreportController::index()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Veterinary\HabitatreportController::new()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController:show" type="service_closure" id=".service_locator.wT0LS6t.App\Controller\Veterinary\HabitatreportController::show()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController:edit" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::edit()"/>
+        <argument key="App\Controller\Veterinary\HabitatreportController:delete" type="service_closure" id=".service_locator.2jYvYwd.App\Controller\Veterinary\HabitatreportController::delete()"/>
+        <argument key="App\Controller\Veterinary\VetreportController:index" type="service_closure" id=".service_locator.ZSL8qBo.App\Controller\Veterinary\VetreportController::index()"/>
+        <argument key="App\Controller\Veterinary\VetreportController:new" type="service_closure" id=".service_locator.P.blNFL.App\Controller\Veterinary\VetreportController::new()"/>
+        <argument key="App\Controller\Veterinary\VetreportController:show" type="service_closure" id=".service_locator.gFLsUIg.App\Controller\Veterinary\VetreportController::show()"/>
+        <argument key="App\Controller\Veterinary\VetreportController:edit" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::edit()"/>
+        <argument key="App\Controller\Veterinary\VetreportController:delete" type="service_closure" id=".service_locator.QKXNuJ9.App\Controller\Veterinary\VetreportController::delete()"/>
       </argument>
     </service>
     <service id=".service_locator.ea.H0ae" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9266,18 +9582,20 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.FW7WGp8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.k4DkIaV" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AnimalType" type="service_closure" id="App\Form\AnimalType"/>
         <argument key="App\Form\ContactType" type="service_closure" id="App\Form\ContactType"/>
         <argument key="App\Form\DailydietType" type="service_closure" id="App\Form\DailydietType"/>
         <argument key="App\Form\HabitatType" type="service_closure" id="App\Form\HabitatType"/>
+        <argument key="App\Form\HabitatreportType" type="service_closure" id="App\Form\HabitatreportType"/>
         <argument key="App\Form\OpeningType" type="service_closure" id="App\Form\OpeningType"/>
         <argument key="App\Form\RaceType" type="service_closure" id="App\Form\RaceType"/>
         <argument key="App\Form\ServiceType" type="service_closure" id="App\Form\ServiceType"/>
         <argument key="App\Form\TestimonialType" type="service_closure" id="App\Form\TestimonialType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
+        <argument key="App\Form\VetreportType" type="service_closure" id="App\Form\VetreportType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service_closure" id="form.type.file"/>
@@ -9403,19 +9721,21 @@
         <argument key="turbo.doctrine.event_listener" type="service_closure" id="turbo.doctrine.event_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.kKyZ9cx" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.pY6mrMh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AnimalRepository" type="service_closure" id="App\Repository\AnimalRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
         <argument key="App\Repository\DailydietRepository" type="service_closure" id="App\Repository\DailydietRepository"/>
         <argument key="App\Repository\HabitatRepository" type="service_closure" id="App\Repository\HabitatRepository"/>
+        <argument key="App\Repository\HabitatreportRepository" type="service_closure" id="App\Repository\HabitatreportRepository"/>
         <argument key="App\Repository\ImageRepository" type="service_closure" id="App\Repository\ImageRepository"/>
         <argument key="App\Repository\OpeningRepository" type="service_closure" id="App\Repository\OpeningRepository"/>
         <argument key="App\Repository\RaceRepository" type="service_closure" id="App\Repository\RaceRepository"/>
         <argument key="App\Repository\ServiceRepository" type="service_closure" id="App\Repository\ServiceRepository"/>
         <argument key="App\Repository\TestimonialRepository" type="service_closure" id="App\Repository\TestimonialRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\VetreportRepository" type="service_closure" id="App\Repository\VetreportRepository"/>
       </argument>
     </service>
     <service id=".service_locator.BxSdgVt" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -9687,6 +10007,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\HabitatreportController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\HabitatreportController"/>
+      <argument>App\Controller\Admin\HabitatreportController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\OpeningController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\OpeningController"/>
       <argument>App\Controller\Admin\OpeningController</argument>
@@ -9714,6 +10040,12 @@
     <service id=".service_locator.QaaoWjx.App\Controller\Admin\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\UserController"/>
       <argument>App\Controller\Admin\UserController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Admin\VetreportController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\VetreportController"/>
+      <argument>App\Controller\Admin\VetreportController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
@@ -9768,6 +10100,24 @@
     <service id=".service_locator.QaaoWjx.App\Controller\ServicesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ServicesController"/>
       <argument>App\Controller\ServicesController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Veterinary\DailydietController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\DailydietController"/>
+      <argument>App\Controller\Veterinary\DailydietController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Veterinary\HabitatreportController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\HabitatreportController"/>
+      <argument>App\Controller\Veterinary\HabitatreportController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.QaaoWjx" method="withContext"/>
+    </service>
+    <service id=".service_locator.QaaoWjx.App\Controller\Veterinary\VetreportController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Veterinary\VetreportController"/>
+      <argument>App\Controller\Veterinary\VetreportController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.QaaoWjx" method="withContext"/>
     </service>
@@ -9964,11 +10314,13 @@
           <argument>App\Controller\Admin\DailydietController</argument>
           <argument>App\Controller\Admin\DashboardController</argument>
           <argument>App\Controller\Admin\HabitatController</argument>
+          <argument>App\Controller\Admin\HabitatreportController</argument>
           <argument>App\Controller\Admin\OpeningController</argument>
           <argument>App\Controller\Admin\RaceController</argument>
           <argument>App\Controller\Admin\ServiceController</argument>
           <argument>App\Controller\Admin\TestimonialController</argument>
           <argument>App\Controller\Admin\UserController</argument>
+          <argument>App\Controller\Admin\VetreportController</argument>
           <argument>App\Controller\AnimalsController</argument>
           <argument>App\Controller\Employe\DailydietController</argument>
           <argument>App\Controller\Employe\ServiceController</argument>
@@ -9978,6 +10330,9 @@
           <argument>App\Controller\OpeningController</argument>
           <argument>App\Controller\SecurityController</argument>
           <argument>App\Controller\ServicesController</argument>
+          <argument>App\Controller\Veterinary\DailydietController</argument>
+          <argument>App\Controller\Veterinary\HabitatreportController</argument>
+          <argument>App\Controller\Veterinary\VetreportController</argument>
           <argument>Doctrine\Bundle\DoctrineBundle\Controller\ProfilerController</argument>
         </argument>
       </call>
@@ -10205,6 +10560,12 @@
     <service id=".errored..service_locator.sDoT5rV.App\Entity\Image" class="App\Entity\Image">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.sDoT5rV&quot;: it needs an instance of &quot;App\Entity\Image&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
+    <service id=".errored..service_locator.wT0LS6t.App\Entity\Habitatreport" class="App\Entity\Habitatreport">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.wT0LS6t&quot;: it needs an instance of &quot;App\Entity\Habitatreport&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.2jYvYwd.App\Entity\Habitatreport" class="App\Entity\Habitatreport">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.2jYvYwd&quot;: it needs an instance of &quot;App\Entity\Habitatreport&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
     <service id=".errored..service_locator.DcatOPi.App\Entity\Opening" class="App\Entity\Opening">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.DcatOPi&quot;: it needs an instance of &quot;App\Entity\Opening&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
@@ -10243,6 +10604,12 @@
     </service>
     <service id=".errored..service_locator.nLtHlEw.App\Entity\User" class="App\Entity\User">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.nLtHlEw&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.gFLsUIg.App\Entity\Vetreport" class="App\Entity\Vetreport">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.gFLsUIg&quot;: it needs an instance of &quot;App\Entity\Vetreport&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.QKXNuJ9.App\Entity\Vetreport" class="App\Entity\Vetreport">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.QKXNuJ9&quot;: it needs an instance of &quot;App\Entity\Vetreport&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.WfXzZIK.App\Entity\Animal" class="App\Entity\Animal">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.WfXzZIK&quot;: it needs an instance of &quot;App\Entity\Animal&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -11425,7 +11792,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.pRu6x_4" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.8UHKdfq"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.hvnhNf6"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -11480,12 +11847,16 @@
     <service id=".service_locator.OM9ohlh" alias=".service_locator.hzYJuTC"/>
     <service id=".service_locator.HSXKVs3" alias=".service_locator.pmIsgEj"/>
     <service id=".service_locator.SkmyL.h" alias=".service_locator.RddNrxu"/>
+    <service id=".service_locator.CoHjseh" alias=".service_locator.SMEzWKM"/>
     <service id=".service_locator.s0mTIkg" alias=".service_locator.rKMHrg5"/>
     <service id=".service_locator.K_01ED8" alias=".service_locator.PKLkl9R"/>
     <service id=".service_locator.XoGdWV0" alias=".service_locator.nvY2WDd"/>
     <service id=".service_locator.HD4b.UF" alias=".service_locator.fpBl.q0"/>
     <service id=".service_locator.wLz9zD1" alias=".service_locator.O38RXnT"/>
     <service id=".service_locator.np9NUMG" alias=".service_locator.sDoT5rV"/>
+    <service id=".service_locator.PmM.ppJ" alias=".service_locator.NuhFOKn"/>
+    <service id=".service_locator.Jr94cDN" alias=".service_locator.wT0LS6t"/>
+    <service id=".service_locator.IVR4iM5" alias=".service_locator.2jYvYwd"/>
     <service id=".service_locator.j6JxmIg" alias=".service_locator.T8_IsXR"/>
     <service id=".service_locator.aZxRJ09" alias=".service_locator.DcatOPi"/>
     <service id=".service_locator.u1Y8PRa" alias=".service_locator.9ibgz36"/>
@@ -11506,6 +11877,9 @@
     <service id=".service_locator.MaqvS4." alias=".service_locator.hKA2je_"/>
     <service id=".service_locator.48fwbz1" alias=".service_locator.Qh67eS1"/>
     <service id=".service_locator.OS8hQ7u" alias=".service_locator.nLtHlEw"/>
+    <service id=".service_locator.GvGeYW9" alias=".service_locator.ZSL8qBo"/>
+    <service id=".service_locator.VrsTK7Y" alias=".service_locator.gFLsUIg"/>
+    <service id=".service_locator.7ZgBYTf" alias=".service_locator.QKXNuJ9"/>
     <service id=".service_locator.8whD9T7" alias=".service_locator.bbmnh0J"/>
     <service id=".service_locator.tFDNzcu" alias=".service_locator.WfXzZIK"/>
     <service id=".service_locator.ajTm75a" alias=".service_locator.za2P_c4"/>

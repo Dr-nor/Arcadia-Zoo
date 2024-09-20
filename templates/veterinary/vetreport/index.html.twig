@@ -1,0 +1,91 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+
+<!-- Begin vetreport List Section -->
+<div class="content-wrapper">
+<!-- Page header -->
+<section class="content-header">					
+    <div class="container-fluid my-2">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Rapports vétérinaire</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ path('vet_vetreport_new') }}" class="btn btn-primary">Ajouter un rapport</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-tools">
+                    <div class="input-group input-group" style="width: 250px;">
+                        <input type="text" name="table_search" class="form-control float-right search-input" placeholder="Search">
+    
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-default">
+                            <i class="bi bi-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">								
+                <table id="vetreportstable" class="table table-hover text-nowrap search-table">
+                    <thead>
+                        <tr>
+                            <th width="60">ID</th>
+                            <th>Date</th>
+                            <th>Animal</th>
+                            <th>Nourriture</th>
+                            <th>grammage</th>
+                            <th>Etat</th>
+                            <th>Vétérinaire</th>
+                            <th width="100">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vetreport in vetreports %}
+                        <tr>
+                            <td>{{ vetreport.id }}</td>
+                            <td>{{ vetreport.createdAt ? vetreport.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>{{ vetreport.AnimalId.name }}</td>
+                            <td>{{ vetreport.diet }}</td>
+                            <td>{{ vetreport.grammage }}</td>
+                            <td>{{ vetreport.state }}</td>
+                            <td>{{ vetreport.user ? vetreport.user.fullname }}</td>
+                            <td>
+                                <a class="text-info w-4 h-4" href="{{ path('vet_vetreport_edit', {'id': vetreport.id}) }}"><i class="nav-icon bi bi-pencil-fill"></i></a>
+                                <form class="display-inline" method="post" action="{{ path('vet_vetreport_delete', {'id': vetreport.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ vetreport.id) }}">
+                                     <button class="btn text-danger"><i class="nav-icon bi bi-trash-fill"></i></button>
+                                </form>
+
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td>Aucun enregistrement trouvé.</td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                            <td class="hidden"></td>
+                        </tr>
+                    {# {% endif %} #}
+
+                         {% endfor %}
+                        
+                    </tbody>
+                </table>										
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- vetreport Section End -->
+
+{% endblock %}

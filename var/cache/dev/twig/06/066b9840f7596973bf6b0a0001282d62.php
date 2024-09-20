@@ -107,64 +107,97 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
                         </p>
                     </a>
             </li>
-            <li class=\"nav-item\">
-                    <a href=\"";
-        // line 46
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_habitat_index");
-        yield "\" class=\"nav-link\">
-                        <i class=\"nav-icon  fal fa-tree\"></i>
-                        <p>
-                            Habitats
-                        </p>
-                    </a>
-            </li>
 
-            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
-            <a href=\"#\" class=\"nav-link dropdown-toggle\">
-                <i class=\"nav-icon fal fa-paw\"></i>
-                <p>
-                    Animaux
-                </p>
-            </a>
-
-            <ul class=\"dropdown-menu dropdown-menu-dark\">
-                <li class=\"nav-item ml-4\">
-                    <a href=\"";
-        // line 64
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_animal_index");
-        yield "\" class=\"nav-link\">
-                        <p>
-                            Liste des animaux
-                        </p>
-                    </a>
-                </li>
-            
-                <li class=\"nav-item ml-4\">
-                    <a href=\"";
-        // line 72
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_race_index");
-        yield "\" class=\"nav-link\">
-                        <p>
-                            Races
-                        </p>
-                    </a>
-                </li>
-                <li class=\"nav-item ml-4\">
-                <a href=\"";
-        // line 79
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_index");
-        yield "\" class=\"nav-link\">
+            <li class=\"nav-item animal-dropdown dropdown\" aria-expanded=\"true\">
+                <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                    <i class=\"nav-icon fal  fal fa-tree\"></i>
                     <p>
-                        Alimentation
+                        Habitats
                     </p>
                 </a>
+                <ul class=\"dropdown-menu dropdown-menu-dark\">
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"";
+        // line 55
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_habitat_index");
+        yield "\" class=\"nav-link\">
+                            <p>
+                                Liste des habitats
+                            </p>
+                        </a>
+                        
+                    </li>
+                    <li class=\"nav-item ml-4\">
+                    <a href=\"";
+        // line 63
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_habitatreport_index");
+        yield "\" class=\"nav-link\">
+                        <p>
+                            Rapports vétérinaire
+                        </p>
+                    </a>
+                </li>
+
+                </ul>
             </li>
+
+
+            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
+                <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                    <i class=\"nav-icon fal fa-paw\"></i>
+                    <p>
+                        Animaux
+                    </p>
+                </a>
+
+                <ul class=\"dropdown-menu dropdown-menu-dark\">
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"";
+        // line 84
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_animal_index");
+        yield "\" class=\"nav-link\">
+                            <p>
+                                Liste des animaux
+                            </p>
+                        </a>
+                    </li>
+            
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"";
+        // line 92
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_race_index");
+        yield "\" class=\"nav-link\">
+                            <p>
+                                Races
+                            </p>
+                        </a>
+                    </li>
+                    <li class=\"nav-item ml-4\">
+                    <a href=\"";
+        // line 99
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dailydiet_index");
+        yield "\" class=\"nav-link\">
+                        <p>
+                            Alimentation
+                        </p>
+                    </a>
+                </li>
+                <li class=\"nav-item ml-4\">
+                    <a href=\"";
+        // line 106
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_vetreport_index");
+        yield "\" class=\"nav-link\">
+                        <p>
+                            Rapports vétérinaire
+                        </p>
+                    </a>
+                </li>
             </ul>
         </li>
 
             <li class=\"nav-item\">
                 <a href=\"";
-        // line 89
+        // line 116
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_testimonial_index");
         yield "\" class=\"nav-link\">
                     <i class=\"nav-icon fal fa-comment-lines\"></i>
@@ -211,7 +244,7 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  168 => 89,  155 => 79,  145 => 72,  134 => 64,  113 => 46,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
+        return array (  201 => 116,  188 => 106,  178 => 99,  168 => 92,  157 => 84,  133 => 63,  122 => 55,  102 => 38,  91 => 30,  80 => 22,  69 => 14,  57 => 5,  53 => 4,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -260,46 +293,73 @@ class __TwigTemplate_11f127a73be8d57c72cc79a7771e0525 extends Template
                         </p>
                     </a>
             </li>
-            <li class=\"nav-item\">
-                    <a href=\"{{ path('app_habitat_index') }}\" class=\"nav-link\">
-                        <i class=\"nav-icon  fal fa-tree\"></i>
-                        <p>
-                            Habitats
-                        </p>
-                    </a>
-            </li>
 
-            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
-            <a href=\"#\" class=\"nav-link dropdown-toggle\">
-                <i class=\"nav-icon fal fa-paw\"></i>
-                <p>
-                    Animaux
-                </p>
-            </a>
-
-            <ul class=\"dropdown-menu dropdown-menu-dark\">
-                <li class=\"nav-item ml-4\">
-                    <a href=\"{{ path('app_animal_index') }}\" class=\"nav-link\">
-                        <p>
-                            Liste des animaux
-                        </p>
-                    </a>
-                </li>
-            
-                <li class=\"nav-item ml-4\">
-                    <a href=\"{{ path('app_race_index') }}\" class=\"nav-link\">
-                        <p>
-                            Races
-                        </p>
-                    </a>
-                </li>
-                <li class=\"nav-item ml-4\">
-                <a href=\"{{ path('app_dailydiet_index') }}\" class=\"nav-link\">
+            <li class=\"nav-item animal-dropdown dropdown\" aria-expanded=\"true\">
+                <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                    <i class=\"nav-icon fal  fal fa-tree\"></i>
                     <p>
-                        Alimentation
+                        Habitats
                     </p>
                 </a>
+                <ul class=\"dropdown-menu dropdown-menu-dark\">
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"{{ path('app_habitat_index') }}\" class=\"nav-link\">
+                            <p>
+                                Liste des habitats
+                            </p>
+                        </a>
+                        
+                    </li>
+                    <li class=\"nav-item ml-4\">
+                    <a href=\"{{ path('app_habitatreport_index') }}\" class=\"nav-link\">
+                        <p>
+                            Rapports vétérinaire
+                        </p>
+                    </a>
+                </li>
+
+                </ul>
             </li>
+
+
+            <li class=\"nav-item  animal-dropdown dropdown \" aria-expanded=\"true\">
+                <a href=\"#\" class=\"nav-link dropdown-toggle\">
+                    <i class=\"nav-icon fal fa-paw\"></i>
+                    <p>
+                        Animaux
+                    </p>
+                </a>
+
+                <ul class=\"dropdown-menu dropdown-menu-dark\">
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"{{ path('app_animal_index') }}\" class=\"nav-link\">
+                            <p>
+                                Liste des animaux
+                            </p>
+                        </a>
+                    </li>
+            
+                    <li class=\"nav-item ml-4\">
+                        <a href=\"{{ path('app_race_index') }}\" class=\"nav-link\">
+                            <p>
+                                Races
+                            </p>
+                        </a>
+                    </li>
+                    <li class=\"nav-item ml-4\">
+                    <a href=\"{{ path('app_dailydiet_index') }}\" class=\"nav-link\">
+                        <p>
+                            Alimentation
+                        </p>
+                    </a>
+                </li>
+                <li class=\"nav-item ml-4\">
+                    <a href=\"{{ path('app_vetreport_index') }}\" class=\"nav-link\">
+                        <p>
+                            Rapports vétérinaire
+                        </p>
+                    </a>
+                </li>
             </ul>
         </li>
 

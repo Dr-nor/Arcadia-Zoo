@@ -37,6 +37,8 @@
             {{ include('admin/layouts/admin-sidebar.html.twig') }}
         {% elseif is_granted('ROLE_EMPLOYE') %}
             {{ include('admin/layouts/employe-sidebar.html.twig') }}
+        {% elseif is_granted('ROLE_VET') %}
+            {{ include('admin/layouts/veterinary-sidebar.html.twig') }}
         {% else %}
             {{ include('admin/layouts/user-sidebar.html.twig') }}
         {% endif %}

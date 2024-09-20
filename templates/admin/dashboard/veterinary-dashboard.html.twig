@@ -1,0 +1,70 @@
+{% extends 'admin/layouts/base.html.twig' %}
+{% block content %}
+    <!-- Begin Dashboard Section -->
+    <div class="content-wrapper">
+        <!-- Page header -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>
+                            Dashboard
+                                                
+                        </h1>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                  
+                    <!-- Rapport animal widget -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box card">
+                            <div class="inner">
+                                <h3>
+                                    {{ animalrepports|length }}
+                                </h3>
+                                <p>
+                                    Rapports animal                     
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-file-chart-line"></i>
+                            </div>
+                            <a href="{{ path('vet_vetreport_index') }}" class="small-box-footer text-dark">
+                                Plus d'info  
+                                                        
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Rapport habitat widget -->
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box card">
+                            <div class="inner">
+                                <h3>
+                                    {{ habitatrepports|length }}
+                                </h3>
+                                <p>
+                                    Rapports habitat                       
+                                </p>
+                            </div>
+                            <div class="icon">
+                                <i class="fal fa-file-chart-line"></i>
+                            </div>
+                            <a href="{{ path('vet_habitatreport_index') }}" class="small-box-footer text-dark">
+                                Plus d'info  
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<!--  Dashboard Section End -->
+{% endblock %}

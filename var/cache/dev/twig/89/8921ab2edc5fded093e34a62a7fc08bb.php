@@ -78,7 +78,7 @@ class __TwigTemplate_d7af7ca6f1b2cbf465e0cc99401b538b extends Template
                 <div class=\"row mb-2\">
                     <div class=\"col-sm-6\">
                         <h1>
-                            Ajouter un une alimentation quotidienne                                         
+                            Ajouter                                        
                                                     
                         </h1>
                     </div>
@@ -160,7 +160,7 @@ class __TwigTemplate_d7af7ca6f1b2cbf465e0cc99401b538b extends Template
         yield "
                     </button>
 
-                    <a href=\"/admin/dailydiet\" class=\"btn btn-outline-dark ml-3\">
+                    <a href=\"/employe/dailydiet\" class=\"btn btn-outline-dark ml-3\">
                         Annuler                  
                                                                     
                                             
@@ -220,7 +220,7 @@ class __TwigTemplate_d7af7ca6f1b2cbf465e0cc99401b538b extends Template
                 <div class=\"row mb-2\">
                     <div class=\"col-sm-6\">
                         <h1>
-                            Ajouter un une alimentation quotidienne                                         
+                            Ajouter                                        
                                                     
                         </h1>
                     </div>
@@ -284,7 +284,7 @@ class __TwigTemplate_d7af7ca6f1b2cbf465e0cc99401b538b extends Template
                         {{ button_label|default('Sauvegarder') }}
                     </button>
 
-                    <a href=\"/admin/dailydiet\" class=\"btn btn-outline-dark ml-3\">
+                    <a href=\"/employe/dailydiet\" class=\"btn btn-outline-dark ml-3\">
                         Annuler                  
                                                                     
                                             

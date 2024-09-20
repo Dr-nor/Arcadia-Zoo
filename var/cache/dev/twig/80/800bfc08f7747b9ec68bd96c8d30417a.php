@@ -84,7 +84,7 @@ class __TwigTemplate_6f1626e134f3d1df73f1900d31bdab7b extends Template
                 <a href=\"";
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("employe_dailydiet_new");
-        yield "\" class=\"btn btn-primary\">Ajouter une alimentation quotidienne</a>
+        yield "\" class=\"btn btn-primary\">Ajouter</a>
             </div>
         </div>
     </div>
@@ -246,7 +246,7 @@ class __TwigTemplate_6f1626e134f3d1df73f1900d31bdab7b extends Template
                 <h1>Alimentation quotidienne</h1>
             </div>
             <div class=\"col-sm-6 text-right\">
-                <a href=\"{{ path('employe_dailydiet_new') }}\" class=\"btn btn-primary\">Ajouter une alimentation quotidienne</a>
+                <a href=\"{{ path('employe_dailydiet_new') }}\" class=\"btn btn-primary\">Ajouter</a>
             </div>
         </div>
     </div>
