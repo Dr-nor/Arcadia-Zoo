@@ -146,17 +146,7 @@ class __TwigTemplate_566ceb84ef370ff2cdd1f569ab2d64f2 extends Template
         yield "                                
                             </div>
                             </div>
-                            <div class=\"col-md-4\">
-                                <div class=\"mb-3\">
-                                    <label for=\"password\">
-                                        Mot de passe
-                                    </label>
-                                     ";
-        // line 63
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 63, $this->source); })()), "plainPassword", [], "any", false, false, false, 63), 'widget', ["attr" => ["class" => "form-control"]]);
-        yield "                                
-                                 </div>
-                            </div>
+                            
                             
                         </div>
                     </div>
@@ -164,13 +154,13 @@ class __TwigTemplate_566ceb84ef370ff2cdd1f569ab2d64f2 extends Template
                 <div class=\"pb-5 pt-3\">
                     
                     <button class=\"btn btn-primary\">";
-        // line 72
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 72, $this->source); })()), "Sauvegarder")) : ("Sauvegarder")), "html", null, true);
+        // line 65
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 65, $this->source); })()), "Sauvegarder")) : ("Sauvegarder")), "html", null, true);
         yield "</button>
                 </div>
             ";
-        // line 74
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 74, $this->source); })()), 'form_end');
+        // line 67
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 67, $this->source); })()), 'form_end');
         yield "
 
             </div>
@@ -207,7 +197,7 @@ class __TwigTemplate_566ceb84ef370ff2cdd1f569ab2d64f2 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 74,  168 => 72,  156 => 63,  145 => 55,  134 => 47,  123 => 39,  110 => 29,  97 => 19,  91 => 16,  87 => 15,  73 => 3,  63 => 2,  40 => 1,);
+        return array (  163 => 67,  158 => 65,  145 => 55,  134 => 47,  123 => 39,  110 => 29,  97 => 19,  91 => 16,  87 => 15,  73 => 3,  63 => 2,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -269,14 +259,7 @@ class __TwigTemplate_566ceb84ef370ff2cdd1f569ab2d64f2 extends Template
                             {{ form_widget(form.roles, {'attr': {'class': 'form-control'}}) }}                                
                             </div>
                             </div>
-                            <div class=\"col-md-4\">
-                                <div class=\"mb-3\">
-                                    <label for=\"password\">
-                                        Mot de passe
-                                    </label>
-                                     {{ form_widget(form.plainPassword, {'attr': {'class': 'form-control'}}) }}                                
-                                 </div>
-                            </div>
+                            
                             
                         </div>
                     </div>

@@ -1,0 +1,95 @@
+<?php //a0f066d0cfa5ef4bdf1a33b5e2b1353c
+
+return [PHP_INT_MAX, static fn () => \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            'sqlExecutor' => [
+                $o[1],
+            ],
+            'resultSetMapping' => [
+                $o[2],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            'sqlStatements' => [
+                1 => 'SELECT a0_.id AS id_0, a0_.name AS name_1, a0_.description AS description_2, a0_.medianlife AS medianlife_3, a0_.diet AS diet_4, a0_.weight AS weight_5, a0_.size AS size_6, a0_.status AS status_7, a0_.slug AS slug_8, a0_.created_at AS created_at_9, a0_.race_id_id AS race_id_id_10, a0_.habitat_id_id AS habitat_id_id_11 FROM animal a0_ LIMIT 9',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'u' => 'App\\Entity\\Animal',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'name_1' => 'name',
+                    'description_2' => 'description',
+                    'medianlife_3' => 'medianlife',
+                    'diet_4' => 'diet',
+                    'weight_5' => 'weight',
+                    'size_6' => 'size',
+                    'status_7' => 'status',
+                    'slug_8' => 'slug',
+                    'created_at_9' => 'created_at',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'race_id_id_10' => 'integer',
+                    'habitat_id_id_11' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'u' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'race_id_id_10' => 'race_id_id',
+                    'habitat_id_id_11' => 'habitat_id_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'u',
+                    'name_1' => 'u',
+                    'description_2' => 'u',
+                    'medianlife_3' => 'u',
+                    'diet_4' => 'u',
+                    'weight_5' => 'u',
+                    'size_6' => 'u',
+                    'status_7' => 'u',
+                    'slug_8' => 'u',
+                    'created_at_9' => 'u',
+                    'race_id_id_10' => 'u',
+                    'habitat_id_id_11' => 'u',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Animal',
+                    'name_1' => 'App\\Entity\\Animal',
+                    'description_2' => 'App\\Entity\\Animal',
+                    'medianlife_3' => 'App\\Entity\\Animal',
+                    'diet_4' => 'App\\Entity\\Animal',
+                    'weight_5' => 'App\\Entity\\Animal',
+                    'size_6' => 'App\\Entity\\Animal',
+                    'status_7' => 'App\\Entity\\Animal',
+                    'slug_8' => 'App\\Entity\\Animal',
+                    'created_at_9' => 'App\\Entity\\Animal',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+)];

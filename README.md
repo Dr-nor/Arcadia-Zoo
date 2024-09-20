@@ -92,9 +92,9 @@ Password Arcadia123?
 
 
 ## Schéma Base de données
-Vous trouverez le schéma de base de données ici : 
+Vous trouverez le schéma de base de données ici : https://dbdiagram.io/d/Arcadia-Zoo-66edcd7da0828f8aa68c4f80
 
 ### Liens
 * Le lien du  dépôt Github : https://github.com/Dr-nor/Arcadia-Zoo
-* Le lien de la version en ligne de l’application web : 
-* Le lien vers votre logiciel de gestion de projet(Trello) : 
+* Le lien de la version en ligne de l’application web : https://interesting-nobel.212-227-162-75.plesk.page/
+* Le lien vers votre logiciel de gestion de projet(Trello) : https://trello.com/invite/b/66d4cf8b56e42ff5acb78071/ATTIec186db29fac6e203766bab10209002e76D48FB2/arcadia-zoo

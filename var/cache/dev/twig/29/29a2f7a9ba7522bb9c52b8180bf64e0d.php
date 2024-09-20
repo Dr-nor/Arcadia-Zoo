@@ -145,7 +145,7 @@ class __TwigTemplate_c42748d40cbb5cc8c504fb67d7d82f80 extends Template
         yield "
                     </button>
 
-                    <a href=\"/admin/vetreport\" class=\"btn btn-outline-dark ml-3\">
+                    <a href=\"/admin/habitatreport\" class=\"btn btn-outline-dark ml-3\">
                         Annuler                  
                                                                     
                                             
@@ -257,7 +257,7 @@ class __TwigTemplate_c42748d40cbb5cc8c504fb67d7d82f80 extends Template
                         {{ button_label|default('Sauvegarder') }}
                     </button>
 
-                    <a href=\"/admin/vetreport\" class=\"btn btn-outline-dark ml-3\">
+                    <a href=\"/admin/habitatreport\" class=\"btn btn-outline-dark ml-3\">
                         Annuler                  
                                                                     
                                             

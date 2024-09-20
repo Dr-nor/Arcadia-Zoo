@@ -181,7 +181,7 @@ class __TwigTemplate_982b1ef6d8fac39cdfc2c69f5355f605 extends Template
                                 <h3>
                                     ";
         // line 94
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["habitat"]) || array_key_exists("habitat", $context) ? $context["habitat"] : (function () { throw new RuntimeError('Variable "habitat" does not exist.', 94, $this->source); })())), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["animals"]) || array_key_exists("animals", $context) ? $context["animals"] : (function () { throw new RuntimeError('Variable "animals" does not exist.', 94, $this->source); })())), "html", null, true);
         yield "
                                 </h3>
                                 <p>
@@ -334,7 +334,7 @@ class __TwigTemplate_982b1ef6d8fac39cdfc2c69f5355f605 extends Template
                         <div class=\"small-box card\">
                             <div class=\"inner\">
                                 <h3>
-                                    {{ habitat|length }}
+                                    {{ animals|length }}
                                 </h3>
                                 <p>
                                     Animaux                       

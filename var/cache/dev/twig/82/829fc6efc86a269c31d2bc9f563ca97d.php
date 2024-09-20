@@ -78,7 +78,7 @@ class __TwigTemplate_e31b296bc8ab46f6c3fd39c9d72fa7ba extends Template
                 <div class=\"row mb-2\">
                     <div class=\"col-sm-6\">
                         <h1>
-                            Ajouter un une alimentation quotidienne                                         
+                            Ajouter                                      
                                                     
                         </h1>
                     </div>
@@ -220,7 +220,7 @@ class __TwigTemplate_e31b296bc8ab46f6c3fd39c9d72fa7ba extends Template
                 <div class=\"row mb-2\">
                     <div class=\"col-sm-6\">
                         <h1>
-                            Ajouter un une alimentation quotidienne                                         
+                            Ajouter                                      
                                                     
                         </h1>
                     </div>
