@@ -96,5 +96,5 @@ Vous trouverez le schéma de base de données ici : https://dbdiagram.io/d/Arcad
 
 ### Liens
 * Le lien du  dépôt Github : https://github.com/Dr-nor/Arcadia-Zoo
-* Le lien de la version en ligne de l’application web : https://interesting-nobel.212-227-162-75.plesk.page/
+* Le lien de la version en ligne de l’application web : https://comfyhomechlef.com
 * Le lien vers votre logiciel de gestion de projet(Trello) : https://trello.com/invite/b/66d4cf8b56e42ff5acb78071/ATTIec186db29fac6e203766bab10209002e76D48FB2/arcadia-zoo
